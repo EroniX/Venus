@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.sql.Date;
 import java.util.List;
 
 @Entity
@@ -16,12 +16,12 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class Semester extends BaseEntity {
-/*
-    @Column(nullable = false)
-    private LocalDate from;
 
     @Column(nullable = false)
-    private LocalDate to;*/
+    private Date from;
+
+    @Column(nullable = false)
+    private Date to;
 
     @OneToMany(mappedBy="semester", cascade={CascadeType.ALL})
     private List<Course> courses;
