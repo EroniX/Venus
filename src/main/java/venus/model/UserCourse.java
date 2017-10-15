@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Optional;
 
 @Entity
 @Table(name = "users_courses")
@@ -24,5 +25,5 @@ public class UserCourse extends BaseEntity {
     private Course course;
 
     @Column
-    private int mark;
+    private Integer mark;
 }
