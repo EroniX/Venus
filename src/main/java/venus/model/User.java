@@ -6,9 +6,10 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "USERS")
+@Table(name = "users")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -24,9 +25,18 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @OneToMany(mappedBy="teacher", cascade={CascadeType.ALL})
+    private List<Course> teachedCourses;
+
+    @ManyToMany(mappedBy = "students")
+    private List<Training> trainings;
+
+    @OneToMany(mappedBy="student", cascade={CascadeType.ALL})
+    private List<UserCourse> courses;
 
     public enum Role {
         GUEST, USER, ADMIN
