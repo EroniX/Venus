@@ -1,9 +1,13 @@
 package venus.service;
 
 import org.springframework.security.core.userdetails.UserDetails;
+import venus.model.User;
 
 public interface SecurityService {
-    Boolean isLoggedIn();
-    String findUsername();
-    Boolean autoLogin(String username, String password);
+    User getUser();
+    Boolean isAuthenticated();
+    String getUsername();
+    UserDetails getUserDetails();
+    Boolean login(String username, String password);
+    Boolean logout();
 }

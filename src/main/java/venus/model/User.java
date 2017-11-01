@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "users")
@@ -46,6 +46,10 @@ public class User extends BaseEntity {
         return roles;
     }
 
+    public Boolean HasRoles() {
+        return roles != null && !roles.isEmpty();
+    }
+
     public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
@@ -64,5 +68,15 @@ public class User extends BaseEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<String> getRoleNames() {
+        if(roles != null) {
+            return roles
+                    .stream()
+                    .map(n -> n.getName())
+                    .collect(Collectors.toList());
+        }
+        return null;
     }
 }

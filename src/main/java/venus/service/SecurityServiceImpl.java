@@ -8,7 +8,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import venus.model.Role;
@@ -29,12 +28,22 @@ public class SecurityServiceImpl implements SecurityService {
 
         @Override
         @Transactional(readOnly = true)
-        public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        public UserDetails loadUserByUsername(String username) {
+            if(username == null) {
+                throw new IllegalArgumentException();
+            }
+
             User user = userRepository.findByUsername(username);
+            if(user == null) {
+                return null;
+            }
 
             Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-            for (Role role : user.getRoles()) {
-                grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
+
+            if(user.HasRoles()) {
+                for (Role role : user.getRoles()) {
+                    grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
+                }
             }
 
             return new org.springframework.security.core.userdetails.User(
@@ -46,38 +55,80 @@ public class SecurityServiceImpl implements SecurityService {
 
     @Autowired
     private AuthenticationManager authenticationManager;
-
+    @Autowired
+    private UserService userService;
     @Autowired
     private UserDetailsService userDetailsService;
 
     //private static final Logger logger = LoggerFactory.getLogger(SecurityServiceImpl.class);
 
     @Override
-    public Boolean isLoggedIn()
-    {
-        return findUsername() != null;
-    }
-
-    @Override
-    public String findUsername() {
-        Object userDetails = SecurityContextHolder.getContext().getAuthentication().getDetails();
-        if (userDetails instanceof UserDetails) {
-            return ((UserDetails)userDetails).getUsername();
+    public User getUser() {
+        String username = getUsername();
+        if(username != null) {
+            return userService.findByUsername(username);
         }
 
         return null;
     }
 
     @Override
-    public Boolean autoLogin(String username, String password) {
-        UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, password, userDetails.getAuthorities());
+    public Boolean isAuthenticated() {
+        return getUsername() != null;
+    }
 
+    @Override
+    public String getUsername() {
+        UserDetails userDetails = getUserDetails();
+        if(userDetails != null) {
+            return userDetails.getUsername();
+        }
+
+        return null;
+    }
+
+    @Override
+    public UserDetails getUserDetails() {
+        Object userDetails = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (userDetails instanceof UserDetails) {
+            return ((UserDetails)userDetails);
+        }
+
+        return null;
+    }
+
+    @Override
+    public Boolean login(String username, String password) {
+        if(username == null) {
+            throw new IllegalArgumentException();
+        }
+
+        if(password == null) {
+            throw new IllegalArgumentException();
+        }
+
+        UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+        if(userDetails == null) {
+            return false;
+        }
+
+        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, password, userDetails.getAuthorities());
         authenticationManager.authenticate(usernamePasswordAuthenticationToken);
 
         if (usernamePasswordAuthenticationToken.isAuthenticated()) {
             SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
             //logger.debug(String.format("Auto login %s successfully!", username));
+            return true;
+        }
+
+        return false;
+    }
+
+    @Override
+    public Boolean logout() {
+        if(isAuthenticated()) {
+            SecurityContextHolder.getContext().setAuthentication(null);
+            SecurityContextHolder.clearContext();
             return true;
         }
 

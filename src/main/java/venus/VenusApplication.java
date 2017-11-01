@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @SpringBootApplication
 public class VenusApplication extends WebMvcConfigurerAdapter  {
-/*
+
     @Autowired
     private HandlerInterceptor authInterceptor;
 
@@ -19,7 +19,7 @@ public class VenusApplication extends WebMvcConfigurerAdapter  {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authInterceptor);
     }
-*/
+
     /*@Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
         return application.sources(VenusApplication.class);
