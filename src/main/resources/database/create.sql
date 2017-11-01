@@ -71,3 +71,18 @@ CREATE TABLE `users_trainings` (
   CONSTRAINT `Users_Trainings.UserId_Users.Id` FOREIGN KEY (`TrainingId`) REFERENCES `trainings` (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 SELECT * FROM venus.semesters;
+
+CREATE TABLE `roles` (
+  `Id` int(32) unsigned NOT NULL AUTO_INCREMENT,
+  `Name` varchar(256) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `roles_users` (
+  `RoleId` int(32) unsigned NOT NULL,
+  `UserId` int(32) unsigned NOT NULL,
+  PRIMARY KEY (`RoleId`,`UserId`),
+  KEY `roles_users.UserId_users_Id_idx` (`UserId`),
+  CONSTRAINT `roles_users.RoleId_roles_Id` FOREIGN KEY (`RoleId`) REFERENCES `roles` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `roles_users.UserId_users_Id` FOREIGN KEY (`UserId`) REFERENCES `users` (`Id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

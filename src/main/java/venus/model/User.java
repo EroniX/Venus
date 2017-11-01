@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -25,10 +26,6 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
-    @Enumerated(EnumType.STRING)
-    private Role role;
-
     @OneToMany(mappedBy="teacher", cascade={CascadeType.ALL})
     private List<Course> teachedCourses;
 
@@ -38,7 +35,34 @@ public class User extends BaseEntity {
     @OneToMany(mappedBy="student", cascade={CascadeType.ALL})
     private List<UserCourse> courses;
 
-    public enum Role {
-        GUEST, USER, ADMIN
+    @JoinTable(
+            name = "roles_users",
+            joinColumns = @JoinColumn(name = "userid", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "roleid", referencedColumnName = "id"))
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Role> roles;
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

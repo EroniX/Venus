@@ -1,8 +1,7 @@
 package venus.config;
-
+/*
 import venus.model.User;
 import venus.service.UserService;
-import venus.service.annotations.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
@@ -22,13 +21,15 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        List<User.Role> routeRoles = getRoles((HandlerMethod) handler);
-        User user = userService.getUser();
+        /*List<User.Role> routeRoles = getRoles((HandlerMethod) handler);
+        //User user = userService.getUser();
 
         // when there are no restrictions, we let the user through
         if (routeRoles.isEmpty() || routeRoles.contains(User.Role.GUEST)) {
             return true;
         }
+
+        Boolean loggedIn = userService.isLoggedIn();
         // check role
         if (userService.isLoggedIn() && routeRoles.contains(user.getRole())) {
             return true;
@@ -38,7 +39,8 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
     }
 
     private List<User.Role> getRoles(HandlerMethod handler) {
-        Role role = handler.getMethodAnnotation(Role.class);
-        return role == null ? Collections.emptyList() : Arrays.asList(role.value());
+        //Role role = handler.getMethodAnnotation(Role.class);
+        //return role == null ? Collections.emptyList() : Arrays.asList(role.value());
+        return null;
     }
-}
+}*/

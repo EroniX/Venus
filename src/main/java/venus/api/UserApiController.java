@@ -1,47 +1,69 @@
 package venus.api;
 
-import venus.model.User;
-import venus.service.UserService;
-import venus.service.annotations.Role;
-import venus.service.exceptions.UserNotValidException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import static venus.model.User.Role.ADMIN;
-import static venus.model.User.Role.USER;
+import venus.model.User;
+import venus.service.SecurityService;
+import venus.service.UserService;
+import venus.validator.UserValidator;
 
 @RestController
 @RequestMapping("/api/user")
 public class UserApiController {
-
-    private final UserService userService;
+    @Autowired
+    private UserService userService;
 
     @Autowired
+    private SecurityService securityService;
+
+    @Autowired
+    private UserValidator userValidator;
+
+ /*   @Autowired
     public UserApiController(UserService userService) {
         this.userService = userService;
     }
-
-    @Role({USER,ADMIN})
+*/
     @GetMapping
     public ResponseEntity<User> user() {
-        if (userService.isLoggedIn()) {
-            return ResponseEntity.ok(userService.getUser());
+        if (!securityService.isLoggedIn()) {
+            return ResponseEntity.badRequest().build();
         }
+
+        User user = userService.findByUsername(
+                securityService.findUsername());
+
+        if(user != null) {
+            return ResponseEntity.ok(user);
+        }
+
         return ResponseEntity.badRequest().build();
     }
 
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody User user) {
-        try {
-            return ResponseEntity.ok(userService.login(user));
-        } catch (UserNotValidException e) {
-            return ResponseEntity.badRequest().build();
+        if(securityService.autoLogin(user.getUsername(), user.getPassword())) {
+            return ResponseEntity.ok(user);
         }
+
+        return ResponseEntity.badRequest().build();
     }
 
     @PostMapping("/register")
     public ResponseEntity<User> register(@RequestBody User user) {
-        return ResponseEntity.ok(userService.register(user));
+        // @TODO: user validation
+        //userValidator.validate(user, bindingResult);
+/*
+        if (bindingResult.hasErrors()) {
+            return "registration";
+        }*/
+
+        userService.save(user);
+        if(securityService.autoLogin(user.getUsername(), user.getPassword())) {
+            return ResponseEntity.ok(user);
+        }
+
+        return ResponseEntity.badRequest().build();
     }
 }

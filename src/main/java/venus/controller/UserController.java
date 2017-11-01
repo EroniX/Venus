@@ -1,53 +1,56 @@
 package venus.controller;
 
+import org.springframework.validation.BindingResult;
 import venus.model.User;
+import venus.service.SecurityService;
 import venus.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import venus.validator.UserValidator;
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
-
     @Autowired
     private UserService userService;
 
-    @GetMapping("/greet")
-    public String greeting(@RequestParam(value = "name", required = false, defaultValue = "World") String name, Model model) {
-        model.addAttribute("name", name);
-        return "greeting";
+    @Autowired
+    private SecurityService securityService;
+
+    @Autowired
+    private UserValidator userValidator;
+
+    @RequestMapping(value = "/registration", method = RequestMethod.GET)
+    public String registration(Model model) {
+        model.addAttribute("userForm", new User());
+
+        return "registration";
     }
 
-    @GetMapping("/login")
-    public String login(Model model) {
-        model.addAttribute(new User());
-        return "login";
-    }
+    @RequestMapping(value = "/registration", method = RequestMethod.POST)
+    public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
+        userValidator.validate(userForm, bindingResult);
 
-    @PostMapping("/login")
-    public String login(@ModelAttribute User user, Model model) {
-        if (userService.isValid(user)) {
-            return redirectToGreeting(user);
+        if (bindingResult.hasErrors()) {
+            return "registration";
         }
-        model.addAttribute("loginFailed", true);
+
+        userService.save(userForm);
+        securityService.autoLogin(userForm.getUsername(), userForm.getPassword());
+
+        return "redirect:/welcome";
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(Model model, String error, String logout) {
+        if (error != null)
+            model.addAttribute("error", "Your username and password is invalid.");
+
+        if (logout != null)
+            model.addAttribute("message", "You have been logged out successfully.");
+
         return "login";
-    }
-
-    @GetMapping("/register")
-    public String register(Model model) {
-        model.addAttribute("user", new User());
-        return "register";
-    }
-
-    @PostMapping("/register")
-    public String register(@ModelAttribute User user) {
-        userService.register(user);
-        return redirectToGreeting(user);
-    }
-
-    private String redirectToGreeting(@ModelAttribute User user) {
-        return "redirect:/user/greet?name=" + user.getUsername();
     }
 }
