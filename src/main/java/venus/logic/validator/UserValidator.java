@@ -1,12 +1,12 @@
-package venus.validator;
+package venus.logic.validator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
-import venus.model.User;
-import venus.service.UserService;
+import venus.logic.model.User;
+import venus.logic.service.UserService;
 
 @Component
 public class UserValidator implements Validator {

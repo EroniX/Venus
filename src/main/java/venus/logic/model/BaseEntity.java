@@ -1,4 +1,4 @@
-package venus.model;
+package venus.logic.model;
 
 import lombok.Data;
 

@@ -1,14 +1,14 @@
-package venus.config;
+package venus.logic.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
-import venus.model.User;
-import venus.service.SecurityService;
-import venus.service.annotations.Authenticated;
-import venus.service.annotations.NotAuthenticated;
-import venus.service.annotations.Role;
+import venus.logic.model.User;
+import venus.logic.service.SecurityService;
+import venus.logic.annotations.Authenticated;
+import venus.logic.annotations.NotAuthenticated;
+import venus.logic.annotations.Role;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,16 +28,19 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
         HandlerMethod handlerMethod = (HandlerMethod) handler;
         Boolean authenticated = securityService.isAuthenticated();
 
+        // Authenticated annotation
         if(hasAnnotation(handlerMethod, Authenticated.class) && !authenticated) {
             response.setStatus(401);
             return false;
         }
 
+        // NotAuthenticated annotation
         if(hasAnnotation(handlerMethod, NotAuthenticated.class) && authenticated) {
             response.setStatus(403);
             return false;
         }
 
+        // Role annotation
         List<String> routeRoles = getRoles((HandlerMethod) handler);
         if (routeRoles.isEmpty()) {
             return true;
@@ -61,7 +64,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
                 : Arrays.asList(role.value());
     }
 
-    public <A extends Annotation> Boolean hasAnnotation(HandlerMethod handler, Class<A> annotation) {
+    private <A extends Annotation> Boolean hasAnnotation(HandlerMethod handler, Class<A> annotation) {
         return handler.getMethodAnnotation(annotation) != null;
     }
 }

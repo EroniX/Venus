@@ -1,6 +1,6 @@
-package venus.service;
+package venus.logic.service;
 
-import venus.model.User;
+import venus.logic.model.User;
 
 public interface UserService {
     void save(User user);

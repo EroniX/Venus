@@ -1,4 +1,4 @@
-package venus.service.exceptions;
+package venus.logic.exceptions;
 
 public class UserNotValidException extends Exception {
 }

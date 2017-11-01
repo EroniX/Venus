@@ -1,58 +1,18 @@
-package venus.service;
+package venus.logic.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import venus.model.Role;
-import venus.model.User;
-import venus.repository.UserRepository;
-
-import java.util.HashSet;
-import java.util.Set;
+import venus.logic.model.User;
 
 @Service
 public class SecurityServiceImpl implements SecurityService {
-
-    @Service
-    public class UserDetailsServiceImpl implements UserDetailsService {
-
-        @Autowired
-        private UserRepository userRepository;
-
-        @Override
-        @Transactional(readOnly = true)
-        public UserDetails loadUserByUsername(String username) {
-            if(username == null) {
-                throw new IllegalArgumentException();
-            }
-
-            User user = userRepository.findByUsername(username);
-            if(user == null) {
-                return null;
-            }
-
-            Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-
-            if(user.HasRoles()) {
-                for (Role role : user.getRoles()) {
-                    grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
-                }
-            }
-
-            return new org.springframework.security.core.userdetails.User(
-                    user.getUsername(),
-                    user.getPassword(),
-                    grantedAuthorities);
-        }
-    }
-
     @Autowired
     private AuthenticationManager authenticationManager;
     @Autowired
@@ -60,7 +20,7 @@ public class SecurityServiceImpl implements SecurityService {
     @Autowired
     private UserDetailsService userDetailsService;
 
-    //private static final Logger logger = LoggerFactory.getLogger(SecurityServiceImpl.class);
+    Logger logger = LoggerFactory.getLogger(SecurityServiceImpl.class);
 
     @Override
     public User getUser() {
@@ -112,12 +72,17 @@ public class SecurityServiceImpl implements SecurityService {
             return false;
         }
 
-        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, password, userDetails.getAuthorities());
+        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
+                new UsernamePasswordAuthenticationToken(
+                        userDetails,
+                        password,
+                        userDetails.getAuthorities());
+
         authenticationManager.authenticate(usernamePasswordAuthenticationToken);
 
         if (usernamePasswordAuthenticationToken.isAuthenticated()) {
             SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
-            //logger.debug(String.format("Auto login %s successfully!", username));
+            logger.warn(String.format("Auto login %s successfully!", username));
             return true;
         }
 

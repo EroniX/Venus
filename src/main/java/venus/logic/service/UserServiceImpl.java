@@ -1,11 +1,11 @@
-package venus.service;
+package venus.logic.service;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
-import venus.model.User;
+import venus.logic.model.User;
 import venus.repository.RoleRepository;
 import venus.repository.UserRepository;
 
@@ -23,7 +23,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public void save(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        //user.setRoles(roleRepository.findAll());
         userRepository.save(user);
     }
 

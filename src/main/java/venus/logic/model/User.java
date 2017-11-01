@@ -1,4 +1,4 @@
-package venus.model;
+package venus.logic.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,13 +26,13 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     private String password;
 
-    @OneToMany(mappedBy="teacher", cascade={CascadeType.ALL})
+    @OneToMany(mappedBy = "teacher", cascade = {CascadeType.ALL})
     private List<Course> teachedCourses;
 
     @ManyToMany(mappedBy = "students")
     private List<Training> trainings;
 
-    @OneToMany(mappedBy="student", cascade={CascadeType.ALL})
+    @OneToMany(mappedBy = "student", cascade = {CascadeType.ALL})
     private List<UserCourse> courses;
 
     @JoinTable(
@@ -71,7 +71,7 @@ public class User extends BaseEntity {
     }
 
     public List<String> getRoleNames() {
-        if(roles != null) {
+        if (roles != null) {
             return roles
                     .stream()
                     .map(n -> n.getName())

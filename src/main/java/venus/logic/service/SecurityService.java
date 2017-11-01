@@ -1,7 +1,7 @@
-package venus.service;
+package venus.logic.service;
 
 import org.springframework.security.core.userdetails.UserDetails;
-import venus.model.User;
+import venus.logic.model.User;
 
 public interface SecurityService {
     User getUser();

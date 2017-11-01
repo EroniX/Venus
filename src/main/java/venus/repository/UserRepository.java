@@ -1,6 +1,6 @@
 package venus.repository;
 
-import venus.model.User;
+import venus.logic.model.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

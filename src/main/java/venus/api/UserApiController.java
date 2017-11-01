@@ -4,12 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import venus.model.User;
-import venus.service.SecurityService;
-import venus.service.UserService;
-import venus.service.annotations.Authenticated;
-import venus.service.annotations.NotAuthenticated;
-import venus.validator.UserValidator;
+import venus.logic.model.User;
+import venus.logic.service.SecurityService;
+import venus.logic.service.UserService;
+import venus.logic.annotations.Authenticated;
+import venus.logic.annotations.NotAuthenticated;
+import venus.logic.annotations.Role;
+import venus.logic.validator.UserValidator;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -48,7 +49,7 @@ public class UserApiController {
         if(securityService.login(user.getUsername(), user.getPassword())) {
             return ResponseEntity.ok(user);
         }
-
+        
         return ResponseEntity.badRequest().build();
     }
 
@@ -79,6 +80,7 @@ public class UserApiController {
         return ResponseEntity.badRequest().build();
     }
 
+    @Role("can-check")
     @PostMapping("/check")
     public ResponseEntity<String> check() {
         return ResponseEntity.ok(securityService.getUsername());
