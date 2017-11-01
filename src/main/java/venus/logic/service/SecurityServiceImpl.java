@@ -20,8 +20,6 @@ public class SecurityServiceImpl implements SecurityService {
     @Autowired
     private UserDetailsService userDetailsService;
 
-    Logger logger = LoggerFactory.getLogger(SecurityServiceImpl.class);
-
     @Override
     public User getUser() {
         String username = getUsername();
@@ -82,7 +80,6 @@ public class SecurityServiceImpl implements SecurityService {
 
         if (usernamePasswordAuthenticationToken.isAuthenticated()) {
             SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
-            logger.warn(String.format("Auto login %s successfully!", username));
             return true;
         }
 
