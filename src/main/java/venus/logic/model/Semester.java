@@ -25,4 +25,20 @@ public class Semester extends BaseEntity {
 
     @OneToMany(mappedBy="semester", cascade={CascadeType.ALL})
     private List<Course> courses;
+
+    public Date getFrom() {
+        return from;
+    }
+
+    public void setFrom(Date from) {
+        this.from = from;
+    }
+
+    public Date getTo() {
+        return from;
+    }
+
+    public void setTo(Date to) {
+        this.to = to;
+    }
 }
