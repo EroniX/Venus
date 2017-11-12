@@ -28,5 +28,4 @@ public class VenusApplication extends WebMvcConfigurerAdapter  {
     public static void main(String[] args) {
         SpringApplication.run(VenusApplication.class, args);
     }
-
 }

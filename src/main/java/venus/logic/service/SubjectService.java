@@ -1,7 +1,10 @@
 package venus.logic.service;
 
-import org.springframework.security.core.userdetails.UserDetails;
-import venus.logic.model.User;
+import venus.dal.model.Subject;
 
 public interface SubjectService {
+    void save(Subject subject);
+    void delete(int id);
+    Iterable<Subject> findAll();
+    Subject findById(int id);
 }

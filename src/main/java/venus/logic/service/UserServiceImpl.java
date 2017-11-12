@@ -5,9 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
-import venus.logic.model.User;
-import venus.repository.RoleRepository;
-import venus.repository.UserRepository;
+import venus.dal.model.User;
+import venus.dal.repository.RoleRepository;
+import venus.dal.repository.UserRepository;
 
 @Service
 @SessionScope
@@ -29,5 +29,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByUsername(String username) {
         return userRepository.findByUsername(username);
+    }
+
+    @Override
+    public User findById(int id) {
+        return userRepository.findOne(id);
     }
 }

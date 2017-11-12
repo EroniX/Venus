@@ -1,4 +1,4 @@
-package venus.logic.model;
+package venus.dal.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,4 +28,36 @@ public class Subject extends BaseEntity {
 
     @OneToMany(mappedBy="subject", cascade={CascadeType.ALL})
     private List<Course> courses;
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public String getCode() {
+        return Code;
+    }
+
+    public void setCode(String code) {
+        Code = code;
+    }
+
+    public Training getTraining() {
+        return training;
+    }
+
+    public void setTraining(Training training) {
+        this.training = training;
+    }
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
 }

@@ -1,4 +1,4 @@
-package venus.logic.model;
+package venus.dal.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +15,6 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class Course extends BaseEntity {
-
     @ManyToOne
     @JoinColumn(name = "teacherid")
     private User teacher;

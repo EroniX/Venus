@@ -1,7 +1,8 @@
 package venus.logic.service;
 
-import venus.logic.model.Semester;
+import venus.dal.model.Semester;
+import venus.logic.exceptions.CurrentSemesterNotFound;
 
 public interface SemesterService {
-    Semester current();
+    Semester current() throws CurrentSemesterNotFound;
 }

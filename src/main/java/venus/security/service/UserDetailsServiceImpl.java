@@ -1,4 +1,4 @@
-package venus.logic.service;
+package venus.security.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -7,9 +7,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import venus.logic.model.Role;
-import venus.logic.model.User;
-import venus.repository.UserRepository;
+import venus.dal.model.Role;
+import venus.dal.model.User;
+import venus.dal.repository.UserRepository;
+import venus.security.model.VenusUserDetails;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -34,13 +35,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
 
-        if(user.HasRoles()) {
+        if(user.hasRoles()) {
             for (Role role : user.getRoles()) {
                 grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
             }
         }
 
-        return new org.springframework.security.core.userdetails.User(
+        return new VenusUserDetails(
                 user.getUsername(),
                 user.getPassword(),
                 grantedAuthorities);

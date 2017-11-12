@@ -1,4 +1,4 @@
-package venus.logic.model;
+package venus.dal.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,7 +1,9 @@
 package venus.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import venus.logic.annotations.Authenticated;
 import venus.logic.annotations.NotAuthenticated;
-import venus.logic.model.User;
-import venus.logic.service.SecurityService;
+import venus.dal.model.User;
+import venus.security.service.SecurityService;
 import venus.logic.service.UserService;
-import venus.logic.validator.UserValidator;
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/api/user")
@@ -21,13 +23,11 @@ public class UserApiController {
     private UserService userService;
     @Autowired
     private SecurityService securityService;
-    @Autowired
-    private UserValidator userValidator;
 
     @NotAuthenticated
     @PostMapping("/login")
-    public ResponseEntity<User> login(@RequestBody User user) {
-        if(securityService.login(user.getUsername(), user.getPassword())) {
+    public ResponseEntity<User> login(@RequestBody User user, HttpServletRequest request) {
+        if(securityService.login(user.getUsername(), user.getPassword(), request)) {
             return ResponseEntity.ok(user);
         }
 
@@ -36,8 +36,8 @@ public class UserApiController {
 
     @Authenticated
     @PostMapping("/logout")
-    public ResponseEntity<Boolean> logout() {
-        if(securityService.logout()) {
+    public ResponseEntity<Boolean> logout(HttpServletRequest request) {
+        if(securityService.logout(request)) {
             return ResponseEntity.ok(true);
         }
 
@@ -46,15 +46,13 @@ public class UserApiController {
 
     @NotAuthenticated
     @PostMapping("/register")
-    public ResponseEntity<User> register(@RequestBody User user, BindingResult bindingResult) {
-        userValidator.validate(user, bindingResult);
-
+    public ResponseEntity<User> register(@RequestBody User user, BindingResult bindingResult, HttpServletRequest request) {
         if (bindingResult.hasErrors()) {
             return ResponseEntity.badRequest().build();
         }
 
         userService.save(user);
-        if (securityService.login(user.getUsername(), user.getPassword())) {
+        if (securityService.login(user.getUsername(), user.getPassword(), request)) {
             return ResponseEntity.ok(user);
         }
 
