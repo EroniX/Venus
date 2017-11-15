@@ -45,9 +45,9 @@ public class UserApiController {
 
     @NotAuthenticated
     @PostMapping("/register")
-    public ResponseEntity<User> register(@RequestBody User user, BindingResult bindingResult, HttpServletRequest request) {
+    public ResponseEntity<Boolean> register(@RequestBody User user, BindingResult bindingResult, HttpServletRequest request) {
         if (bindingResult.hasErrors()) {
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.ok(false);
         }
 
         String password = new String(user.getPassword());
@@ -56,14 +56,14 @@ public class UserApiController {
             userService.save(user);
         }
         catch(UsernameAlreadyUsedException e) {
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.ok(false);
         }
         catch(EmailAlreadyUsedException e) {
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.ok(false);
         }
 
         if (securityService.login(user.getUsername(), password, request)) {
-            return ResponseEntity.ok(user);
+            return ResponseEntity.ok(true);
         }
         return ResponseEntity.badRequest().build();
     }
