@@ -26,7 +26,6 @@ public class SubjectApiController {
     @DeleteMapping("/delete/{id}")
     @PreAuthorize("hasAuthority('SUBJECT_TEACHER_DELETE')")
     public ResponseEntity delete(@RequestBody int id) {
-        User user = securityService.getUser();
         subjectService.delete(id);
         // @TODO: Probably need to delete the Courses and UserCourses as well
         return ResponseEntity.ok().build();
@@ -35,7 +34,6 @@ public class SubjectApiController {
     @PostMapping("/create/")
     @PreAuthorize("hasAuthority('SUBJECT_TEACHER_CREATE')")
     public ResponseEntity create(@RequestBody Subject subject) {
-        User user = securityService.getUser();
         subjectService.save(subject);
         return ResponseEntity.ok().build();
     }

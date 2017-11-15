@@ -1,7 +1,10 @@
 package venus.api;
 
+import com.sun.net.httpserver.Authenticator;
+import com.sun.net.httpserver.Authenticator.Success;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
@@ -35,9 +38,9 @@ public class UserApiController {
 
     @Authenticated
     @PostMapping("/logout")
-    public ResponseEntity<Boolean> logout(HttpServletRequest request) {
+    public ResponseEntity logout(HttpServletRequest request) {
         if(securityService.logout(request)) {
-            return ResponseEntity.ok(true);
+            return ResponseEntity.ok().build();
         }
 
         return ResponseEntity.badRequest().build();
@@ -45,9 +48,9 @@ public class UserApiController {
 
     @NotAuthenticated
     @PostMapping("/register")
-    public ResponseEntity<Boolean> register(@RequestBody User user, BindingResult bindingResult, HttpServletRequest request) {
+    public ResponseEntity register(@RequestBody User user, BindingResult bindingResult, HttpServletRequest request) {
         if (bindingResult.hasErrors()) {
-            return ResponseEntity.ok(false);
+            return new ResponseEntity<Error>(HttpStatus.EXPECTATION_FAILED);
         }
 
         String password = new String(user.getPassword());
@@ -56,14 +59,14 @@ public class UserApiController {
             userService.save(user);
         }
         catch(UsernameAlreadyUsedException e) {
-            return ResponseEntity.ok(false);
+            return ResponseEntity.badRequest().build();
         }
         catch(EmailAlreadyUsedException e) {
-            return ResponseEntity.ok(false);
+            return ResponseEntity.badRequest().build();
         }
 
         if (securityService.login(user.getUsername(), password, request)) {
-            return ResponseEntity.ok(true);
+            return ResponseEntity.ok().build();
         }
         return ResponseEntity.badRequest().build();
     }

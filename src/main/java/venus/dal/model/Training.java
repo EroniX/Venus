@@ -28,4 +28,28 @@ public class Training extends BaseEntity {
             inverseJoinColumns = @JoinColumn(name = "userid", referencedColumnName = "id"))
     @ManyToMany(cascade = CascadeType.ALL)
     private List<User> students;
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public List<Subject> getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(List<Subject> subjects) {
+        this.subjects = subjects;
+    }
+
+    public List<User> getStudents() {
+        return students;
+    }
+
+    public void setStudents(List<User> students) {
+        this.students = students;
+    }
 }

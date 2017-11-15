@@ -33,6 +33,9 @@ public class CourseApiController {
     @PreAuthorize("hasAuthority('TRAINING_LIST')")
     public ResponseEntity<Iterable<Course>> list(@PathVariable int id) {
         Subject subject = subjectService.findById(id);
+        if(subject == null) {
+            return ResponseEntity.badRequest().build();
+        }
         return ResponseEntity.ok(subject.getCourses());
     }
 
@@ -47,8 +50,12 @@ public class CourseApiController {
     @PostMapping("/add/{id}")
     @PreAuthorize("hasAuthority('COURSE_STUDENT_ADD')")
     public ResponseEntity add(@PathVariable int id) {
-        User user = securityService.getUser();
         Course course = courseService.findById(id);
+        if(course == null) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        User user = securityService.getUser();
         UserCourse userCourse = UserCourse.make(user, course);
         user.addUserCourse(userCourse);
         return ResponseEntity.ok().build();
@@ -69,7 +76,6 @@ public class CourseApiController {
     @PostMapping("/create/")
     @PreAuthorize("hasAuthority('COURSE_TEACHER_CREATE')")
     public ResponseEntity create(@RequestBody Course course) {
-        User user = securityService.getUser();
         courseService.save(course);
         return ResponseEntity.ok().build();
     }

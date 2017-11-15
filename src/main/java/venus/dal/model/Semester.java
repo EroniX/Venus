@@ -41,4 +41,12 @@ public class Semester extends BaseEntity {
     public void setTo(Date to) {
         this.to = to;
     }
+
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
 }
