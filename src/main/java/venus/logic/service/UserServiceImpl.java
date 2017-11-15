@@ -8,8 +8,6 @@ import org.springframework.web.context.annotation.SessionScope;
 import venus.dal.model.User;
 import venus.dal.repository.RoleRepository;
 import venus.dal.repository.UserRepository;
-import venus.logic.exceptions.EmailAlreadyUsedException;
-import venus.logic.exceptions.UsernameAlreadyUsedException;
 
 @Service
 @SessionScope
@@ -23,14 +21,7 @@ public class UserServiceImpl implements UserService {
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
-    public void save(User user) throws UsernameAlreadyUsedException, EmailAlreadyUsedException {
-        if(findByUsername(user.getUsername()) != null) {
-            throw new UsernameAlreadyUsedException();
-        }
-        if(findByEmail(user.getEmail()) != null) {
-            throw new EmailAlreadyUsedException();
-        }
-
+    public void save(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userRepository.save(user);
     }
@@ -38,11 +29,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByUsername(String username) {
         return userRepository.findByUsername(username);
-    }
-
-    @Override
-    public User findByEmail(String email)  {
-        return userRepository.findByEmail(email);
     }
 
     @Override

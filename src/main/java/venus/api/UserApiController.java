@@ -5,12 +5,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import venus.logic.annotations.Authenticated;
 import venus.logic.annotations.NotAuthenticated;
 import venus.dal.model.User;
-import venus.logic.exceptions.EmailAlreadyUsedException;
-import venus.logic.exceptions.UsernameAlreadyUsedException;
 import venus.security.service.SecurityService;
 import venus.logic.service.UserService;
 import javax.servlet.http.HttpServletRequest;
@@ -49,39 +50,10 @@ public class UserApiController {
         if (bindingResult.hasErrors()) {
             return ResponseEntity.badRequest().build();
         }
-
         String password = new String(user.getPassword());
-
-        try {
-            userService.save(user);
-        }
-        catch(UsernameAlreadyUsedException e) {
-            return ResponseEntity.badRequest().build();
-        }
-        catch(EmailAlreadyUsedException e) {
-            return ResponseEntity.badRequest().build();
-        }
-
+        userService.save(user);
         if (securityService.login(user.getUsername(), password, request)) {
             return ResponseEntity.ok(user);
-        }
-        return ResponseEntity.badRequest().build();
-    }
-
-    @NotAuthenticated
-    @PostMapping("/check-username/{username}")
-    public ResponseEntity checkUsername(@RequestParam String username) {
-        if(userService.findByUsername(username) == null) {
-            return ResponseEntity.ok().build();
-        }
-        return ResponseEntity.badRequest().build();
-    }
-
-    @NotAuthenticated
-    @PostMapping("/check-email/{username}")
-    public ResponseEntity checkEmail(@RequestParam String email) {
-        if(userService.findByEmail(email) == null) {
-            return ResponseEntity.ok().build();
         }
         return ResponseEntity.badRequest().build();
     }
