@@ -50,12 +50,11 @@ public class UserApiController {
         if (bindingResult.hasErrors()) {
             return ResponseEntity.badRequest().build();
         }
-
+        String password = new String(user.getPassword());
         userService.save(user);
-        if (securityService.login(user.getUsername(), user.getPassword(), request)) {
+        if (securityService.login(user.getUsername(), password, request)) {
             return ResponseEntity.ok(user);
         }
-
         return ResponseEntity.badRequest().build();
     }
 }

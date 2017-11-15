@@ -14,17 +14,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class UserCourse extends BaseEntity {
-
-    public UserCourse(User student, Course course) {
-        this(student, course, null);
-    }
-
-    public UserCourse(User student, Course course, Integer mark) {
-        this.setStudent(student);
-        this.setCourse(course);
-        this.setMark(mark);
-    }
-
     @ManyToOne
     @JoinColumn(name = "userid")
     private User student;
@@ -58,5 +47,12 @@ public class UserCourse extends BaseEntity {
 
     public void setMark(Integer mark) {
         this.mark = mark;
+    }
+
+    public static UserCourse make(User student, Course course) {
+        UserCourse userCourse = new UserCourse();
+        userCourse.setStudent(student);
+        userCourse.setCourse(course);
+        return userCourse;
     }
 }

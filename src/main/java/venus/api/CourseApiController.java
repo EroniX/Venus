@@ -49,7 +49,7 @@ public class CourseApiController {
     public ResponseEntity add(@PathVariable int id) {
         User user = securityService.getUser();
         Course course = courseService.findById(id);
-        UserCourse userCourse = new UserCourse(user, course);
+        UserCourse userCourse = UserCourse.make(user, course);
         user.addUserCourse(userCourse);
         return ResponseEntity.ok().build();
     }
