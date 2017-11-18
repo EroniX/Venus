@@ -5,7 +5,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import venus.dal.model.Subject;
-import venus.dal.model.User;
 import venus.logic.service.SubjectService;
 import venus.security.service.SecurityService;
 

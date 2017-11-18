@@ -6,7 +6,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.annotation.SessionScope;
 import venus.dal.model.User;
-import venus.dal.repository.RoleRepository;
 import venus.dal.repository.UserRepository;
 import venus.logic.exceptions.EmailAlreadyUsedException;
 import venus.logic.exceptions.UsernameAlreadyUsedException;
@@ -17,8 +16,6 @@ import venus.logic.exceptions.UsernameAlreadyUsedException;
 public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
-    @Autowired
-    private RoleRepository roleRepository;
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 

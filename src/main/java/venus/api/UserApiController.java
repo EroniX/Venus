@@ -1,21 +1,18 @@
 package venus.api;
 
-import com.sun.net.httpserver.Authenticator;
-import com.sun.net.httpserver.Authenticator.Success;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import venus.dal.model.User;
 import venus.logic.annotations.Authenticated;
 import venus.logic.annotations.NotAuthenticated;
-import venus.dal.model.User;
 import venus.logic.exceptions.EmailAlreadyUsedException;
 import venus.logic.exceptions.UsernameAlreadyUsedException;
-import venus.security.service.SecurityService;
 import venus.logic.service.UserService;
+import venus.security.service.SecurityService;
+
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
@@ -38,7 +35,7 @@ public class UserApiController {
 
     @Authenticated
     @PostMapping("/logout")
-    public ResponseEntity logout(HttpServletRequest request) {
+    public ResponseEntity<?> logout(HttpServletRequest request) {
         if(securityService.logout(request)) {
             return ResponseEntity.ok().build();
         }
@@ -48,7 +45,7 @@ public class UserApiController {
 
     @NotAuthenticated
     @PostMapping("/register")
-    public ResponseEntity register(@RequestBody User user, BindingResult bindingResult, HttpServletRequest request) {
+    public ResponseEntity<?> register(@RequestBody User user, BindingResult bindingResult, HttpServletRequest request) {
         if (bindingResult.hasErrors()) {
             return new ResponseEntity<Error>(HttpStatus.EXPECTATION_FAILED);
         }
@@ -73,7 +70,7 @@ public class UserApiController {
 
     @NotAuthenticated
     @PostMapping("/check-username/{username}")
-    public ResponseEntity checkUsername(@RequestParam String username) {
+    public ResponseEntity<?> checkUsername(@RequestParam String username) {
         if(userService.findByUsername(username) == null) {
             return ResponseEntity.ok().build();
         }
@@ -82,7 +79,7 @@ public class UserApiController {
 
     @NotAuthenticated
     @PostMapping("/check-email/{username}")
-    public ResponseEntity checkEmail(@RequestParam String email) {
+    public ResponseEntity<?> checkEmail(@RequestParam String email) {
         if(userService.findByEmail(email) == null) {
             return ResponseEntity.ok().build();
         }
