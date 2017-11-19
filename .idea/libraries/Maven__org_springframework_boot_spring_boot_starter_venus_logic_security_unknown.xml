@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.springframework.boot:spring-boot-starter-venus.logic.security:unknown">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-venus.logic.security/unknown/spring-boot-starter-venus.logic.security-unknown.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-venus.logic.security/unknown/spring-boot-starter-venus.logic.security-unknown-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-starter-venus.logic.security/unknown/spring-boot-starter-venus.logic.security-unknown-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
