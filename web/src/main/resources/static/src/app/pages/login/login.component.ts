@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from "../../model/User";
+import {AccountCredentials} from "../../model/AccountCredentials";
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from "../../services/auth.service";
 
@@ -21,10 +21,11 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    this.loginService.login(new User(this.username.value, this.password.value))
+    this.loginService.login(new AccountCredentials(this.username.value, this.password.value))
       .subscribe(
         res => console.log(res),
-        err => console.log(err));
+        err => console.log(err)
+      );
   }
 
   get username(): AbstractControl {
