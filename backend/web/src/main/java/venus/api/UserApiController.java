@@ -1,49 +1,43 @@
 package venus.api;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import venus.logic.dto.UserRegisterDTO;
+import venus.logic.dto.UserDTO;
 import venus.logic.service.UserService;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/api/user")
 public class UserApiController {
     @Autowired
     private UserService userService;
-/*
+
     @PostMapping("/logout")
     public ResponseEntity<?> logout(HttpServletRequest request) {
-       if(securityService.logout(request)) {
+       /*if(securityService.logout(request)) {
             return ResponseEntity.ok().build();
-        }
+        }*/
 
         return ResponseEntity.badRequest().build();
     }
-*/
+
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody UserRegisterDTO params) {
-        /*if (bindingResult.hasErrors()) {
-            return new ResponseEntity<Error>(HttpStatus.EXPECTATION_FAILED);
-        }*/
-        int i = 0;
-        /*String password = new String(user.getPassword());
-
+    public ResponseEntity register(@RequestBody UserDTO userDTO, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return ResponseEntity.badRequest().build();
+        }
         try {
-            userService.save(user);
-        }
-        catch(UsernameAlreadyUsedException e) {
-            return ResponseEntity.badRequest().build();
-        }
-        catch(EmailAlreadyUsedException e) {
-            return ResponseEntity.badRequest().build();
-        }
-
-        /*if (securityService.login(user.getUsername(), password, request)) {
+            userService.save(userDTO);
             return ResponseEntity.ok().build();
-        }*/
-        return ResponseEntity.badRequest().build();
+        }
+        catch(Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     @GetMapping("/check-username/{username}")

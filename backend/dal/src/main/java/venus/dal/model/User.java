@@ -1,12 +1,25 @@
 package venus.dal.model;
 
 import javax.persistence.*;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "users")
 public class User extends BaseEntity {
+    public User() {
+    }
+
+    public User(String username, String password, String email) {
+        this.setUsername(username);
+        this.setPassword(password);
+        this.setEmail(email);
+        this.setCourses(Collections.emptyList());
+        this.setRoles(Collections.emptyList());
+        this.setTeachedCourses(Collections.emptyList());
+        this.setTrainings(Collections.emptyList());
+    }
 
     @Column(nullable = false, unique = true)
     private String username;

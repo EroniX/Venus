@@ -6,6 +6,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import venus.dal.model.User;
 import venus.dal.repository.UserRepository;
+import venus.logic.dto.UserDTO;
 import venus.logic.exceptions.EmailAlreadyUsedException;
 import venus.logic.exceptions.UsernameAlreadyUsedException;
 
@@ -35,16 +36,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void save(User user) throws UsernameAlreadyUsedException, EmailAlreadyUsedException {
-        /*if(findByUsername(user.getUsername()) != null) {
+    public void save(UserDTO userDTO) throws UsernameAlreadyUsedException, EmailAlreadyUsedException {
+        User user = userDTO.toUser();
+        if(!findByUsername(user.getUsername()).isPresent()) {
             throw new UsernameAlreadyUsedException();
         }
-        if(findByEmail(user.getEmail()) != null) {
+        if(!findByEmail(user.getEmail()).isPresent()) {
             throw new EmailAlreadyUsedException();
         }
-
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        userRepository.save(user);*/
+        userRepository.save(user);
     }
 
     @Override

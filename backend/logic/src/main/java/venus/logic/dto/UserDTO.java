@@ -1,8 +1,11 @@
 package venus.logic.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import venus.dal.model.User;
 
-public class UserRegisterDTO {
+import java.util.Collections;
+
+public class UserDTO {
     private String username;
     private String password;
     private String email;
@@ -23,11 +26,23 @@ public class UserRegisterDTO {
         this.password = password;
     }
 
+    public String getEncodedPassword() {
+        return new BCryptPasswordEncoder().encode(this.getPassword());
+    }
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public User toUser() {
+        return new User(
+            this.getUsername(),
+            this.getEncodedPassword(),
+            this.getEmail()
+        );
     }
 }

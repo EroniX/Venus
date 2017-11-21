@@ -10,7 +10,7 @@ export class HttpService {
     constructor(private http: Http) {
     }
 
-    post(route : String, params : any, isLoggedIn : boolean) {
+    post(route, params, isLoggedIn) {
         return this.http.post(
             Server.routeTo(route), 
             JSON.stringify(params),
