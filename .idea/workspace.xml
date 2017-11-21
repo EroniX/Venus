@@ -2,172 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b9692af-7dca-4a1b-80fd-a49a34ea8669" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/dal.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/src/main/java/venus/dal/model/BaseEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/src/main/java/venus/dal/model/Course.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/src/main/java/venus/dal/model/Role.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/src/main/java/venus/dal/model/Semester.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/src/main/java/venus/dal/model/Subject.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/src/main/java/venus/dal/model/Training.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/src/main/java/venus/dal/model/User.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/src/main/java/venus/dal/model/UserCourse.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/src/main/java/venus/dal/repository/CourseRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/src/main/java/venus/dal/repository/RoleRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/src/main/java/venus/dal/repository/SemesterRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/src/main/java/venus/dal/repository/SubjectRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/src/main/java/venus/dal/repository/TrainingRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/src/main/java/venus/dal/repository/UserRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/target/classes/venus/dal/model/BaseEntity.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/target/classes/venus/dal/model/Course.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/target/classes/venus/dal/model/Role.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/target/classes/venus/dal/model/Semester.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/target/classes/venus/dal/model/Subject.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/target/classes/venus/dal/model/Training.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/target/classes/venus/dal/model/User.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/target/classes/venus/dal/model/UserCourse.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/target/classes/venus/dal/repository/CourseRepository.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/target/classes/venus/dal/repository/RoleRepository.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/target/classes/venus/dal/repository/SemesterRepository.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/target/classes/venus/dal/repository/SubjectRepository.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/target/classes/venus/dal/repository/TrainingRepository.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dal/target/classes/venus/dal/repository/UserRepository.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/logic.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/src/main/java/venus/logic/dto/AccountCredentialsDTO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/src/main/java/venus/logic/dto/UserRegisterDTO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/src/main/java/venus/logic/exceptions/EmailAlreadyUsedException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/src/main/java/venus/logic/exceptions/UsernameAlreadyUsedException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/src/main/java/venus/logic/security/JWTAuthenticationFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/src/main/java/venus/logic/security/JWTLoginFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/src/main/java/venus/logic/security/TokenAuthenticationService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/src/main/java/venus/logic/service/CourseService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/src/main/java/venus/logic/service/CourseServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/src/main/java/venus/logic/service/SemesterService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/src/main/java/venus/logic/service/SemesterServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/src/main/java/venus/logic/service/SubjectService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/src/main/java/venus/logic/service/SubjectServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/src/main/java/venus/logic/service/TrainingService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/src/main/java/venus/logic/service/TrainingServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/src/main/java/venus/logic/service/UserService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/src/main/java/venus/logic/service/UserServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/target/classes/venus/logic/dto/AccountCredentialsDTO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/target/classes/venus/logic/dto/UserRegisterDTO.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/target/classes/venus/logic/exceptions/EmailAlreadyUsedException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/target/classes/venus/logic/exceptions/UsernameAlreadyUsedException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/target/classes/venus/logic/security/JWTAuthenticationFilter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/target/classes/venus/logic/security/JWTLoginFilter.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/target/classes/venus/logic/security/TokenAuthenticationService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/target/classes/venus/logic/service/CourseService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/target/classes/venus/logic/service/CourseServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/target/classes/venus/logic/service/SemesterService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/target/classes/venus/logic/service/SemesterServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/target/classes/venus/logic/service/SubjectService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/target/classes/venus/logic/service/SubjectServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/target/classes/venus/logic/service/TrainingService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/target/classes/venus/logic/service/TrainingServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/target/classes/venus/logic/service/UserService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logic/target/classes/venus/logic/service/UserServiceImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/venus/VenusApplication.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/venus/api/CourseApiController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/venus/api/SubjectApiController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/venus/api/TrainingApiController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/venus/api/UserApiController.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/java/venus/config/SecurityConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/application.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/.angular-cli.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/.editorconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/app.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/e2e/app.e2e-spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/e2e/app.po.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/e2e/tsconfig.e2e.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/karma.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/package-lock.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/protractor.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/proxy.conf.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/MaterialItemsModule.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/app.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/app.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/app.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/app.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/app.module.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/components/menu/menu.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/components/menu/menu.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/components/menu/menu.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/components/menu/menu.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/model/AccountCredentials.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/model/Issue.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/model/User.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/error/error.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/error/error.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/error/error.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/error/error.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/help/help.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/help/help.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/help/help.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/help/help.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/issues/issue-detail/issue-detail.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/issues/issue-detail/issue-detail.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/issues/issue-detail/issue-detail.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/issues/issue-detail/issue-detail.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/issues/issue-list/issue-list.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/issues/issue-list/issue-list.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/issues/issue-list/issue-list.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/issues/issue-list/issue-list.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/issues/new-issue/new-issue.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/issues/new-issue/new-issue.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/issues/new-issue/new-issue.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/issues/new-issue/new-issue.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/login/login.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/login/login.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/login/login.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/login/login.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/register/register.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/register/register.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/register/register.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/register/register.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/stats/stats.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/stats/stats.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/stats/stats.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/pages/stats/stats.component.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/routes.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/services/auth.service.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/services/auth.service.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/services/http.service.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/services/http.service.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/services/issue.service.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/services/issue.service.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/utils/ServerRoutes.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/app/utils/venus-request-options.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/assets/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/environments/environment.prod.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/environments/environment.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/main.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/polyfills.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/styles.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/test.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/tsconfig.app.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/tsconfig.spec.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/src/typings.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/tsconfig.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/src/main/resources/static/tslint.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/target/classes/application.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/target/classes/venus/VenusApplication.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/target/classes/venus/api/UserApiController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/target/classes/venus/config/SecurityConfig.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/web.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/logic/target/classes/venus/logic/security/SimpleCORSFilter.class" afterPath="$PROJECT_DIR$/backend/logic/target/classes/venus/logic/security/SimpleCORSFilter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/target/classes/venus/config/SecurityConfig.class" afterPath="$PROJECT_DIR$/backend/web/target/classes/venus/config/SecurityConfig.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/venus.iml" afterPath="$PROJECT_DIR$/venus.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/security/SimpleCORSFilter.java" afterPath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/security/SimpleCORSFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/src/main/java/venus/config/SecurityConfig.java" afterPath="$PROJECT_DIR$/backend/web/src/main/java/venus/config/SecurityConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/components/menu/menu.component.html" afterPath="$PROJECT_DIR$/frontend/src/app/components/menu/menu.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.ts" afterPath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.html" afterPath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/services/auth.service.ts" afterPath="$PROJECT_DIR$/frontend/src/app/services/auth.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/services/http.service.ts" afterPath="$PROJECT_DIR$/frontend/src/app/services/http.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/utils/venus-request-options.ts" afterPath="$PROJECT_DIR$/frontend/src/app/utils/venus-request-options.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -190,81 +35,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".angular-cli.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/.angular-cli.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="20" lean-forward="false" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1258">
-              <caret line="74" column="21" lean-forward="false" selection-start-line="74" selection-start-column="21" selection-end-line="74" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AccountCredentialsDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/AccountCredentialsDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserRegisterDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/UserRegisterDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleCORSFilter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SimpleCORSFilter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/security/SimpleCORSFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding />
+            <state relative-caret-position="163">
+              <caret line="24" column="114" lean-forward="false" selection-start-line="24" selection-start-column="114" selection-end-line="24" selection-end-column="114" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#445#446#0" expanded="true" />
+                <element signature="e#468#469#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VenusApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/VenusApplication.java">
+      <file leaf-file-name="Filter.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.20/tomcat-embed-core-8.5.20-sources.jar!/javax/servlet/Filter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+            <state relative-caret-position="100">
+              <caret line="99" column="16" lean-forward="false" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SecurityConfig.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserApiController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/api/src/main/java/venus/api/UserApiController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/web/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="37" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecurityConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/config/SecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="398">
+              <caret line="34" column="52" lean-forward="false" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -283,12 +102,14 @@
     <findStrings>
       <find>com.tutorial.springboot.angular2.starter</find>
       <find>4200</find>
+      <find>Issue Tracker</find>
     </findStrings>
     <replaceStrings>
       <replace>venus</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\EroniX\Desktop\asd\venus</dir>
+      <dir>C:\Users\EroniX\Desktop\Venus</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -302,9 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dal/src/main/java/venus/dal/model/BaseEntity.java" />
-        <option value="$PROJECT_DIR$/logic/src/main/java/venus/logic/service/UserService.java" />
-        <option value="$PROJECT_DIR$/logic/pom.xml" />
         <option value="$PROJECT_DIR$/dal/src/main/java/venus/dal/repository/UserRepository.java" />
         <option value="$PROJECT_DIR$/web/src/main/resources/static/package.json" />
         <option value="$PROJECT_DIR$/web/src/main/resources/static/src/app/app.module.ts" />
@@ -353,6 +171,9 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/AccountCredentialsDTO.java" />
         <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/UserRegisterDTO.java" />
+        <option value="$PROJECT_DIR$/backend/web/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/backend/web/src/main/java/venus/config/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/security/SimpleCORSFilter.java" />
       </list>
     </option>
   </component>
@@ -406,6 +227,79 @@
               <item name="Venus" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Venus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Venus" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Venus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Venus" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Venus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Venus" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Venus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Venus" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Venus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Venus" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Venus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Venus" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Venus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Venus" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="venus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Venus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Venus" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="venus" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Venus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Venus" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -426,6 +320,9 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="RequestMappingsPanelOrder2" value="2" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -558,47 +455,48 @@
       <workItem from="1511166419343" duration="8387000" />
       <workItem from="1511182880149" duration="7758000" />
       <workItem from="1511213737568" duration="9990000" />
-      <workItem from="1511226510275" duration="32000" />
+      <workItem from="1511226510275" duration="1739000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48111000" />
+    <option name="totallyTimeSpent" value="49818000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32837838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.295764" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35855263" sideWeight="0.49707174" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46217105" sideWeight="0.49707174" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3256579" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32837838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32837838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.295764" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3256579" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32837838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -635,12 +533,6 @@
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/api/src/main/java/venus/api/UserApiController.java</url>
-          <line>29</line>
-          <properties />
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/logic/src/main/java/venus/logic/security/JWTLoginFilter.java</url>
           <line>44</line>
           <properties />
@@ -652,26 +544,24 @@
           <properties />
           <option name="timeStamp" value="48" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/api/src/main/java/venus/api/UserApiController.java</url>
+          <line>29</line>
+          <properties />
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/api/src/main/java/venus/api/UserApiController.java</url>
+          <line>45</line>
+          <properties />
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="49" />
+      <option name="time" value="53" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.0.33/tomcat-embed-core-8.0.33.jar!/org/apache/catalina/core/StandardWrapperValve.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="221" column="0" lean-forward="false" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.0.33/tomcat-embed-core-8.0.33.jar!/org/apache/catalina/core/StandardContextValve.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.0.33/tomcat-embed-core-8.0.33.jar!/org/apache/catalina/authenticator/AuthenticatorBase.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
@@ -800,16 +690,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/api/src/main/java/venus/api/UserApiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="25" column="4" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -822,6 +702,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -829,6 +710,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -836,6 +718,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -894,14 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/security/SimpleCORSFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/VenusApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -910,20 +785,128 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/api/src/main/java/venus/api/UserApiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/web/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="37" lean-forward="false" selection-start-line="6" selection-start-column="37" selection-end-line="6" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/8.5.20/tomcat-embed-core-8.5.20-sources.jar!/javax/servlet/Filter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="99" column="16" lean-forward="false" selection-start-line="99" selection-start-column="16" selection-end-line="99" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/config/SecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="398">
+          <caret line="34" column="52" lean-forward="false" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/security/SimpleCORSFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="24" column="114" lean-forward="false" selection-start-line="24" selection-start-column="114" selection-end-line="24" selection-end-column="114" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#445#446#0" expanded="true" />
+            <element signature="e#468#469#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>api</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -10,18 +10,16 @@ export class HttpService {
     constructor(private http: Http) {
     }
 
-    post(route, params) {
-        console.log(JSON.stringify(params));
+    post(route : String, params : any, isLoggedIn : boolean) {
         return this.http.post(
             Server.routeTo(route), 
-            //params,
             JSON.stringify(params),
-            new VenusRequestOptions(this.isLoggedIn));
+            new VenusRequestOptions(isLoggedIn));
     }
 
-    get(route, params) {
+    get(route : String, params : any, isLoggedIn : boolean) {
         return this.http.get(
             Server.routeTo(route) + "/" +  params,
-            new VenusRequestOptions(this.isLoggedIn));
+            new VenusRequestOptions(isLoggedIn));
     }
 }

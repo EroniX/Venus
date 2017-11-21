@@ -1,18 +1,24 @@
 package venus.config;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.access.channel.ChannelProcessingFilter;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import venus.logic.security.JWTAuthenticationFilter;
 import venus.logic.security.JWTLoginFilter;
+import venus.logic.security.SimpleCORSFilter;
 
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    @Autowired
+    private SimpleCORSFilter simpleCORSFilter;
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
@@ -25,5 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.addFilterBefore(new JWTAuthenticationFilter(),
                 UsernamePasswordAuthenticationFilter.class);
+
+        http.addFilterBefore(simpleCORSFilter, ChannelProcessingFilter.class);
     }
 }

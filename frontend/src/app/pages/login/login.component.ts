@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   submit() {
     this.loginService.login(new AccountCredentials(this.username.value, this.password.value))
       .subscribe(
-        res => console.log(res),
+        res => console.log("asd"),
         err => console.log(err)
       );
   }

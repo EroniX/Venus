@@ -11,48 +11,38 @@ import { HttpService } from './http.service';
 
 @Injectable()
 export class AuthService {
-  accountCredentials: AccountCredentials;
-  constructor(private http: Http, private httpService: HttpService) {
-    this.accountCredentials = new AccountCredentials();
-    httpService.isLoggedIn = this.isLoggedIn();
-  }
+    accountCredentials: AccountCredentials;
+    constructor(private http: Http, private httpService: HttpService) {
+        this.accountCredentials = new AccountCredentials();
+        httpService.isLoggedIn = this.isLoggedIn();
+    }
 
-  login(accountCredentials: AccountCredentials) {
-      console.log(accountCredentials);
-      return this.httpService.post(Routes.LOGIN, accountCredentials)
-        .do(resp => {
-            console.log("asd");
-            localStorage.setItem('jwt', resp.headers.get('Authorization'));
-    });
-    //let loginRequest = JSON.stringify({username: username, password: password});
-    /*return this.http.post(Server.routeTo(Routes.LOGIN), accountCredentials)
-      .map(resp => {
-        console.log("asdsadad");
-        localStorage.setItem('jwt', resp.headers.get('x-auth-token'));
-        return resp;
-      });*/
+    login(accountCredentials: AccountCredentials) {
+        return this.http.post(
+            Server.routeTo(Routes.LOGIN), 
+            JSON.stringify(accountCredentials))
+                .do(resp => {
+                    console.log("login");
+                    localStorage.setItem('jwt', resp.headers.get('Authorization'));
+      });
+    }
 
-  }
+    logout(): void {
+        // @TODO: Tell server to delete my datas
+        localStorage.removeItem('jwt');
+    }
 
-  logout(): void {
-    // @TODO: Tell server to delete my datas
-    localStorage.removeItem('jwt');
-  }
+    isLoggedIn() : boolean {
+        return localStorage.getItem('jwt') != undefined;
+    }
 
-  isLoggedIn() : boolean {
-    return localStorage.getItem('jwt') != undefined;
-}
-
-  register(user: User) {
-
-    let headers = new Headers({'Content-Type': 'application/json'});
-    return this.http.post(
-        //Server.routeTo(Routes.REGISTER), 
-        'http://localhost:8080/api/user/register',
-        '{"username":"vaczi8","password":"samsung88","email":"vaczi8@gmail.com"}',
-        {headers: headers})
-      .do(resp => {
-        console.log("asd");
-    });
-  }
+    register(user: User) {
+        return this.httpService.post(
+            Routes.REGISTER, 
+            user, 
+            this.isLoggedIn())
+                .do(resp => {
+                    console.log("register"); 
+        });
+    }
 }
