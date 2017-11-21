@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/dal/dal.iml" filepath="$PROJECT_DIR$/dal/dal.iml" />
-      <module fileurl="file://$PROJECT_DIR$/logic/logic.iml" filepath="$PROJECT_DIR$/logic/logic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/api/api.iml" filepath="$PROJECT_DIR$/backend/api/api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/backend.iml" filepath="$PROJECT_DIR$/backend/backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/dal/dal.iml" filepath="$PROJECT_DIR$/backend/dal/dal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frontend/frontend.iml" filepath="$PROJECT_DIR$/frontend/frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/logic/logic.iml" filepath="$PROJECT_DIR$/backend/logic/logic.iml" />
       <module fileurl="file://$PROJECT_DIR$/venus.iml" filepath="$PROJECT_DIR$/venus.iml" />
-      <module fileurl="file://$PROJECT_DIR$/web/web.iml" filepath="$PROJECT_DIR$/web/web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/web/web.iml" filepath="$PROJECT_DIR$/backend/web/web.iml" />
     </modules>
   </component>
 </project>
