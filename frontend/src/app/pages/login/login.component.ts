@@ -1,28 +1,29 @@
+import {Router} from '@angular/router';
+import {UserService} from '../../services/user.service';
 import {Component, OnInit} from '@angular/core';
 import {AccountCredentials} from "../../model/AccountCredentials";
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
-import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   loginForm: FormGroup = new FormGroup({
     username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required])
   });
 
-  constructor(private loginService: AuthService) {
-  }
-
-  ngOnInit() {
+  constructor(
+      private userService: UserService,
+      private router: Router) {
   }
 
   submit() {
-    this.loginService.login(new AccountCredentials(this.username.value, this.password.value))
-        .subscribe();
+    this.userService.login(new AccountCredentials(this.username.value, this.password.value))
+        .subscribe(resp => 
+            this.router.navigateByUrl(''));
   }
 
   get username(): AbstractControl {

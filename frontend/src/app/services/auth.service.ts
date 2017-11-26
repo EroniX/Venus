@@ -4,42 +4,24 @@ import {AccountCredentials} from "../model/AccountCredentials";
 import {User} from "../model/User";
 
 import "rxjs/Rx";
-import {Routes, Server} from "../routes/server-routes";
-import { VenusRequestOptions } from '../utils/venus-request-options';
+import {Routes, Server} from "../config/routes.config";
+import { Config } from '../config/config';
 
 @Injectable()
 export class AuthService {
-    constructor(private http: Http) {
-    }
-
-    login(accountCredentials: AccountCredentials) {
-        return this.http.post(
-            Server.routeTo(Routes.LOGIN),
-            JSON.stringify(accountCredentials))
-                .do(resp => {
-                    localStorage.setItem('jwt', resp.headers.get('Authorization'));
-        });
+    login(token: string) : void {
+        localStorage.setItem(Config.TOKEN, token);
     }
 
     logout(): void {
-        // @TODO: Tell server to delete my datas
-        localStorage.removeItem('jwt');
+        localStorage.removeItem(Config.TOKEN);
     }
 
     isLoggedIn() : boolean {
-        return localStorage.getItem('jwt') != undefined;
+        return this.getToken() != null;
     }
 
-    register(user: User) {
-
-        return this.http.post(
-            Server.routeTo(Routes.REGISTER),
-            JSON.stringify(user),
-            new VenusRequestOptions());
-            //.map(resp => resp.json());
-        /*return this.httpService.post(
-            Routes.REGISTER,
-            user,
-            this.isLoggedIn());*/
+    getToken() : string {
+        return localStorage.getItem(Config.TOKEN);
     }
 }

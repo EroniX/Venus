@@ -1,5 +1,4 @@
 import {Router} from '@angular/router';
-import {Routes} from '../../routes/server-routes';
 import {AccountCredentials} from '../../model/AccountCredentials';
 import {Component, OnInit} from '@angular/core';
 import {User} from "../../model/User";
@@ -24,7 +23,6 @@ export class RegisterComponent implements OnInit {
     emailValidation: Boolean;
 
     constructor(
-        private authService: AuthService, 
         private userService: UserService,
         private router: Router) {
     }
@@ -35,12 +33,11 @@ export class RegisterComponent implements OnInit {
     }
 
     submit() {
-        this.authService.register(new User(this.username.value, this.password.value, this.email.value))
+        this.userService.register(new User(this.username.value, this.password.value, this.email.value))
             .subscribe(resp => {
-                this.authService.login(new AccountCredentials(this.username.value, this.password.value))
-                .subscribe(resp => {
-                    this.router.navigateByUrl('');
-                });  
+                this.userService.login(new AccountCredentials(this.username.value, this.password.value))
+                    .subscribe(resp => 
+                        this.router.navigateByUrl(''));  
             }); 
     }
 
@@ -60,12 +57,12 @@ export class RegisterComponent implements OnInit {
         return this.registerForm.get('email');
     }
 
-    validateUsername(username: String) {
+    validateUsername(username: string) {
         return this.userService.validateUsername(username)
             .subscribe(resp => this.usernameValidation = resp);
     }
 
-    validateEmail(email: String) {
+    validateEmail(email: string) {
         return this.userService.validateEmail(email)
             .subscribe(resp => this.emailValidation = resp);
     }

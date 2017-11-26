@@ -11,14 +11,10 @@ import { HttpService } from "./services/http.service";
 import { UserService } from "./services/user.service";
 import { HttpModule } from "@angular/http";
 import { RegisterComponent } from './pages/register/register.component';
-import  { appRoutes } from './routes/routes';
-import { IssueDetailComponent } from './pages/issues/issue-detail/issue-detail.component';
-import { IssueListComponent } from './pages/issues/issue-list/issue-list.component';
-import { MaterialItemsModule } from "./utils/material-items-module";
+import  { appRoutes } from './routes';
+import { MaterialModule } from "./material.module";
 import { MenuComponent } from './components/menu/menu.component';
-import { NewIssueComponent } from './pages/issues/new-issue/new-issue.component';
 import { StatsComponent } from './pages/stats/stats.component';
-import { IssueService } from "./services/issue.service";
 import { HelpComponent } from './pages/help/help.component';
 import { ErrorComponent } from './pages/error/error.component';
 
@@ -27,10 +23,7 @@ import { ErrorComponent } from './pages/error/error.component';
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    IssueDetailComponent,
-    IssueListComponent,
     MenuComponent,
-    NewIssueComponent,
     StatsComponent,
     HelpComponent,
     ErrorComponent
@@ -42,9 +35,9 @@ import { ErrorComponent } from './pages/error/error.component';
     HttpModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
-    MaterialItemsModule
+    MaterialModule
   ],
-  providers: [AuthService, IssueService, HttpService, UserService],
+  providers: [AuthService, HttpService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -13,5 +13,5 @@ import {NgModule} from "@angular/core";
   imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatToolbarModule, MatTableModule, MatSelectModule, MatSlideToggleModule],
   exports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatToolbarModule, MatTableModule, MatSelectModule, MatSlideToggleModule],
 })
-export class MaterialItemsModule {
+export class MaterialModule {
 }
