@@ -40,19 +40,15 @@ public class UserApiController {
         }
     }
 
-    @GetMapping("/check-username/{username}")
-    public ResponseEntity<?> checkUsername(@PathVariable String username) {
-        if(userService.findByUsername(username) == null) {
-            return ResponseEntity.ok().build();
-        }
-        return ResponseEntity.badRequest().build();
+    @GetMapping("/validate-username/{username}")
+    public ResponseEntity<Boolean> validateUsername(@PathVariable String username) {
+        return ResponseEntity.ok(
+                !userService.findByUsername(username).isPresent());
     }
 
-    @GetMapping("/check-email/{email}")
-    public ResponseEntity checkEmail(@PathVariable String email) {
-        if(userService.findByEmail(email) == null) {
-            return ResponseEntity.ok().build();
-        }
-        return ResponseEntity.badRequest().build();
+    @GetMapping("/validate-email/{email}")
+    public ResponseEntity<Boolean> validateEmail(@PathVariable String email) {
+        return ResponseEntity.ok(
+                !userService.findByEmail(email).isPresent());
     }
 }

@@ -1,7 +1,12 @@
+import {Router} from '@angular/router';
+import {Routes} from '../../routes/server-routes';
+import {AccountCredentials} from '../../model/AccountCredentials';
 import {Component, OnInit} from '@angular/core';
 import {User} from "../../model/User";
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from "../../services/auth.service";
+import {UserService} from "../../services/user.service";
+import { Event } from '@angular/router/src/events';
 
 @Component({
   selector: 'app-register',
@@ -9,38 +14,59 @@ import {AuthService} from "../../services/auth.service";
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  registerForm: FormGroup = new FormGroup({
-    username: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-  });
+    registerForm: FormGroup = new FormGroup({
+        username: new FormControl('', [Validators.required]),
+        password: new FormControl('', [Validators.required]),
+        email: new FormControl('', [Validators.required, Validators.email]),
+    });
 
-  constructor(private authService: AuthService) {
-  }
+    usernameValidation: Boolean;
+    emailValidation: Boolean;
 
-  ngOnInit() {
-  }
+    constructor(
+        private authService: AuthService, 
+        private userService: UserService,
+        private router: Router) {
+    }
 
-  submit() {
-    this.authService.register(new User(this.username.value, this.password.value, this.email.value))
-      .subscribe(
-        res => console.log(res),
-        err => console.log(err))
-  }
+    ngOnInit() {
+        this.usernameValidation = false;
+        this.emailValidation = false;
+    }
 
-  get username(): AbstractControl {
-    return this.registerForm.get('username');
-  }
+    submit() {
+        this.authService.register(new User(this.username.value, this.password.value, this.email.value))
+            .subscribe(resp => {
+                this.authService.login(new AccountCredentials(this.username.value, this.password.value))
+                .subscribe(resp => {
+                    this.router.navigateByUrl('');
+                });  
+            }); 
+    }
 
-  get password(): AbstractControl {
-    return this.registerForm.get('password');
-  }
+    get username(): AbstractControl {
+        return this.registerForm.get('username');
+    }
 
-  get confirmPassword(): AbstractControl {
-    return this.registerForm.get('confirmPassword');
-  }
+    get password(): AbstractControl {
+        return this.registerForm.get('password');
+    }
 
-  get email(): AbstractControl {
-    return this.registerForm.get('email');
-  }
+    get confirmPassword(): AbstractControl {
+        return this.registerForm.get('confirmPassword');
+    }
+
+    get email(): AbstractControl {
+        return this.registerForm.get('email');
+    }
+
+    validateUsername(username: String) {
+        return this.userService.validateUsername(username)
+            .subscribe(resp => this.usernameValidation = resp);
+    }
+
+    validateEmail(email: String) {
+        return this.userService.validateEmail(email)
+            .subscribe(resp => this.emailValidation = resp);
+    }
 }

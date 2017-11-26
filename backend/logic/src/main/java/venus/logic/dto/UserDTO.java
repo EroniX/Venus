@@ -3,8 +3,6 @@ package venus.logic.dto;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import venus.dal.model.User;
 
-import java.util.Collections;
-
 public class UserDTO {
     private String username;
     private String password;

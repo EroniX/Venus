@@ -7,7 +7,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-import venus.logic.dto.AccountCredentialsDTO;
+import venus.logic.dto.UserDTO;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -28,13 +28,13 @@ public class JWTLoginFilter extends AbstractAuthenticationProcessingFilter {
             HttpServletRequest req, HttpServletResponse res)
             throws AuthenticationException, IOException, ServletException {
 
-        AccountCredentialsDTO accountCredentials = new ObjectMapper()
-                .readValue(req.getInputStream(), AccountCredentialsDTO.class);
+        UserDTO userDTO = new ObjectMapper()
+                .readValue(req.getInputStream(), UserDTO.class);
 
         return getAuthenticationManager().authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        accountCredentials.getUsername(),
-                        accountCredentials.getPassword(),
+                        userDTO.getUsername(),
+                        userDTO.getPassword(),
                         Collections.emptyList()
                 )
         );

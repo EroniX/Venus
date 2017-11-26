@@ -7,14 +7,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AuthService } from "./services/auth.service";
-import { VenusRequestOptions } from "./utils/venus-request-options";
 import { HttpService } from "./services/http.service";
+import { UserService } from "./services/user.service";
 import { HttpModule } from "@angular/http";
 import { RegisterComponent } from './pages/register/register.component';
-import  { appRoutes } from './routes';
+import  { appRoutes } from './routes/routes';
 import { IssueDetailComponent } from './pages/issues/issue-detail/issue-detail.component';
 import { IssueListComponent } from './pages/issues/issue-list/issue-list.component';
-import { MaterialItemsModule } from "./MaterialItemsModule";
+import { MaterialItemsModule } from "./utils/material-items-module";
 import { MenuComponent } from './components/menu/menu.component';
 import { NewIssueComponent } from './pages/issues/new-issue/new-issue.component';
 import { StatsComponent } from './pages/stats/stats.component';
@@ -44,7 +44,7 @@ import { ErrorComponent } from './pages/error/error.component';
     BrowserAnimationsModule,
     MaterialItemsModule
   ],
-  providers: [AuthService, IssueService, HttpService],
+  providers: [AuthService, IssueService, HttpService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

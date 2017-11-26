@@ -67,7 +67,7 @@ public class User extends BaseEntity {
             name = "roles_users",
             joinColumns = @JoinColumn(name = "userid", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "roleid", referencedColumnName = "id"))
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Role> roles;
 
     public List<Role> getRoles() {
