@@ -43,4 +43,9 @@ public class Training extends BaseEntity {
     public void setStudents(List<User> students) {
         this.students = students;
     }
+
+    public void removeStudent(int id) {
+        getStudents()
+                .removeIf(n -> n.getId() == id);
+    }
 }

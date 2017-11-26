@@ -1,5 +1,7 @@
 package venus.dal.model;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.*;
 import java.util.Collections;
 import java.util.List;
@@ -33,7 +35,11 @@ public class User extends BaseEntity {
     @OneToMany(mappedBy = "teacher", cascade = {CascadeType.ALL})
     private List<Course> teachedCourses;
 
-    @ManyToMany(mappedBy = "students")
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "users_trainings",
+            joinColumns = @JoinColumn(name = "userid", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "trainingid", referencedColumnName = "id"))
     private List<Training> trainings;
 
     @OneToMany(mappedBy = "student", cascade = {CascadeType.ALL})

@@ -11,5 +11,6 @@ public interface UserService extends org.springframework.security.core.userdetai
     void save(UserDTO userDTO) throws EmailAlreadyUsedException, UsernameAlreadyUsedException;
     Optional<User> findByUsername(String username);
     Optional<User> findByEmail(String email);
-    User findById(int id);
+    Optional<User> findById(int id);
+    void update(User user);
 }

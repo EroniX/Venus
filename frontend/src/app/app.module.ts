@@ -17,6 +17,9 @@ import { MenuComponent } from './components/menu/menu.component';
 import { StatsComponent } from './pages/stats/stats.component';
 import { HelpComponent } from './pages/help/help.component';
 import { ErrorComponent } from './pages/error/error.component';
+import { TrainingComponent } from './pages/training/training.component';
+import { TrainingItemComponent } from './pages/training/item/training-item.component';
+import { TrainingService } from './services/training.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { ErrorComponent } from './pages/error/error.component';
     MenuComponent,
     StatsComponent,
     HelpComponent,
-    ErrorComponent
+    ErrorComponent,
+    TrainingComponent,
+    TrainingItemComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,7 @@ import { ErrorComponent } from './pages/error/error.component';
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [AuthService, HttpService, UserService],
+  providers: [AuthService, HttpService, UserService, TrainingService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
