@@ -1,61 +1,76 @@
 package venus.api;
-/*
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import venus.dal.model.Course;
 import venus.dal.model.Subject;
+import venus.dal.model.User;
+import venus.dal.model.UserCourse;
+import venus.logic.dto.CourseDTO;
 import venus.logic.service.CourseService;
+import venus.logic.service.SecurityService;
 import venus.logic.service.SubjectService;
+import venus.logic.service.UserService;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/course")
 public class CourseApiController {
-    /*@Autowired
+    @Autowired
     private SubjectService subjectService;
     @Autowired
     private CourseService courseService;
+    @Autowired
+    private UserService userService;
+    @Autowired
+    private SecurityService securityService;
 
     @GetMapping
-    @PreAuthorize("hasAuthority('COURSE_LIST')")
-    public ResponseEntity<Iterable<Course>> list() {
+    @PreAuthorize("hasAuthority('COURSE_LIST_ALL')")
+    public ResponseEntity<Iterable<Course>> listAll() {
         return ResponseEntity.ok(courseService.findAll());
     }
 
-    @GetMapping("/{id}")
-    @PreAuthorize("hasAuthority('TRAINING_LIST')")
-    public ResponseEntity<Iterable<Course>> list(@PathVariable int id) {
-        Subject subject = subjectService.findById(id);
-        if(subject == null) {
+    @GetMapping("/list/{id}")
+    //@PreAuthorize("hasAuthority('COURSE_LIST')")
+    public ResponseEntity<List<CourseDTO>> list(@PathVariable int id) {
+        User user = securityService.getUser();
+        Optional<Subject> subject = subjectService.findById(id);
+        if(!subject.isPresent()) {
             return ResponseEntity.badRequest().build();
         }
-        return ResponseEntity.ok(subject.getCourses());
+
+        List<CourseDTO> courseDTOs = courseService.convertToDTOs(
+                subject.get().getCourses(),
+                user);
+
+        return ResponseEntity.ok(courseDTOs);
     }
-*/
-    /*@DeleteMapping("/remove/{id}")
-    @PreAuthorize("hasAuthority('COURSE_STUDENT_REMOVE')")
-    public ResponseEntity remove(@RequestBody int id) {
+
+    @PostMapping("/register")
+    //@PreAuthorize("hasAuthority('COURSE_REGISTER')")
+    public ResponseEntity<Boolean> register(@RequestBody int id) {
+        Optional<Course> course = courseService.findById(id);
+        if(!course.isPresent()) {
+            return ResponseEntity.badRequest().build();
+        }
+        User user = securityService.getUser();
+        user.addUserCourse(UserCourse.create(user, course.get()));
+        userService.update(user);
+        return ResponseEntity.ok(true);
+    }
+
+    @PostMapping("/unregister")
+    //@PreAuthorize("hasAuthority('COURSE_UNREGISTER')")
+    public ResponseEntity<Boolean> unregister(@RequestBody int id) {
         User user = securityService.getUser();
         user.removeUserCourse(id);
-        return ResponseEntity.ok().build();
-    }
-
-    @PostMapping("/add/{id}")
-    @PreAuthorize("hasAuthority('COURSE_STUDENT_ADD')")
-    public ResponseEntity add(@PathVariable int id) {
-        Course course = courseService.findById(id);
-        if(course == null) {
-            return ResponseEntity.badRequest().build();
-        }
-
-        User user = securityService.getUser();
-        UserCourse userCourse = UserCourse.make(user, course);
-        user.addUserCourse(userCourse);
-        return ResponseEntity.ok().build();
+        userService.update(user);
+        return ResponseEntity.ok(true);
     }
 
     @DeleteMapping("/delete/{id}")
@@ -66,7 +81,6 @@ public class CourseApiController {
             return ResponseEntity.badRequest().build();
         }
         courseService.delete(id);
-        // @TODO: Probably need to delete the UserCourses as well
         return ResponseEntity.ok().build();
     }
 
@@ -75,5 +89,5 @@ public class CourseApiController {
     public ResponseEntity create(@RequestBody Course course) {
         courseService.save(course);
         return ResponseEntity.ok().build();
-    }*/
-//}
+    }
+}

@@ -1,2 +1,23 @@
 <div class="page-body">
+    <mat-accordion>
+        <mat-expansion-panel *ngFor="let course of courses" >
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{course.teacherName}}
+                </mat-panel-title>
+                <mat-panel-title>
+                    {{course.limit}}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div *ngIf="course?.registered">
+                <p>By clicking on unregistration you will get unregistrated from this course.</p>
+                <button mat-raised-button class="mat-warn" (click)="unregister(course)">Unregister</button>  
+            </div>
+
+            <div *ngIf="!course?.registered">
+                <p>By clicking on registration you will try something new and awesome.</p>
+                <button mat-raised-button class="mat-primary" (click)="register(course)">Register</button> 
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
 </div>

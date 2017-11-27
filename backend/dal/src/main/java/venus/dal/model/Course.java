@@ -21,6 +21,9 @@ public class Course extends BaseEntity {
     @OneToMany(mappedBy="course", cascade={CascadeType.ALL})
     private List<UserCourse> studentCourses;
 
+    @Column
+    private int limit;
+
     public User getTeacher() {
         return teacher;
     }
@@ -51,5 +54,13 @@ public class Course extends BaseEntity {
 
     public void setStudentCourses(List<UserCourse> studentCourses) {
         this.studentCourses = studentCourses;
+    }
+
+    public int getLimit() {
+        return limit;
+    }
+
+    public void setLimit(int limit) {
+        this.limit = limit;
     }
 }

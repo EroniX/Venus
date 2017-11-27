@@ -40,7 +40,7 @@ public class UserCourse extends BaseEntity {
         this.mark = mark;
     }
 
-    public static UserCourse make(User student, Course course) {
+    public static UserCourse create(User student, Course course) {
         UserCourse userCourse = new UserCourse();
         userCourse.setStudent(student);
         userCourse.setCourse(course);

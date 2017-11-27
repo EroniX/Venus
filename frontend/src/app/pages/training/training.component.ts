@@ -12,7 +12,9 @@ export class TrainingComponent implements OnInit {
     unregisteredTrainings: Array<Training>;  
     registeredTrainings: Array<Training>;  
 
-    constructor(private snackbar: MatSnackBar, private trainingService: TrainingService) { 
+    constructor(
+        private snackbar: MatSnackBar, 
+        private trainingService: TrainingService) { 
     }
 
     ngOnInit() {

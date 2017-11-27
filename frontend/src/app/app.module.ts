@@ -20,33 +20,46 @@ import { HelpComponent } from './pages/help/help.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { TrainingComponent } from './pages/training/training.component';
 import { SemesterComponent } from './pages/semester/semester.component';
+import { CourseComponent } from './pages/course/course.component';
+import { SubjectComponent } from './pages/subject/subject.component';
 import { TrainingService } from './services/training.service';
+import { CourseService } from './services/course.service';
+import { SubjectService } from './services/subject.service';
 import { DatePipe } from '@angular/common';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    MenuComponent,
-    StatsComponent,
-    HelpComponent,
-    ErrorComponent,
-    TrainingComponent,
-    SemesterComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpModule,
-    RouterModule.forRoot(appRoutes),
-    BrowserAnimationsModule,
-    MaterialModule,
-
-  ],
-  providers: [AuthService, HttpService, UserService, TrainingService, SemesterService, DatePipe],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        LoginComponent,
+        RegisterComponent,
+        MenuComponent,
+        StatsComponent,
+        HelpComponent,
+        ErrorComponent,
+        TrainingComponent,
+        SubjectComponent,
+        CourseComponent,
+        SemesterComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpModule,
+        RouterModule.forRoot(appRoutes),
+        BrowserAnimationsModule,
+        MaterialModule
+    ],
+    providers: [
+        AuthService, 
+        HttpService, 
+        UserService, 
+        TrainingService, 
+        SemesterService, 
+        CourseService, 
+        SubjectService, 
+        DatePipe],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

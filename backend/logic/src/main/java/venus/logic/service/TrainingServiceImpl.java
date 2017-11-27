@@ -16,26 +16,32 @@ public class TrainingServiceImpl implements TrainingService {
     @Autowired
     private TrainingRepository trainingRepository;
 
+    @Override
     public void save(Training training) {
         trainingRepository.save(training);
     }
 
+    @Override
     public void delete(int id) {
         trainingRepository.delete(id);
     }
 
+    @Override
     public Iterable<Training> findAll() {
         return trainingRepository.findAll();
     }
 
+    @Override
     public Iterable<Training> findAllUnregistered(User user) {
         return trainingRepository.findByStudentsIsNotContaining(user);
     }
 
+    @Override
     public Optional<Training> findById(int id) {
         return Optional.of(trainingRepository.findOne(id));
     }
 
+    @Override
     public List<TrainingDTO> convertToDTOs(List<Training> trainings) {
         return trainings
                 .stream()

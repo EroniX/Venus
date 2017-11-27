@@ -129,69 +129,86 @@ public class User extends BaseEntity {
 
     public List<String> getRoleNames() {
         return getRoles()
-                .stream()
-                .map(n -> n.getName())
-                .collect(Collectors.toList());
+            .stream()
+            .map(n -> n.getName())
+            .collect(Collectors.toList());
     }
 
     public Boolean hasTraining(int id) {
         return getTrainings()
-                .stream()
-                .anyMatch(n -> n.getId() == id);
+            .stream()
+            .anyMatch(n -> n.getId() == id);
     }
 
     public void removeTraining(int id) {
         getTrainings()
-                .removeIf(n -> n.getId() == id);
+            .removeIf(n -> n.getId() == id);
     }
 
     public void addTraining(Training training) {
         if(!hasTraining(training.getId())) {
             getTrainings()
-                    .add(training);
+                .add(training);
         }
     }
 
     public Boolean hasSemester(int id) {
         return getSemesters()
-                .stream()
-                .anyMatch(n -> n.getId() == id);
+            .stream()
+            .anyMatch(n -> n.getId() == id);
     }
 
     public void removeSemester(int id) {
         getSemesters()
-                .removeIf(n -> n.getId() == id);
+            .removeIf(n -> n.getId() == id);
     }
 
     public void addSemester(Semester semester) {
         if(!hasSemester(semester.getId())) {
             getSemesters()
-                    .add(semester);
+                .add(semester);
         }
     }
 
     public Boolean hasTeachedCourse(int id) {
         return getTeachedCourses()
-                .stream()
-                .anyMatch(n -> n.getId() == id);
+            .stream()
+            .anyMatch(n -> n.getId() == id);
     }
 
     public void removeUserCourse(int courseId) {
         getCourses()
-                .removeIf(n -> n.getCourse().getId() == courseId);
+            .removeIf(n -> n.getCourse().getId() == courseId);
     }
 
     public void addUserCourse(UserCourse userCourse) {
         if(!hasCourse(userCourse.getCourse().getId())) {
             getCourses()
-                    .add(userCourse);
+                .add(userCourse);
         }
     }
 
     public Boolean hasCourse(int courseId) {
         return getCourses()
-                .stream()
-                .anyMatch(n -> n.getCourse()
-                        .getId() == courseId);
+            .stream()
+            .anyMatch(n -> n.getCourse()
+                .getId() == courseId);
+    }
+
+    public Boolean hasSubject(int id) {
+        return getCourses()
+            .stream()
+            .anyMatch(n -> n
+                .getCourse()
+                .getSubject()
+                .getId() == id);
+    }
+
+    public void removeSubject(int id) {
+        getCourses()
+            .removeIf(n -> n
+                .getCourse()
+                .getSubject()
+                .getId() == id);
     }
 }

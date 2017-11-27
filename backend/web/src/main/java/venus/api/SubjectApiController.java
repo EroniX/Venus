@@ -1,29 +1,42 @@
 package venus.api;
-/*
+
+import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import venus.dal.model.Subject;
+import venus.dal.model.User;
+import venus.logic.dto.SubjectDTO;
+import venus.logic.service.SecurityService;
 import venus.logic.service.SubjectService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/subject")
 public class SubjectApiController {
-    /*@Autowired
+    @Autowired
     private SubjectService subjectService;
+    @Autowired
+    private SecurityService securityService;
 
-    @GetMapping
-    @PreAuthorize("hasAuthority('SUBJECT_LIST')")
-    public ResponseEntity<Iterable<Subject>> list() {
-        return ResponseEntity.ok(subjectService.findAll());
+    @GetMapping("/list")
+    //@PreAuthorize("hasAuthority('SUBJECT_LIST')")
+    public ResponseEntity<Iterable<SubjectDTO>> list() {
+        User user = securityService.getUser();
+        List<SubjectDTO> subjectDTOs = subjectService.convertToDTOs(
+                Lists.newArrayList(
+                        subjectService.findAll()),
+                user);
+
+        return ResponseEntity.ok(subjectDTOs);
     }
 
     @DeleteMapping("/delete/{id}")
     @PreAuthorize("hasAuthority('SUBJECT_TEACHER_DELETE')")
     public ResponseEntity delete(@RequestBody int id) {
         subjectService.delete(id);
-        // @TODO: Probably need to delete the Courses and UserCourses as well
         return ResponseEntity.ok().build();
     }
 
@@ -32,5 +45,5 @@ public class SubjectApiController {
     public ResponseEntity create(@RequestBody Subject subject) {
         subjectService.save(subject);
         return ResponseEntity.ok().build();
-    }*/
-/*}*/
+    }
+}

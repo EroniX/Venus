@@ -11,9 +11,17 @@ import { SubjectService } from '../../services/subject.service';
   styleUrls: ['./subject.component.css']
 })
 export class SubjectComponent implements OnInit {
+    subjects: Array<Subject>
+
     constructor(private snackbar: MatSnackBar, private subjectService: SubjectService) { 
     }
 
     ngOnInit() {
+        this.loadSubjects();
+    }
+
+    loadSubjects() {
+      this.subjectService.list()
+         .subscribe(resp => this.subjects = resp);
     }
 }

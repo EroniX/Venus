@@ -16,7 +16,10 @@ export class HttpService {
             this.getRequestOptions(needHeader));
     }
 
-    get(route: string, params = "", needHeader = true) {
+    get(route: string, params?: any, needHeader = true) {
+        if(params == undefined) {
+            params = "";
+        }
         return this.http.get(
             Server.routeTo(route) + "/" +  params,
             this.getRequestOptions(needHeader));

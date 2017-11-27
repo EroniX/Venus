@@ -31,9 +31,7 @@ export class TrainingService {
     }
 
     unregister(training: Training) {
-        console.log("1");
-        let id = training.id;
-        return this.http.post(Routes.TRAINING_UNREGISTER, id)
+        return this.http.post(Routes.TRAINING_UNREGISTER, training.id)
             .map(resp => resp.text() == "true");
     }
 }

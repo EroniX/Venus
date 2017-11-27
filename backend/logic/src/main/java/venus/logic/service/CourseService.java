@@ -1,10 +1,16 @@
 package venus.logic.service;
 
 import venus.dal.model.Course;
+import venus.dal.model.User;
+import venus.logic.dto.CourseDTO;
+
+import java.util.List;
+import java.util.Optional;
 
 public interface CourseService {
     void save(Course course);
     void delete(int id);
     Iterable<Course> findAll();
-    Course findById(int id);
+    Optional<Course> findById(int id);
+    List<CourseDTO> convertToDTOs(List<Course> courses, User user);
 }

@@ -23,12 +23,6 @@ public class SemesterServiceImpl implements SemesterService {
         return semesterRepository.findAll();
     }
 
-    /*@Override
-    public Iterable<Semester> findAllForUser(User user) {
-
-        return null;
-    }*/
-
     @Override
     public Optional<Semester> current() {
         Date now = Date.valueOf(LocalDate.now());
