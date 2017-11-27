@@ -35,8 +35,8 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public List<CourseDTO> convertToDTOs(List<Course> courses, User user) {
         return courses
-                .stream()
-                .map(n -> CourseDTO.create(n, user))
-                .collect(Collectors.toList());
+            .stream()
+            .map(n -> CourseDTO.create(n, user))
+            .collect(Collectors.toList());
     }
 }

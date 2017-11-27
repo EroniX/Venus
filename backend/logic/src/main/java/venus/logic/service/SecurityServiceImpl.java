@@ -16,7 +16,6 @@ public class SecurityServiceImpl implements SecurityService {
         if(username != null) {
             return userService.findByUsername(username).get();
         }
-
         return null;
     }
 

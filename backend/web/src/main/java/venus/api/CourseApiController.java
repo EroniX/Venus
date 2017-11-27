@@ -22,8 +22,6 @@ public class CourseApiController {
     @Autowired
     private CourseService courseService;
     @Autowired
-    private UserService userService;
-    @Autowired
     private UserCourseService userCourseService;
     @Autowired
     private SecurityService securityService;
@@ -35,7 +33,7 @@ public class CourseApiController {
     }
 
     @GetMapping("/list/{id}")
-    //@PreAuthorize("hasAuthority('COURSE_LIST')")
+    @PreAuthorize("hasAuthority('COURSE_LIST')")
     public ResponseEntity<List<CourseDTO>> list(@PathVariable int id) {
         User user = securityService.getUser();
         Optional<Subject> subject = subjectService.findById(id);
@@ -51,19 +49,15 @@ public class CourseApiController {
     }
 
     @PostMapping("/register")
-    //@PreAuthorize("hasAuthority('COURSE_REGISTER')")
+    @PreAuthorize("hasAuthority('COURSE_REGISTER')")
     public ResponseEntity<Boolean> register(@RequestBody int id) {
         Optional<Course> course = courseService.findById(id);
         if(!course.isPresent()) {
             return ResponseEntity.badRequest().build();
         }
-
         User user = securityService.getUser();
-        //@TODO: Into van transaction
-        //user.removeUserCourse(id)
         UserCourse userCourse = UserCourse.create(user, course.get());
         userCourseService.save(userCourse);
-        //
         return ResponseEntity.ok(true);
     }
 
@@ -75,12 +69,10 @@ public class CourseApiController {
         if(!course.isPresent()) {
             return ResponseEntity.badRequest().build();
         }
-
         Optional<UserCourse> userCourse = course.get().getUserCourse(user.getId());
         if(!userCourse.isPresent()) {
             return ResponseEntity.badRequest().build();
         }
-
         userCourseService.delete(userCourse.get());
         return ResponseEntity.ok(true);
     }

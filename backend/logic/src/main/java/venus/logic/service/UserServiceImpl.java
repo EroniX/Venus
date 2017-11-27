@@ -26,7 +26,6 @@ public class UserServiceImpl implements UserService {
     }
 
     private HashSet<GrantedAuthority> toGrantedAuthorities(List<String> roleNames) {
-        //return new HashSet<>(0);
         HashSet<GrantedAuthority> grantedAuthorities = new HashSet<>(roleNames.size());
         for (String roleName : roleNames) {
             grantedAuthorities.add(new SimpleGrantedAuthority(roleName));
@@ -39,9 +38,9 @@ public class UserServiceImpl implements UserService {
         final Optional<User> user = userRepository.findByUsername(username);
         if(user.isPresent()) {
             return new org.springframework.security.core.userdetails.User(
-                    user.get().getUsername(),
-                    user.get().getPassword(),
-                    toGrantedAuthorities(user.get().getRoleNames()));
+                user.get().getUsername(),
+                user.get().getPassword(),
+                toGrantedAuthorities(user.get().getRoleNames()));
         }
         return null;
     }

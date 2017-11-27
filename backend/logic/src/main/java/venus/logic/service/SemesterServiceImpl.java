@@ -32,8 +32,8 @@ public class SemesterServiceImpl implements SemesterService {
     @Override
     public List<SemesterDTO> convertToDTOs(List<Semester> semesters, User user) {
         return semesters
-                .stream()
-                .map(n -> SemesterDTO.create(n, user))
-                .collect(Collectors.toList());
+            .stream()
+            .map(n -> SemesterDTO.create(n, user))
+            .collect(Collectors.toList());
     }
 }

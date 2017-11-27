@@ -72,7 +72,7 @@ public class TrainingApiController {
     }
 
     @PostMapping("/unregister")
-    //@PreAuthorize("hasAuthority('TRAINING_UNREGISTER')")
+    @PreAuthorize("hasAuthority('TRAINING_UNREGISTER')")
     public ResponseEntity<Boolean> unregister(@RequestBody int id) {
         User user = securityService.getUser();
         if(!user.hasTraining(id)) {

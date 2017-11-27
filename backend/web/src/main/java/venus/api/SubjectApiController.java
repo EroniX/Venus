@@ -22,7 +22,7 @@ public class SubjectApiController {
     private SecurityService securityService;
 
     @GetMapping("/list")
-    //@PreAuthorize("hasAuthority('SUBJECT_LIST')")
+    @PreAuthorize("hasAuthority('SUBJECT_LIST')")
     public ResponseEntity<Iterable<SubjectDTO>> list() {
         User user = securityService.getUser();
         List<SubjectDTO> subjectDTOs = subjectService.convertToDTOs(
