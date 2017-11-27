@@ -1,5 +1,5 @@
 import {Router} from '@angular/router';
-import {AccountCredentials} from '../../model/AccountCredentials';
+import {AccountCredentials} from '../../model/account-credetials';
 import {Component, OnInit} from '@angular/core';
 import {User} from "../../model/User";
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';

@@ -12,6 +12,11 @@ export class Routes {
     static TRAINING_LIST_UNREGISTERED: string  = "training/listUnregistered";
     static TRAINING_REGISTER: string    = "training/register";
     static TRAINING_UNREGISTER: string  = "training/unregister";
+
+    static SEMESTER_LIST: string        = "semester/list";
+    static SEMESTER_REGISTER: string    = "semester/register";
+    static SEMESTER_UNREGISTER: string  = "semester/unregister";
+    static SEMESTER_CURRENT: string     = "semester/current";
 }
 
 export class Server {

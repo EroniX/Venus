@@ -1,0 +1,23 @@
+<div class="page-body">
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Current semester
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{current?.from | date:'yyyy-MM-dd'}} -  {{current?.to | date:'yyyy-MM-dd'}}
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div *ngIf="current?.registered">
+                <p>By clicking on unregistration you loose all your courses.</p>
+                <button mat-raised-button class="mat-warn" (click)="unregister()">Unregister</button>  
+
+            </div>
+            <div *ngIf="!current?.registered">
+                <p>By clicking on registration you will try something new and awesome.</p>
+                <button mat-raised-button class="mat-primary" (click)="register()">Register</button> 
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {RequestOptions, Http} from '@angular/http';
-import {AccountCredentials} from "../model/AccountCredentials";
+import {AccountCredentials} from "../model/account-credetials";
 import {User} from "../model/User";
 
 import "rxjs/Rx";

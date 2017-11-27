@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AuthService } from "./services/auth.service";
 import { HttpService } from "./services/http.service";
 import { UserService } from "./services/user.service";
+import { SemesterService } from "./services/semester.service";
 import { HttpModule } from "@angular/http";
 import { RegisterComponent } from './pages/register/register.component';
 import  { appRoutes } from './routes';
@@ -18,8 +19,9 @@ import { StatsComponent } from './pages/stats/stats.component';
 import { HelpComponent } from './pages/help/help.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { TrainingComponent } from './pages/training/training.component';
-import { TrainingItemComponent } from './pages/training/item/training-item.component';
+import { SemesterComponent } from './pages/semester/semester.component';
 import { TrainingService } from './services/training.service';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { TrainingService } from './services/training.service';
     HelpComponent,
     ErrorComponent,
     TrainingComponent,
-    TrainingItemComponent
+    SemesterComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +42,10 @@ import { TrainingService } from './services/training.service';
     HttpModule,
     RouterModule.forRoot(appRoutes),
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+
   ],
-  providers: [AuthService, HttpService, UserService, TrainingService],
+  providers: [AuthService, HttpService, UserService, TrainingService, SemesterService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {

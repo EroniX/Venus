@@ -58,10 +58,9 @@ public class TrainingApiController {
 
     @PostMapping("/register")
     @PreAuthorize("hasAuthority('TRAINING_REGISTER')")
-    public ResponseEntity<Boolean> register(@RequestBody String id) {
-        int idNumber = Integer.parseInt(id);
+    public ResponseEntity<Boolean> register(@RequestBody int id) {
         User user = securityService.getUser();
-        Optional<Training> training = trainingService.findById(idNumber);
+        Optional<Training> training = trainingService.findById(id);
         if(!training.isPresent()) {
             return ResponseEntity.ok(false);
         }

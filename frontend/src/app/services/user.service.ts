@@ -1,7 +1,7 @@
 import {AuthService} from './auth.service';
 import {HttpService} from './http.service';
 import {User} from '../model/User';
-import {AccountCredentials} from '../model/AccountCredentials';
+import {AccountCredentials} from '../model/account-credetials';
 import {Injectable} from '@angular/core';
 import {Http} from "@angular/http";
 

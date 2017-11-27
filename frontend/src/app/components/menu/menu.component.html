@@ -4,7 +4,15 @@
   </div>
 
   <div class="center">
-    <a mat-button *ngFor="let menu of menus" [routerLink]="menu.link" routerLinkActive="active">{{menu.title}}</a>
+      <div *ngIf="authService.isLoggedIn()" class="authorized">
+          <button mat-button [matMenuTriggerFor]="menu">Administrations</button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item routerLink="/training">Trainings</button>
+            <button mat-menu-item routerLink="/semester">Semesters</button>
+          </mat-menu>   
+
+          <button mat-button routerLink="/semester">Subjects</button>
+      </div>
   </div>
 
   <div class="right-side">

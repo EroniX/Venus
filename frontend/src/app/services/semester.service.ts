@@ -9,31 +9,30 @@ import {Routes, Server} from "../config/routes.config";
 import { Config } from '../config/config';
 import { Training } from '../model/Training';
 import { Observable } from 'rxjs/Observable';
+import { Semester } from '../model/semester';
 
 @Injectable()
-export class TrainingService {
+export class SemesterService {
     constructor(private http: HttpService) {
     }
 
-    listRegistered(): Observable<Array<Training>> {
-        return this.http.get(Routes.TRAINING_LIST_REGISTERED)
+    current(): Observable<Semester> {
+        return this.http.get(Routes.SEMESTER_CURRENT)
             .map(resp => resp.json());
     }
 
-    listUnregistered(): Observable<Array<Training>> {
-        return this.http.get(Routes.TRAINING_LIST_UNREGISTERED)
+    list(): Observable<Array<Semester>> {
+        return this.http.get(Routes.SEMESTER_LIST)
             .map(resp => resp.json());
     }
 
-    register(training: Training): Observable<boolean> {
-        return this.http.post(Routes.TRAINING_REGISTER, training.id)
+    register(): Observable<boolean> {
+        return this.http.post(Routes.SEMESTER_REGISTER, "")
             .map(resp => resp.text() == "true");
     }
 
-    unregister(training: Training) {
-        console.log("1");
-        let id = training.id;
-        return this.http.post(Routes.TRAINING_UNREGISTER, id)
+    unregister() {
+        return this.http.post(Routes.SEMESTER_UNREGISTER, "")
             .map(resp => resp.text() == "true");
     }
 }

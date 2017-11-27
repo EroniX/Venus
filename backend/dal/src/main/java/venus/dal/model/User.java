@@ -42,6 +42,13 @@ public class User extends BaseEntity {
             inverseJoinColumns = @JoinColumn(name = "trainingid", referencedColumnName = "id"))
     private List<Training> trainings;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "users_semesters",
+            joinColumns = @JoinColumn(name = "userid", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "semesterid", referencedColumnName = "id"))
+    private List<Semester> semesters;
+
     @OneToMany(mappedBy = "student", cascade = {CascadeType.ALL})
     private List<UserCourse> courses;
 
@@ -112,6 +119,14 @@ public class User extends BaseEntity {
         this.trainings = trainings;
     }
 
+    public List<Semester> getSemesters() {
+        return semesters;
+    }
+
+    public void setSemesters(List<Semester> semesters) {
+        this.semesters = semesters;
+    }
+
     public List<String> getRoleNames() {
         return getRoles()
                 .stream()
@@ -134,6 +149,24 @@ public class User extends BaseEntity {
         if(!hasTraining(training.getId())) {
             getTrainings()
                     .add(training);
+        }
+    }
+
+    public Boolean hasSemester(int id) {
+        return getSemesters()
+                .stream()
+                .anyMatch(n -> n.getId() == id);
+    }
+
+    public void removeSemester(int id) {
+        getSemesters()
+                .removeIf(n -> n.getId() == id);
+    }
+
+    public void addSemester(Semester semester) {
+        if(!hasSemester(semester.getId())) {
+            getSemesters()
+                    .add(semester);
         }
     }
 
