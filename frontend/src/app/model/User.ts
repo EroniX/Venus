@@ -3,11 +3,11 @@ export enum Role {
 }
 
 export class User {
-  username: String;
-  password: String;
-  email: String;
+  username: string;
+  password: string;
+  email: string;
 
-  constructor(username?: String, password?: String, email?: String) {
+  constructor(username?: string, password?: string, email?: string) {
     this.username = username || "";
     this.password = password || "";
     this.email = email || "";

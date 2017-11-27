@@ -3,7 +3,6 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatSelectModule,
-  MatTableModule,
   MatToolbarModule,
   MatSlideToggleModule
 } from '@angular/material';
@@ -11,6 +10,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material';
 import {NgModule} from "@angular/core";
 
 @NgModule({
@@ -25,7 +26,8 @@ import {NgModule} from "@angular/core";
     MatExpansionModule, 
     MatProgressSpinnerModule, 
     MatSnackBarModule, 
-    MatMenuModule],
+    MatMenuModule,
+    MatTabsModule],
 
   exports: [
     MatFormFieldModule, 
@@ -38,7 +40,8 @@ import {NgModule} from "@angular/core";
     MatExpansionModule, 
     MatProgressSpinnerModule, 
     MatSnackBarModule, 
-    MatMenuModule],
+    MatMenuModule,
+    MatTabsModule],
 })
 export class MaterialModule {
 }

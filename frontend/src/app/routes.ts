@@ -9,13 +9,13 @@ import {SubjectComponent} from './pages/subject/subject.component';
 import {CourseComponent} from './pages/course/course.component';
 
 export const appRoutes: Routes = [
-  {path: '',            redirectTo: 'home',         pathMatch: 'full'},
-  {path: 'login',       component: LoginComponent},
-  {path: 'register',    component: RegisterComponent},
-  {path: 'training',    component: TrainingComponent},
-  {path: 'semester',    component: SemesterComponent},
-  {path: 'subject',    component: SubjectComponent},
-  {path: 'course/:id',    component: CourseComponent},
-  {path: 'home',        component: HomeComponent},
-  {path: '**',          component: ErrorComponent},
+  {path: '',           		 redirectTo: 'home',         pathMatch: 'full'},
+  {path: 'login',      		 component: LoginComponent},
+  {path: 'register',   		 component: RegisterComponent},
+  {path: 'training',   		 component: TrainingComponent},
+  {path: 'semester',   		 component: SemesterComponent},
+  {path: 'subject',    		 component: SubjectComponent},
+  {path: 'course/:id', 		 component: CourseComponent},
+  {path: 'home',       		 component: HomeComponent},
+  {path: '**',         		 component: ErrorComponent},
 ];
