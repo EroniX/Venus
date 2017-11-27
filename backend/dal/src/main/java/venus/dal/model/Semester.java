@@ -34,7 +34,7 @@ public class Semester extends BaseEntity {
     }
 
     public Date getTo() {
-        return from;
+        return to;
     }
 
     public void setTo(Date to) {

@@ -1,5 +1,6 @@
 package venus.api;
 
+import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -9,12 +10,10 @@ import venus.dal.model.User;
 import venus.logic.dto.TrainingDTO;
 import venus.logic.service.SecurityService;
 import venus.logic.service.TrainingService;
+import venus.logic.service.UserService;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import com.google.common.collect.Lists;
-import venus.logic.service.UserService;
 
 @RestController
 @RequestMapping("/api/training")
@@ -27,29 +26,29 @@ public class TrainingApiController {
     private SecurityService securityService;
 
     @GetMapping("/listRegistered")
-    //@PreAuthorize("hasAuthority('TRAINING_LIST_REGISTERED')")
-    public ResponseEntity<List<TrainingDTO>> listRegistered() {
+    @PreAuthorize("hasAuthority('TRAINING_LIST_REGISTERED')")
+    public ResponseEntity<Iterable<TrainingDTO>> listRegistered() {
         User user = securityService.getUser();
         List<Training> trainings = Lists.newArrayList(user.getTrainings());
         return ResponseEntity.ok(trainingService.convertToDTOs(trainings));
     }
 
     @GetMapping("/listUnregistered")
-    //@PreAuthorize("hasAuthority('TRAINING_LIST_UNREGISTERED')")
-    public ResponseEntity<List<TrainingDTO>> listUnregistered() {
+    @PreAuthorize("hasAuthority('TRAINING_LIST_UNREGISTERED')")
+    public ResponseEntity<Iterable<TrainingDTO>> listUnregistered() {
         User user = securityService.getUser();
         List<Training> trainings = Lists.newArrayList(trainingService.findAllUnregistered(user));
         return ResponseEntity.ok(trainingService.convertToDTOs(trainings));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     @PreAuthorize("hasAuthority('TRAINING_DELETE')")
     public ResponseEntity delete(@RequestBody int id) {
         trainingService.delete(id);
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping("/{id}")
+    @PostMapping("/add/{id}")
     @PreAuthorize("hasAuthority('TRAINING_ADD')")
     public ResponseEntity add(@RequestBody Training training) {
         trainingService.save(training);
@@ -64,7 +63,9 @@ public class TrainingApiController {
         if(!training.isPresent()) {
             return ResponseEntity.ok(false);
         }
-
+        if(user.hasTraining(id)) {
+            return ResponseEntity.ok(false);
+        }
         user.addTraining(training.get());
         userService.update(user);
         return ResponseEntity.ok(true);
@@ -73,13 +74,12 @@ public class TrainingApiController {
     @PostMapping("/unregister")
     //@PreAuthorize("hasAuthority('TRAINING_UNREGISTER')")
     public ResponseEntity<Boolean> unregister(@RequestBody int id) {
-        int idNumber = id;//Integer.parseInt(id);
         User user = securityService.getUser();
-        if(!user.hasTraining(idNumber)) {
+        if(!user.hasTraining(id)) {
             return ResponseEntity.ok(false);
         }
 
-        user.removeTraining(idNumber);
+        user.removeTraining(id);
         userService.update(user);
         return ResponseEntity.ok(true);
     }

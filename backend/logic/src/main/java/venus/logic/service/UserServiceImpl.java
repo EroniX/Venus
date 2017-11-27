@@ -1,7 +1,6 @@
 package venus.logic.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AccountStatusUserDetailsChecker;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,7 +12,6 @@ import venus.logic.dto.UserDTO;
 import venus.logic.exceptions.EmailAlreadyUsedException;
 import venus.logic.exceptions.UsernameAlreadyUsedException;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -28,12 +26,12 @@ public class UserServiceImpl implements UserService {
     }
 
     private HashSet<GrantedAuthority> toGrantedAuthorities(List<String> roleNames) {
-        return new HashSet<>(0);
-        /*HashSet<GrantedAuthority> grantedAuthorities = new HashSet<>(roleNames.size());
+        //return new HashSet<>(0);
+        HashSet<GrantedAuthority> grantedAuthorities = new HashSet<>(roleNames.size());
         for (String roleName : roleNames) {
             grantedAuthorities.add(new SimpleGrantedAuthority(roleName));
         }
-        return grantedAuthorities;*/
+        return grantedAuthorities;
     }
 
     @Override

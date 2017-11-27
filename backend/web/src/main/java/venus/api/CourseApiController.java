@@ -9,10 +9,7 @@ import venus.dal.model.Subject;
 import venus.dal.model.User;
 import venus.dal.model.UserCourse;
 import venus.logic.dto.CourseDTO;
-import venus.logic.service.CourseService;
-import venus.logic.service.SecurityService;
-import venus.logic.service.SubjectService;
-import venus.logic.service.UserService;
+import venus.logic.service.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,6 +23,8 @@ public class CourseApiController {
     private CourseService courseService;
     @Autowired
     private UserService userService;
+    @Autowired
+    private UserCourseService userCourseService;
     @Autowired
     private SecurityService securityService;
 
@@ -58,18 +57,31 @@ public class CourseApiController {
         if(!course.isPresent()) {
             return ResponseEntity.badRequest().build();
         }
+
         User user = securityService.getUser();
-        user.addUserCourse(UserCourse.create(user, course.get()));
-        userService.update(user);
+        //@TODO: Into van transaction
+        //user.removeUserCourse(id)
+        UserCourse userCourse = UserCourse.create(user, course.get());
+        userCourseService.save(userCourse);
+        //
         return ResponseEntity.ok(true);
     }
 
     @PostMapping("/unregister")
-    //@PreAuthorize("hasAuthority('COURSE_UNREGISTER')")
+    @PreAuthorize("hasAuthority('COURSE_UNREGISTER')")
     public ResponseEntity<Boolean> unregister(@RequestBody int id) {
         User user = securityService.getUser();
-        user.removeUserCourse(id);
-        userService.update(user);
+        Optional<Course> course = courseService.findById(id);
+        if(!course.isPresent()) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        Optional<UserCourse> userCourse = course.get().getUserCourse(user.getId());
+        if(!userCourse.isPresent()) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        userCourseService.delete(userCourse.get());
         return ResponseEntity.ok(true);
     }
 

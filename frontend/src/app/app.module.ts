@@ -15,13 +15,12 @@ import { RegisterComponent } from './pages/register/register.component';
 import  { appRoutes } from './routes';
 import { MaterialModule } from "./material.module";
 import { MenuComponent } from './components/menu/menu.component';
-import { StatsComponent } from './pages/stats/stats.component';
-import { HelpComponent } from './pages/help/help.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { TrainingComponent } from './pages/training/training.component';
 import { SemesterComponent } from './pages/semester/semester.component';
 import { CourseComponent } from './pages/course/course.component';
 import { SubjectComponent } from './pages/subject/subject.component';
+import { HomeComponent } from './pages/home/home.component';
 import { TrainingService } from './services/training.service';
 import { CourseService } from './services/course.service';
 import { SubjectService } from './services/subject.service';
@@ -33,13 +32,12 @@ import { DatePipe } from '@angular/common';
         LoginComponent,
         RegisterComponent,
         MenuComponent,
-        StatsComponent,
-        HelpComponent,
         ErrorComponent,
         TrainingComponent,
         SubjectComponent,
         CourseComponent,
-        SemesterComponent
+        SemesterComponent,
+        HomeComponent
     ],
     imports: [
         BrowserModule,

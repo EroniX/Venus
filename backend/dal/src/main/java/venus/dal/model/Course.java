@@ -2,6 +2,7 @@ package venus.dal.model;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Optional;
 
 @Entity
 @Table(name = "courses")
@@ -62,5 +63,14 @@ public class Course extends BaseEntity {
 
     public void setLimit(int limit) {
         this.limit = limit;
+    }
+
+    public Optional<UserCourse> getUserCourse(int userId) {
+        for(UserCourse studentCourse : getStudentCourses()) {
+            if(studentCourse.getStudent().getId() == userId) {
+                return Optional.of(studentCourse);
+            }
+        }
+        return Optional.empty();
     }
 }

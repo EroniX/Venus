@@ -1,7 +1,5 @@
 package venus.dal.model;
 
-import org.springframework.transaction.annotation.Transactional;
-
 import javax.persistence.*;
 import java.util.Collections;
 import java.util.List;
@@ -17,7 +15,7 @@ public class User extends BaseEntity {
         this.setUsername(username);
         this.setPassword(password);
         this.setEmail(email);
-        this.setCourses(Collections.emptyList());
+        this.setUserCourses(Collections.emptyList());
         this.setRoles(Collections.emptyList());
         this.setTeachedCourses(Collections.emptyList());
         this.setTrainings(Collections.emptyList());
@@ -50,7 +48,7 @@ public class User extends BaseEntity {
     private List<Semester> semesters;
 
     @OneToMany(mappedBy = "student", cascade = {CascadeType.ALL})
-    private List<UserCourse> courses;
+    private List<UserCourse> userCourses;
 
     public String getEmail() {
         return email;
@@ -68,12 +66,12 @@ public class User extends BaseEntity {
         this.teachedCourses = teachedCourses;
     }
 
-    public List<UserCourse> getCourses() {
-        return courses;
+    public List<UserCourse> getUserCourses() {
+        return userCourses;
     }
 
-    public void setCourses(List<UserCourse> courses) {
-        this.courses = courses;
+    public void setUserCourses(List<UserCourse> courses) {
+        this.userCourses = userCourses;
     }
 
     @JoinTable(
@@ -176,27 +174,22 @@ public class User extends BaseEntity {
             .anyMatch(n -> n.getId() == id);
     }
 
-    public void removeUserCourse(int courseId) {
-        getCourses()
-            .removeIf(n -> n.getCourse().getId() == courseId);
-    }
-
     public void addUserCourse(UserCourse userCourse) {
         if(!hasCourse(userCourse.getCourse().getId())) {
-            getCourses()
-                .add(userCourse);
+            getUserCourses()
+                    .add(userCourse);
         }
     }
 
     public Boolean hasCourse(int courseId) {
-        return getCourses()
+        return getUserCourses()
             .stream()
             .anyMatch(n -> n.getCourse()
                 .getId() == courseId);
     }
 
     public Boolean hasSubject(int id) {
-        return getCourses()
+        return getUserCourses()
             .stream()
             .anyMatch(n -> n
                 .getCourse()
@@ -205,7 +198,7 @@ public class User extends BaseEntity {
     }
 
     public void removeSubject(int id) {
-        getCourses()
+        getUserCourses()
             .removeIf(n -> n
                 .getCourse()
                 .getSubject()

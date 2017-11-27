@@ -8,23 +8,11 @@ import org.springframework.web.bind.annotation.*;
 import venus.logic.dto.UserDTO;
 import venus.logic.service.UserService;
 
-import javax.servlet.http.HttpServletRequest;
-
 @RestController
 @RequestMapping("/api/user")
 public class UserApiController {
     @Autowired
     private UserService userService;
-
-    @PostMapping("/logout")
-    public ResponseEntity<?> logout(HttpServletRequest request) {
-       /*if(securityService.logout(request)) {
-            return ResponseEntity.ok().build();
-        }*/
-
-        return ResponseEntity.badRequest().build();
-    }
-
 
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody UserDTO userDTO, BindingResult bindingResult) {
@@ -43,12 +31,12 @@ public class UserApiController {
     @GetMapping("/validate-username/{username}")
     public ResponseEntity<Boolean> validateUsername(@PathVariable String username) {
         return ResponseEntity.ok(
-                !userService.findByUsername(username).isPresent());
+            !userService.findByUsername(username).isPresent());
     }
 
     @GetMapping("/validate-email/{email}")
     public ResponseEntity<Boolean> validateEmail(@PathVariable String email) {
         return ResponseEntity.ok(
-                !userService.findByEmail(email).isPresent());
+            !userService.findByEmail(email).isPresent());
     }
 }

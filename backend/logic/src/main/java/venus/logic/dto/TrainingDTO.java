@@ -32,7 +32,7 @@ public class TrainingDTO {
 
     public static TrainingDTO create(Training training) {
         return new TrainingDTO(
-                training.getId(),
-                training.getName());
+            training.getId(),
+            training.getName());
     }
 }

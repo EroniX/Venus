@@ -5,7 +5,7 @@ import {User} from "../model/User";
 
 import "rxjs/Rx";
 import {Routes, Server} from "../config/routes.config";
-import { Config } from '../config/config';
+import {Config} from '../config/config';
 
 @Injectable()
 export class AuthService {

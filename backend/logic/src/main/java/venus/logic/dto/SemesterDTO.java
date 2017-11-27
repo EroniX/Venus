@@ -55,9 +55,9 @@ public class SemesterDTO {
 
     public static SemesterDTO create(Semester semester, User user) {
         return new SemesterDTO(
-                semester.getFrom(),
-                semester.getTo(),
-                semester.current(),
-                user.hasSemester(semester.getId()));
+            semester.getFrom(),
+            semester.getTo(),
+            semester.current(),
+            user.hasSemester(semester.getId()));
     }
 }

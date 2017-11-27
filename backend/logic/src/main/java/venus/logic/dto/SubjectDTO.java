@@ -53,9 +53,9 @@ public class SubjectDTO {
 
     public static SubjectDTO create(Subject subject, User user) {
         return new SubjectDTO(
-                subject.getId(),
-                subject.getName(),
-                subject.getCode(),
-                user.hasSubject(subject.getId()));
+            subject.getId(),
+            subject.getName(),
+            subject.getCode(),
+            user.hasSubject(subject.getId()));
     }
 }

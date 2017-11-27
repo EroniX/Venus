@@ -80,11 +80,11 @@ public class CourseDTO {
 
     public static CourseDTO create(Course course, User user) {
         return new CourseDTO(
-                course.getId(),
-                course.getTeacher().getEmail(),
-                course.getSubject().getName(),
-                course.getSubject().getCode(),
-                course.getLimit(),
-                user.hasCourse(course.getId()));
+            course.getId(),
+            course.getTeacher().getEmail(),
+            course.getSubject().getName(),
+            course.getSubject().getCode(),
+            course.getLimit(),
+            user.hasCourse(course.getId()));
     }
 }

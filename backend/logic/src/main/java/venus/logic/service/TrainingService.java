@@ -13,5 +13,5 @@ public interface TrainingService {
     Iterable<Training> findAll();
     Iterable<Training> findAllUnregistered(User user);
     Optional<Training> findById(int id);
-    List<TrainingDTO> convertToDTOs(List<Training> trainings);
+    Iterable<TrainingDTO> convertToDTOs(List<Training> trainings);
 }

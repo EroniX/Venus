@@ -39,8 +39,8 @@ public class SubjectServiceImpl implements SubjectService {
     @Override
     public List<SubjectDTO> convertToDTOs(List<Subject> subjects, User user) {
         return subjects
-                .stream()
-                .map(n -> SubjectDTO.create(n, user))
-                .collect(Collectors.toList());
+            .stream()
+            .map(n -> SubjectDTO.create(n, user))
+            .collect(Collectors.toList());
     }
 }

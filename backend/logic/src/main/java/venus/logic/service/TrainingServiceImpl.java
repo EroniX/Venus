@@ -42,10 +42,10 @@ public class TrainingServiceImpl implements TrainingService {
     }
 
     @Override
-    public List<TrainingDTO> convertToDTOs(List<Training> trainings) {
+    public Iterable<TrainingDTO> convertToDTOs(List<Training> trainings) {
         return trainings
-                .stream()
-                .map(n -> new TrainingDTO(n.getId(), n.getName()))
-                .collect(Collectors.toList());
+            .stream()
+            .map(n -> new TrainingDTO(n.getId(), n.getName()))
+            .collect(Collectors.toList());
     }
 }

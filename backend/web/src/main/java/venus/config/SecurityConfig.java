@@ -4,7 +4,6 @@ package venus.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -19,6 +18,7 @@ import venus.logic.service.UserService;
 
 @Configuration
 @EnableWebSecurity
+//@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserService userService;
@@ -32,11 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
         http.csrf().disable();
-        http.authorizeRequests().antMatchers("/api/user/register").anonymous();
-        http.authorizeRequests().antMatchers("/api/user/login").anonymous();
-        http.authorizeRequests().antMatchers("/api/user/logout").authenticated();
 
         http.addFilterBefore(new JWTLoginFilter("/api/user/login", authenticationManager()),
                 UsernamePasswordAuthenticationFilter.class);
