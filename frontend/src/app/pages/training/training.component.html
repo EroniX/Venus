@@ -1,29 +1,55 @@
 <div class="page-body">
-    <h2 class="mat-h2">Registered</h2>
-    <mat-accordion>
-        <div>
-            <mat-expansion-panel *ngFor="let training of registeredTrainings">
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                      {{training.name}}
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <p>By clicking on unregistration you loose all your credits.</p>
-                <button mat-raised-button class="mat-warn" (click)="unregisterTraining(training)">Unregister</button>
-            </mat-expansion-panel>
-        </div>
-        <br>
-        <h2 class="mat-h2">Unregistered</h2>
-        <div>
-            <mat-expansion-panel *ngFor="let training of unregisteredTrainings">
-                <mat-expansion-panel-header>
-                  <mat-panel-title>
-                    {{training.name}}
-                  </mat-panel-title>
-                </mat-expansion-panel-header>
-                <p>By clicking on registration you will start something new and amazing.</p>
-                <button mat-raised-button class="mat-primary" (click)="registerTraining(training)">Register</button>
-            </mat-expansion-panel>
-        </div>
-  </mat-accordion>
+    <h1 class="mat-h1">Trainings</h1>
+    <mat-tab-group>
+        <mat-tab label="All trainings">
+            <div class="training-header">
+                <mat-form-field>
+                    <input matInput (keyup)="applyAllTrainingsFilter($event.target.value)" placeholder="Search">
+                </mat-form-field>
+            </div>
+            <div class="training-container mat-elevation-z8">
+                <mat-table #table [dataSource]="allTrainingsDataSource" matSort>
+                    <ng-container matColumnDef="name">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                    </ng-container>
+        
+                    <ng-container matColumnDef="control">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> # </mat-header-cell>
+                        <mat-cell *matCellDef="let element">  
+                            
+                        </mat-cell>
+                    </ng-container>            
+        
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+            </div>
+        </mat-tab>
+        <mat-tab label="My trainings">
+            <div class="training-header">
+                <mat-form-field>
+                    <input matInput (keyup)="applyMyTrainingsFilter($event.target.value)" placeholder="Search">
+                </mat-form-field>
+            </div>
+                <div class="training-container mat-elevation-z8">
+                    <mat-table #table [dataSource]="myTrainingsDataSource" matSort>
+                        <ng-container matColumnDef="name">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                        </ng-container>
+            
+                        <ng-container matColumnDef="control">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> # </mat-header-cell>
+                            <mat-cell *matCellDef="let element">  
+                                
+                            </mat-cell>
+                        </ng-container>  
+
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    </mat-table>
+                </div>
+        </mat-tab>
+    </mat-tab-group>
 </div>

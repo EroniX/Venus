@@ -4,7 +4,7 @@
         <mat-tab label="All subjects">
             <div class="subject-header">
                 <mat-form-field>
-                    <input matInput (keyup)="allSubjectsDataSource($event.target.value)" placeholder="Search">
+                    <input matInput (keyup)="applyAllSubjectsFilter($event.target.value)" placeholder="Search">
                 </mat-form-field>
             </div>
             <div class="subject-container mat-elevation-z8">
@@ -34,7 +34,7 @@
         <mat-tab label="My subjects">
             <div class="subject-header">
                 <mat-form-field>
-                    <input matInput (keyup)="mySubjectsDataSource($event.target.value)" placeholder="Search">
+                    <input matInput (keyup)="applyMySubjectsFilter($event.target.value)" placeholder="Search">
                 </mat-form-field>
             </div>
                 <div class="subject-container mat-elevation-z8">

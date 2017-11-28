@@ -22,20 +22,20 @@ export class SubjectComponent implements OnInit {
         private subjectService: SubjectService) { 
     }
 
-    applyAllSubjectFilter(filterValue: string) {
+    ngOnInit() {
+        this.loadSubjects();
+    }
+
+    applyAllSubjectsFilter(filterValue: string) {
         filterValue = filterValue.trim(); 
         filterValue = filterValue.toLowerCase();
         this.allSubjectsDataSource.filter = filterValue;
     }
 
-    applyMySubjectFilter(filterValue: string) {
+    applyMySubjectsFilter(filterValue: string) {
         filterValue = filterValue.trim(); 
         filterValue = filterValue.toLowerCase();
         this.mySubjectsDataSource.filter = filterValue;
-    }
-
-    ngOnInit() {
-        this.loadSubjects();
     }
 
     loadSubjects() {

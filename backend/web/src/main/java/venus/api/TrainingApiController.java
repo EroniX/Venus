@@ -25,20 +25,13 @@ public class TrainingApiController {
     @Autowired
     private SecurityService securityService;
 
-    @GetMapping("/listRegistered")
-    @PreAuthorize("hasAuthority('TRAINING_LIST_REGISTERED')")
-    public ResponseEntity<Iterable<TrainingDTO>> listRegistered() {
+    @GetMapping("/list")
+    @PreAuthorize("hasAuthority('TRAINING_LIST')")
+    public ResponseEntity<Iterable<TrainingDTO>> list() {
         User user = securityService.getUser();
-        List<Training> trainings = Lists.newArrayList(user.getTrainings());
-        return ResponseEntity.ok(trainingService.convertToDTOs(trainings));
-    }
-
-    @GetMapping("/listUnregistered")
-    @PreAuthorize("hasAuthority('TRAINING_LIST_UNREGISTERED')")
-    public ResponseEntity<Iterable<TrainingDTO>> listUnregistered() {
-        User user = securityService.getUser();
-        List<Training> trainings = Lists.newArrayList(trainingService.findAllUnregistered(user));
-        return ResponseEntity.ok(trainingService.convertToDTOs(trainings));
+        List<Training> trainings = Lists.newArrayList(trainingService.findAll());
+        Iterable<TrainingDTO> trainingDTOs = trainingService.convertToDTOs(trainings, user);
+        return ResponseEntity.ok(trainingDTOs);
     }
 
     @DeleteMapping("/delete/{id}")
@@ -78,7 +71,6 @@ public class TrainingApiController {
         if(!user.hasTraining(id)) {
             return ResponseEntity.ok(false);
         }
-
         user.removeTraining(id);
         userService.update(user);
         return ResponseEntity.ok(true);

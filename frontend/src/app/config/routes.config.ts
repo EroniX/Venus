@@ -8,8 +8,6 @@ export class Routes {
     static VALIDATE_EMAIL: 					string = 'user/validate-email';
                                                   
     static TRAINING_LIST: 					string = "training/list";
-    static TRAINING_LIST_REGISTERED: 		string = "training/listRegistered";
-    static TRAINING_LIST_UNREGISTERED: 		string = "training/listUnregistered";
     static TRAINING_REGISTER: 				string = "training/register";
     static TRAINING_UNREGISTER: 			string = "training/unregister";
                                                   

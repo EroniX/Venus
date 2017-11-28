@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { TrainingService } from '../../services/training.service';
-import { Training } from '../../model/Training';
-import { MatSnackBar } from '@angular/material';
+import {MatTableDataSource, MatSort} from '@angular/material';
+import {Component, OnInit} from '@angular/core';
+import {TrainingService} from '../../services/training.service';
+import {Training} from '../../model/Training';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-training',
@@ -9,8 +10,12 @@ import { MatSnackBar } from '@angular/material';
   styleUrls: ['./training.component.css']
 })
 export class TrainingComponent implements OnInit {
-    unregisteredTrainings: Array<Training>;  
-    registeredTrainings: Array<Training>;  
+    allTrainings: Array<Training>;  
+    myTrainings: Array<Training>;  
+
+    displayedColumns = ['name', 'control'];
+    allTrainingsDataSource = new MatTableDataSource<Training>(this.allTrainings);
+    myTrainingsDataSource = new MatTableDataSource<Training>(this.myTrainings);
 
     constructor(
         private snackbar: MatSnackBar, 
@@ -18,19 +23,26 @@ export class TrainingComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.refresh();
+        this.loadTrainings();
     }
 
-    refresh() {
-        this.listRegisteredTrainings();
-        this.listUnregisteredTrainings();
+    applyAllTrainingsFilter(filterValue: string) {
+        filterValue = filterValue.trim(); 
+        filterValue = filterValue.toLowerCase();
+        this.allTrainingsDataSource.filter = filterValue;
+    }
+
+    applyMyTrainingsFilter(filterValue: string) {
+        filterValue = filterValue.trim(); 
+        filterValue = filterValue.toLowerCase();
+        this.myTrainingsDataSource.filter = filterValue;
     }
 
     registerTraining(training: Training) {
       this.trainingService.register(training)
           .subscribe(resp => {
             if(resp == true) {
-                this.refresh();
+                this.loadTrainings();
                 this.snackbar.open(training.name + ' succesfully registered', "Close", {
                   duration: 3000
                 });
@@ -42,7 +54,7 @@ export class TrainingComponent implements OnInit {
       this.trainingService.unregister(training)
           .subscribe(resp => {
               if(resp == true) {
-                  this.refresh();
+                  this.loadTrainings();
                   this.snackbar.open(training.name + ' succesfully unregistered', "Close", {
                     duration: 3000
                   });
@@ -50,13 +62,14 @@ export class TrainingComponent implements OnInit {
           });
     }
 
-    listRegisteredTrainings() {
-      this.trainingService.listRegistered()
-         .subscribe(resp => this.registeredTrainings = resp);
-    }
+    loadTrainings() {
+        this.trainingService.list()
+            .subscribe(resp => {
+                this.allTrainings = resp.filter(n => !n.registered); 
+                this.myTrainings = resp.filter(n => n.registered); 
 
-    listUnregisteredTrainings() {
-      this.trainingService.listUnregistered()
-         .subscribe(resp => this.unregisteredTrainings = resp);
+                this.allTrainingsDataSource = new MatTableDataSource<Training>(this.allTrainings);
+                this.myTrainingsDataSource = new MatTableDataSource<Training>(this.myTrainings);
+        });
     }
 }

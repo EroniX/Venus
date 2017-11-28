@@ -15,13 +15,8 @@ export class TrainingService {
     constructor(private http: HttpService) {
     }
 
-    listRegistered(): Observable<Array<Training>> {
-        return this.http.get(Routes.TRAINING_LIST_REGISTERED)
-            .map(resp => resp.json());
-    }
-
-    listUnregistered(): Observable<Array<Training>> {
-        return this.http.get(Routes.TRAINING_LIST_UNREGISTERED)
+    list(): Observable<Array<Training>> {
+        return this.http.get(Routes.TRAINING_LIST)
             .map(resp => resp.json());
     }
 
