@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import venus.dal.model.User;
 import venus.logic.dto.UserDTO;
+import venus.logic.service.SecurityService;
 import venus.logic.service.UserService;
 
 @RestController
@@ -12,6 +14,15 @@ import venus.logic.service.UserService;
 public class UserApiController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private SecurityService securityService;
+
+    @GetMapping("/get")
+    public ResponseEntity<UserDTO> get() {
+        User user = securityService.getUser();
+        UserDTO userDTO = UserDTO.create(user);
+        return ResponseEntity.ok(userDTO);
+    }
 
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody UserDTO userDTO, BindingResult bindingResult) {

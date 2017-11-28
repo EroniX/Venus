@@ -1,7 +1,7 @@
 export class Routes {
     static HOME: 							string = '';
     static USER_LOGIN: 						string = 'user/login';
-    static USER_GET: 						string = 'user/get-user';
+    static USER_GET: 						string = 'user/get';
     static USER_REGISTER: 					string = 'user/register';
     static USER_LOGOUT: 					string = 'user/logout';
     static VALIDATE_USERNAME:				string = 'user/validate-username';

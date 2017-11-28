@@ -2,22 +2,29 @@
     <h1 class="mat-h1">Subjects</h1>
     <mat-tab-group>
         <mat-tab label="All subjects">
-            <div class="example-header">
+            <div class="subject-header">
                 <mat-form-field>
-                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+                    <input matInput (keyup)="allSubjectsDataSource($event.target.value)" placeholder="Search">
                 </mat-form-field>
             </div>
-            <div class="example-container mat-elevation-z8">
-                <mat-table #table [dataSource]="dataSource" matSort>
+            <div class="subject-container mat-elevation-z8">
+                <mat-table #table [dataSource]="allSubjectsDataSource" matSort>
                     <ng-container matColumnDef="name">
                         <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
                         <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
                     </ng-container>
         
                     <ng-container matColumnDef="code">
-                        <mat-header-cell *matHeaderCellDef mat-sort-header> Code </mat-header-cell>
-                        <mat-cell *matCellDef="let element"> {{element.code}} </mat-cell>
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> Code </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.code}} </mat-cell>
                     </ng-container>
+
+                    <ng-container matColumnDef="control">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> # </mat-header-cell>
+                        <mat-cell *matCellDef="let element">  
+                            <button mat-raised-button class="mat-primary" [routerLink]="'/course/' + element.id">Courses</button>                                
+                        </mat-cell>
+                    </ng-container>            
         
                     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
                     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
@@ -25,6 +32,35 @@
             </div>
         </mat-tab>
         <mat-tab label="My subjects">
+            <div class="subject-header">
+                <mat-form-field>
+                    <input matInput (keyup)="mySubjectsDataSource($event.target.value)" placeholder="Search">
+                </mat-form-field>
+            </div>
+                <div class="subject-container mat-elevation-z8">
+                    <mat-table #table [dataSource]="mySubjectsDataSource" matSort>
+                        <ng-container matColumnDef="name">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                        </ng-container>
+            
+                        <ng-container matColumnDef="code">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> Code </mat-header-cell>
+                            <mat-cell *matCellDef="let element"> {{element.code}} </mat-cell>
+                        </ng-container>
+            
+                        <ng-container matColumnDef="control">
+                            <mat-header-cell *matHeaderCellDef mat-sort-header> # </mat-header-cell>
+                            <mat-cell *matCellDef="let element">  
+                                <button mat-raised-button class="mat-primary" [routerLink]="'/course/' + element.id">Courses</button>   
+                                <button mat-raised-button class="mat-warn" (click)="register()">Unregister</button>  
+                            </mat-cell>
+                        </ng-container>  
+
+                        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                    </mat-table>
+                </div>
         </mat-tab>
     </mat-tab-group>
 </div>

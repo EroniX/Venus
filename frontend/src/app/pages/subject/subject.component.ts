@@ -10,25 +10,28 @@ import {SubjectService} from '../../services/subject.service';
   styleUrls: ['./subject.component.css']
 })
 export class SubjectComponent implements OnInit {
-    subjects: Array<Subject>
-    displayedColumns = ['name', 'code'];
-    dataSource = new MatTableDataSource<Subject>(this.subjects);
+    allSubjects: Array<Subject>
+    mySubjects: Array<Subject>
 
-    @ViewChild(MatSort) sort: MatSort;
+    displayedColumns = ['name', 'code', 'control'];
+    allSubjectsDataSource = new MatTableDataSource<Subject>(this.allSubjects);
+    mySubjectsDataSource = new MatTableDataSource<Subject>(this.mySubjects);
 
     constructor(
         private snackbar: MatSnackBar, 
         private subjectService: SubjectService) { 
     }
 
-    applyFilter(filterValue: string) {
+    applyAllSubjectFilter(filterValue: string) {
         filterValue = filterValue.trim(); 
         filterValue = filterValue.toLowerCase();
-        this.dataSource.filter = filterValue;
+        this.allSubjectsDataSource.filter = filterValue;
     }
 
-    ngAfterViewInit() {
-        this.dataSource.sort = this.sort;
+    applyMySubjectFilter(filterValue: string) {
+        filterValue = filterValue.trim(); 
+        filterValue = filterValue.toLowerCase();
+        this.mySubjectsDataSource.filter = filterValue;
     }
 
     ngOnInit() {
@@ -38,8 +41,11 @@ export class SubjectComponent implements OnInit {
     loadSubjects() {
       this.subjectService.list()
          .subscribe(resp => {
-              this.subjects = resp; 
-              this.dataSource = new MatTableDataSource<Subject>(this.subjects);
+                this.allSubjects = resp.filter(n => !n.registered); 
+                this.mySubjects = resp.filter(n => n.registered); 
+
+                this.allSubjectsDataSource = new MatTableDataSource<Subject>(this.allSubjects);
+                this.mySubjectsDataSource = new MatTableDataSource<Subject>(this.mySubjects);
           });
     }
 }

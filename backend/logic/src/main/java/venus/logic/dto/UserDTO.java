@@ -3,10 +3,22 @@ package venus.logic.dto;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import venus.dal.model.User;
 
+import java.util.List;
+
 public class UserDTO {
     private String username;
     private String password;
     private String email;
+    private List<String> roles;
+
+    public UserDTO() {
+    }
+
+    public UserDTO(String username, String email, List<String> roles) {
+        this.setUsername(username);
+        this.setEmail(email);
+        this.setRoles(roles);
+    }
 
     public String getUsername() {
         return username;
@@ -24,10 +36,6 @@ public class UserDTO {
         this.password = password;
     }
 
-    public String getEncodedPassword() {
-        return new BCryptPasswordEncoder().encode(this.getPassword());
-    }
-
     public String getEmail() {
         return email;
     }
@@ -36,11 +44,27 @@ public class UserDTO {
         this.email = email;
     }
 
+    public List<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
+    }
+
     public User toUser() {
         return new User(
             this.getUsername(),
-            this.getEncodedPassword(),
+            new BCryptPasswordEncoder().encode(this.getPassword()),
             this.getEmail()
+        );
+    }
+
+    public static UserDTO create(User user) {
+        return new UserDTO(
+            user.getUsername(),
+            user.getEmail(),
+            user.getRoleNames()
         );
     }
 }

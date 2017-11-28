@@ -25,7 +25,7 @@ export class CourseComponent implements OnInit {
         this.activatedRoute.paramMap
             .subscribe(n => {
                 if(n.has("id")) {
-                    this.subjectId = parseInt(n.get('id'), 10);
+                    this.subjectId = parseInt(n.get('id'));
                     this.loadCourses();
                 }
             });
@@ -54,7 +54,6 @@ export class CourseComponent implements OnInit {
               }                
           });
     }
-
 
     loadCourses() {
         this.courseService.list(this.subjectId)

@@ -1,15 +1,13 @@
-export enum Role {
-  GUEST, USER, ADMIN
-}
-
 export class User {
-  username: string;
-  password: string;
-  email: string;
+    username: string;
+    password: string;
+    email: string;
+    roles: Array<string>;
 
-  constructor(username?: string, password?: string, email?: string) {
-    this.username = username || "";
-    this.password = password || "";
-    this.email = email || "";
-  }
+    constructor(username?: string, password?: string, email?: string, roles?: Array<string>) {
+        this.username = username || "";
+        this.password = password || "";
+        this.email = email || "";
+        this.roles = roles;
+    }
 }

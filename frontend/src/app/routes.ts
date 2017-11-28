@@ -7,15 +7,24 @@ import {TrainingComponent} from './pages/training/training.component';
 import {SemesterComponent} from './pages/semester/semester.component';
 import {SubjectComponent} from './pages/subject/subject.component';
 import {CourseComponent} from './pages/course/course.component';
+import { RouteGuard } from './route.guard';
+import { Role } from './helpers/role';
 
 export const appRoutes: Routes = [
-  {path: '',           		 redirectTo: 'home',         pathMatch: 'full'},
-  {path: 'login',      		 component: LoginComponent},
-  {path: 'register',   		 component: RegisterComponent},
-  {path: 'training',   		 component: TrainingComponent},
-  {path: 'semester',   		 component: SemesterComponent},
-  {path: 'subject',    		 component: SubjectComponent},
-  {path: 'course/:id', 		 component: CourseComponent},
-  {path: 'home',       		 component: HomeComponent},
-  {path: '**',         		 component: ErrorComponent},
+    {
+        path: '',
+        canActivateChild: [RouteGuard],
+
+        children: [
+          {path: '',            redirectTo: 'home',           pathMatch: 'full'},
+          {path: 'login',       component: LoginComponent,    },
+          {path: 'register',    component: RegisterComponent, },
+          {path: 'training',    component: TrainingComponent, data: {roles: [Role.USER]}},
+          {path: 'semester',    component: SemesterComponent, data: {roles: [Role.USER]}},
+          {path: 'subject',     component: SubjectComponent,  data: {roles: [Role.USER]}},
+          {path: 'course/:id', 	component: CourseComponent,   data: {roles: [Role.USER]}},
+          {path: 'home',       	component: HomeComponent},
+          {path: '**',         	component: ErrorComponent},
+        ]
+    }
 ];

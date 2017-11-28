@@ -39,17 +39,8 @@ export class UserService {
             .map(resp => resp.text() == "true");
     }
 
-    getUser(): User {
-        if(!this.authService.isLoggedIn()) {
-            return null;
-        }
-
-        if(this.user == null) {
-            this.http.get(Routes.USER_GET)
-                .map(n => n.json);
-                //.subscribe(n => this.user = n);
-        }
-
-        return this.user;
+    getUser(): Observable<User> {
+        return this.http.get(Routes.USER_GET)
+            .map(n => n.json());
     }
 }
