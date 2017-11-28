@@ -12,7 +12,7 @@ import { Config } from '../config/config';
 
 @Injectable()
 export class UserService {
-    private user: User;
+    public user: User;
 
     constructor(private http: HttpService, private authService: AuthService) {
     }

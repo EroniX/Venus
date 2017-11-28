@@ -6,7 +6,7 @@ import {RouterModule} from '@angular/router'
 import {AppComponent} from './app.component';
 import {LoginComponent} from './pages/login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {StorageService} from "./services/storage.service";
+import {AuthService} from "./services/auth.service";
 import {HttpService} from "./services/http.service";
 import {UserService} from "./services/user.service";
 import {SemesterService} from "./services/semester.service";
@@ -51,7 +51,7 @@ import { RouteGuard } from './route.guard';
     ],
     providers: [
         RouteGuard,
-        StorageService, 
+        AuthService, 
         HttpService, 
         UserService, 
         TrainingService, 

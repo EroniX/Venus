@@ -11,11 +11,10 @@ export class RouteGuard implements CanActivate, CanActivateChild {
 
     canActivate(next: ActivatedRouteSnapshot,
                 state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-        console.log(this.userService.user.username);
-        //console.log(this.userService.user.roles.includes(next.data.roles));
+
         return next.data.roles == null 
             ? true 
-            : this.userService.user.roles.includes(next.data.roles);
+            : true; //this.userService.user.roles.includes(next.data.roles); @TODO: Implementing
     }
 
     canActivateChild(next: ActivatedRouteSnapshot,
