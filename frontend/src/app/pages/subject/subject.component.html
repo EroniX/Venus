@@ -1,16 +1,30 @@
 <div class="page-body">
-    <mat-accordion>
-        <mat-expansion-panel *ngFor="let subject of subjects" >
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        {{subject.name}}
-                    </mat-panel-title>
-                    <mat-panel-description>
-                        {{subject.code}}
-                    </mat-panel-description>
-                </mat-expansion-panel-header>
-                <p>By clicking you can list the available courses.</p>
-                <button mat-raised-button class="mat-primary" [routerLink]="'/course/' + subject.id">Courses</button>
-            </mat-expansion-panel>
-    </mat-accordion>
+    <h1 class="mat-h1">Subjects</h1>
+    <mat-tab-group>
+        <mat-tab label="All subjects">
+            <div class="example-header">
+                <mat-form-field>
+                    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+                </mat-form-field>
+            </div>
+            <div class="example-container mat-elevation-z8">
+                <mat-table #table [dataSource]="dataSource" matSort>
+                    <ng-container matColumnDef="name">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                    </ng-container>
+        
+                    <ng-container matColumnDef="code">
+                        <mat-header-cell *matHeaderCellDef mat-sort-header> Code </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.code}} </mat-cell>
+                    </ng-container>
+        
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+            </div>
+        </mat-tab>
+        <mat-tab label="My subjects">
+        </mat-tab>
+    </mat-tab-group>
 </div>

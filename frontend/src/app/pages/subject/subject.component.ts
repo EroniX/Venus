@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { TrainingService } from '../../services/training.service';
-import { Training } from '../../model/Training';
-import { MatSnackBar } from '@angular/material';
-import { Subject } from '../../model/subject';
-import { SubjectService } from '../../services/subject.service';
+import {Component, ViewChild, OnInit} from '@angular/core';
+import {MatTableDataSource, MatSort} from '@angular/material';
+import {MatSnackBar} from '@angular/material';
+import {Subject} from '../../model/subject';
+import {SubjectService} from '../../services/subject.service';
 
 @Component({
   selector: 'app-subject',
@@ -12,8 +11,24 @@ import { SubjectService } from '../../services/subject.service';
 })
 export class SubjectComponent implements OnInit {
     subjects: Array<Subject>
+    displayedColumns = ['name', 'code'];
+    dataSource = new MatTableDataSource<Subject>(this.subjects);
 
-    constructor(private snackbar: MatSnackBar, private subjectService: SubjectService) { 
+    @ViewChild(MatSort) sort: MatSort;
+
+    constructor(
+        private snackbar: MatSnackBar, 
+        private subjectService: SubjectService) { 
+    }
+
+    applyFilter(filterValue: string) {
+        filterValue = filterValue.trim(); 
+        filterValue = filterValue.toLowerCase();
+        this.dataSource.filter = filterValue;
+    }
+
+    ngAfterViewInit() {
+        this.dataSource.sort = this.sort;
     }
 
     ngOnInit() {
@@ -22,6 +37,9 @@ export class SubjectComponent implements OnInit {
 
     loadSubjects() {
       this.subjectService.list()
-         .subscribe(resp => this.subjects = resp);
+         .subscribe(resp => {
+              this.subjects = resp; 
+              this.dataSource = new MatTableDataSource<Subject>(this.subjects);
+          });
     }
 }
