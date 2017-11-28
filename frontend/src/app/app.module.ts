@@ -25,7 +25,7 @@ import {TrainingService} from './services/training.service';
 import {CourseService} from './services/course.service';
 import {SubjectService} from './services/subject.service';
 import {DatePipe} from '@angular/common';
-import { RouteGuard } from './route.guard';
+import {RouteGuard} from './route.guard';
 
 @NgModule({
     declarations: [

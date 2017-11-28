@@ -2,7 +2,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { TrainingService } from '../../services/training.service';
 import { Training } from '../../model/Training';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, MatTableDataSource } from '@angular/material';
 import { Course } from '../../model/course';
 import { CourseService } from '../../services/course.service';
 
@@ -15,6 +15,9 @@ export class CourseComponent implements OnInit {
     courses: Array<Course>;
     subjectId?: number;
 
+    displayedColumns = ['name', 'code', 'control'];
+    coursesDataSource = new MatTableDataSource<Course>(this.courses);
+    
     constructor(
         private snackbar: MatSnackBar, 
         private courseService: CourseService,
@@ -24,11 +27,15 @@ export class CourseComponent implements OnInit {
     ngOnInit() {
         this.activatedRoute.paramMap
             .subscribe(n => {
-                if(n.has("id")) {
-                    this.subjectId = parseInt(n.get('id'));
-                    this.loadCourses();
-                }
+                this.subjectId = parseInt(n.get('id'));
+                this.loadCourses();
             });
+    }
+
+    applyCoursesFilter(filterValue: string) {
+        filterValue = filterValue.trim(); 
+        filterValue = filterValue.toLowerCase();
+        this.coursesDataSource.filter = filterValue;
     }
 
     register(course: Course) {
@@ -57,6 +64,9 @@ export class CourseComponent implements OnInit {
 
     loadCourses() {
         this.courseService.list(this.subjectId)
-          .subscribe(resp => this.courses = resp);
+            .subscribe(resp => {
+                this.courses = resp
+                this.coursesDataSource = new MatTableDataSource<Course>(this.courses);
+            });
     }
 }

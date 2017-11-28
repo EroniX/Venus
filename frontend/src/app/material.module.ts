@@ -11,6 +11,8 @@ import {
   MatMenuModule,
   MatTabsModule,
   MatTableModule,
+  MatIconModule,
+  MatGridListModule
 } from '@angular/material';
 import {NgModule} from "@angular/core";
 import {CdkTableModule} from '@angular/cdk/table';
@@ -29,7 +31,9 @@ import {CdkTableModule} from '@angular/cdk/table';
     MatSnackBarModule, 
     MatMenuModule,
     MatTabsModule,
-    CdkTableModule],
+    CdkTableModule,
+    MatIconModule,
+    MatGridListModule],
 })
 export class MaterialModule {
 }

@@ -43,7 +43,7 @@ public class SemesterApiController {
         User user = securityService.getUser();
         Optional<Semester> semester = semesterService.current();
         if(!semester.isPresent()) {
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity.ok(null);
         }
         SemesterDTO semesterDTO = SemesterDTO.create(semester.get(), user);
         return ResponseEntity.ok(semesterDTO);

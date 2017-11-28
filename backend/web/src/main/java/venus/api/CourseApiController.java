@@ -78,7 +78,7 @@ public class CourseApiController {
     }
 
     @DeleteMapping("/delete/{id}")
-    @PreAuthorize("hasAuthority('COURSE_TEACHER_DELETE')")
+    @PreAuthorize("hasAuthority('COURSE_DELETE')")
     public ResponseEntity delete(@RequestBody int id) {
         User user = securityService.getUser();
         if(!user.hasTeachedCourse(id)) {
@@ -89,7 +89,7 @@ public class CourseApiController {
     }
 
     @PostMapping("/create/")
-    @PreAuthorize("hasAuthority('COURSE_TEACHER_CREATE')")
+    @PreAuthorize("hasAuthority('COURSE_CREATE')")
     public ResponseEntity create(@RequestBody Course course) {
         courseService.save(course);
         return ResponseEntity.ok().build();

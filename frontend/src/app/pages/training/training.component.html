@@ -17,7 +17,9 @@
                     <ng-container matColumnDef="control">
                         <mat-header-cell *matHeaderCellDef mat-sort-header> # </mat-header-cell>
                         <mat-cell *matCellDef="let element">  
-                            
+                            <button mat-raised-button color="primary" (click)="registerTraining(element)">
+                                Register
+                            </button>
                         </mat-cell>
                     </ng-container>            
         
@@ -42,7 +44,9 @@
                         <ng-container matColumnDef="control">
                             <mat-header-cell *matHeaderCellDef mat-sort-header> # </mat-header-cell>
                             <mat-cell *matCellDef="let element">  
-                                
+                                <button mat-raised-button color="warn" (click)="unregisterTraining(element)">
+                                    Unregister
+                                </button>
                             </mat-cell>
                         </ng-container>  
 

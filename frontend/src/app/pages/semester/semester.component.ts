@@ -46,9 +46,6 @@ export class SemesterComponent implements OnInit {
 
     loadCurrent() {
       this.semesterService.current()
-         .subscribe(resp => {
-             this.current = resp;
-             console.log(this.current);
-            });
+         .subscribe(resp => this.current = resp);
     }
 }

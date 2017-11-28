@@ -11,13 +11,10 @@ import { Observable } from 'rxjs/Observable';
 import { Config } from '../config/config';
 
 @Injectable()
-export class UserService implements OnInit {
+export class UserService {
     public user: User;
 
     constructor(private http: HttpService, private authService: AuthService) {
-    }
-
-    ngOnInit(): void {
         this.setUser();
     }
 
