@@ -6,6 +6,7 @@ import venus.dal.model.UserCourse;
 import venus.dal.repository.UserCourseRepository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 public class UserCourseServiceImpl implements UserCourseService {
@@ -15,10 +16,10 @@ public class UserCourseServiceImpl implements UserCourseService {
     @Override
     @Transactional
     public void save(UserCourse userCourse) {
-        userCourse.getStudent()
-                .getUserCourses()
-                .forEach(n -> userCourseRepository.delete(n));
-
+        List<UserCourse> userCourses = userCourse.getStudent().getUserCourses();
+        for(int i = 0; i < userCourses.size(); ++i) {
+            this.delete(userCourses.get(i));
+        }
         userCourseRepository.save(userCourse);
     }
 
