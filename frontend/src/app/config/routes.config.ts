@@ -19,6 +19,7 @@ export class Routes {
     static SUBJECT_LIST: 					string = "subject/list";
                                                   
     static COURSE_LIST: 					string = "course/list";
+    static COURSE_CREATE: 				string = "course/create";
     static COURSE_REGISTER: 				string = "course/register";
     static COURSE_UNREGISTER: 				string = "course/unregister";
 }

@@ -5,8 +5,9 @@
             <input matInput (keyup)="applyCoursesFilter($event.target.value)" placeholder="Search">
         </mat-form-field>
     </div>
+
     <div class="subject-container mat-elevation-z8">
-        <mat-table #table [dataSource]="coursesDataSource" matSort>
+            <mat-table #table [dataSource]="coursesDataSource" matSort>
 
             <ng-container matColumnDef="id">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>

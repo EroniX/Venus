@@ -21,6 +21,11 @@ export class CourseService {
             .map(resp => resp.json());
     }
 
+    create(course: Course): Observable<boolean>  {
+        return this.http.post(Routes.COURSE_CREATE, course)
+            .map(resp => resp.text() == "true");
+    }
+
     register(course: Course): Observable<boolean> {
         return this.http.post(Routes.COURSE_REGISTER, course.id)
             .map(resp => resp.text() == "true");
