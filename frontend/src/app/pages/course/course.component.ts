@@ -15,7 +15,7 @@ export class CourseComponent implements OnInit {
     courses: Array<Course>;
     subjectId?: number;
 
-    displayedColumns = ['name', 'code', 'control'];
+    displayedColumns = ['id', 'name', 'code', 'teacher', 'limit', 'control'];
     coursesDataSource = new MatTableDataSource<Course>(this.courses);
     
     constructor(
