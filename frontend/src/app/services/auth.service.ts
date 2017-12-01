@@ -1,10 +1,5 @@
 import {Injectable} from '@angular/core';
-import {RequestOptions, Http} from '@angular/http';
-import {AccountCredentials} from "../model/account-credentials";
-import {User} from "../model/User";
-
 import "rxjs/Rx";
-import {Routes, Server} from "../config/routes.config";
 import {Config} from '../config/config';
 
 @Injectable()

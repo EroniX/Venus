@@ -1,5 +1,6 @@
 package venus.api;
 
+import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -9,7 +10,11 @@ import venus.dal.model.Subject;
 import venus.dal.model.User;
 import venus.dal.model.UserCourse;
 import venus.logic.dto.CourseDTO;
-import venus.logic.service.*;
+import venus.logic.dto.UserCourseDTO;
+import venus.logic.service.CourseService;
+import venus.logic.service.SecurityService;
+import venus.logic.service.SubjectService;
+import venus.logic.service.UserCourseService;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,8 +33,13 @@ public class CourseApiController {
 
     @GetMapping
     @PreAuthorize("hasAuthority('COURSE_LIST_ALL')")
-    public ResponseEntity<Iterable<Course>> listAll() {
-        return ResponseEntity.ok(courseService.findAll());
+    public ResponseEntity<Iterable<CourseDTO>> listAll() {
+        User user = securityService.getUser();
+        List<CourseDTO> courseDTOs = courseService.convertToDTOs(
+                Lists.newArrayList(courseService.findAll()),
+                user);
+
+        return ResponseEntity.ok(courseDTOs);
     }
 
     @GetMapping("/list/{id}")
@@ -44,6 +54,19 @@ public class CourseApiController {
         List<CourseDTO> courseDTOs = courseService.convertToDTOs(
                 subject.get().getCourses(),
                 user);
+
+        return ResponseEntity.ok(courseDTOs);
+    }
+
+    @GetMapping("/list-students/{id}")
+    @PreAuthorize("hasAuthority('COURSE_STUDENTS_LIST')")
+    public ResponseEntity<List<UserCourseDTO>> listStudents(@PathVariable int id) {
+        Optional<Course> course = courseService.findById(id);
+        if(!course.isPresent()) {
+            return ResponseEntity.badRequest().build();
+        }
+        User user = securityService.getUser();
+        List<UserCourseDTO> courseDTOs = courseService.convertToDTOs(course.get());
 
         return ResponseEntity.ok(courseDTOs);
     }
@@ -88,10 +111,11 @@ public class CourseApiController {
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping("/create/")
+    @PostMapping("/create")
     @PreAuthorize("hasAuthority('COURSE_CREATE')")
-    public ResponseEntity create(@RequestBody Course course) {
-        courseService.save(course);
-        return ResponseEntity.ok().build();
+    public ResponseEntity<Boolean> create(@RequestBody CourseDTO courseDTO) {
+        User user = securityService.getUser();
+        courseService.save(courseDTO, user);
+        return ResponseEntity.ok(true);
     }
 }

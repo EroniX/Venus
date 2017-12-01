@@ -51,4 +51,11 @@ export class UserService {
         return this.http.get(Routes.USER_GET)
             .map(n => n.json());
     }
+
+    hasRole(role: string): boolean {
+        if(!this.authService.isLoggedIn()) {
+            return false;
+        }
+        return this.user.roles.includes(role);
+    }
 }

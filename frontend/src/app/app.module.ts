@@ -5,6 +5,7 @@ import {RouterModule} from '@angular/router'
 
 import {AppComponent} from './app.component';
 import {LoginComponent} from './pages/login/login.component';
+import {CourseStudentsComponent} from './pages/course/students/course-students.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AuthService} from "./services/auth.service";
 import {HttpService} from "./services/http.service";
@@ -19,6 +20,7 @@ import {ErrorComponent} from './pages/error/error.component';
 import {TrainingComponent} from './pages/training/training.component';
 import {SemesterComponent} from './pages/semester/semester.component';
 import {CourseComponent} from './pages/course/course.component';
+import {CourseCreateComponent} from './pages/course/create/course-create.component';
 import {SubjectComponent} from './pages/subject/subject.component';
 import {HomeComponent} from './pages/home/home.component';
 import {TrainingService} from './services/training.service';
@@ -38,7 +40,9 @@ import {RouteGuard} from './route.guard';
         SubjectComponent,
         CourseComponent,
         SemesterComponent,
-        HomeComponent
+        HomeComponent,
+        CourseCreateComponent,
+        CourseStudentsComponent
     ],
     imports: [
         BrowserModule,

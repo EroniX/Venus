@@ -3,6 +3,7 @@ package venus.dal.model;
 import javax.persistence.*;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Entity
@@ -139,15 +140,11 @@ public class User extends BaseEntity {
     }
 
     public void removeTraining(int id) {
-        getTrainings()
-            .removeIf(n -> n.getId() == id);
+        getTrainings().removeIf(n -> n.getId() == id);
     }
 
     public void addTraining(Training training) {
-        if(!hasTraining(training.getId())) {
-            getTrainings()
-                .add(training);
-        }
+        getTrainings().add(training);
     }
 
     public Boolean hasSemester(int id) {
@@ -157,51 +154,55 @@ public class User extends BaseEntity {
     }
 
     public void removeSemester(int id) {
-        getSemesters()
-            .removeIf(n -> n.getId() == id);
+        getSemesters().removeIf(n -> n.getId() == id);
     }
 
     public void addSemester(Semester semester) {
-        if(!hasSemester(semester.getId())) {
-            getSemesters()
-                .add(semester);
-        }
+        getSemesters().add(semester);
     }
 
     public Boolean hasTeachedCourse(int id) {
         return getTeachedCourses()
             .stream()
-            .anyMatch(n -> n.getId() == id);
+            .anyMatch(n -> n
+                .getId() == id);
     }
 
     public void addUserCourse(UserCourse userCourse) {
-        if(!hasCourse(userCourse.getCourse().getId())) {
-            getUserCourses()
-                    .add(userCourse);
+        getUserCourses().add(userCourse);
+    }
+
+    public Optional<UserCourse> getUserCourseForCourse(int courseId) {
+        for(UserCourse userCourse : getUserCourses()) {
+            if(userCourse.getCourse().getId() == courseId) {
+                return Optional.of(userCourse);
+            }
         }
+        return Optional.empty();
     }
 
     public Boolean hasCourse(int courseId) {
         return getUserCourses()
             .stream()
-            .anyMatch(n -> n.getCourse()
+            .anyMatch(n -> n
+                .getCourse()
                 .getId() == courseId);
     }
 
-    public Boolean hasSubject(int id) {
+    public Boolean hasSubject(int subjectId) {
         return getUserCourses()
             .stream()
             .anyMatch(n -> n
                 .getCourse()
                 .getSubject()
-                .getId() == id);
+                .getId() == subjectId);
     }
 
-    public void removeSubject(int id) {
+    public void removeSubject(int subjectId) {
         getUserCourses()
             .removeIf(n -> n
                 .getCourse()
                 .getSubject()
-                .getId() == id);
+                .getId() == subjectId);
     }
 }

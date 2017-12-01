@@ -6,7 +6,9 @@ import venus.dal.model.Course;
 import venus.dal.model.User;
 import venus.dal.repository.CourseRepository;
 import venus.logic.dto.CourseDTO;
+import venus.logic.dto.UserCourseDTO;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -15,8 +17,18 @@ import java.util.stream.Collectors;
 public class CourseServiceImpl implements CourseService {
     @Autowired
     private CourseRepository courseRepository;
+    @Autowired //@TODO: Not a nice solution, will be fixed later
+    private SubjectService subjectService;
+    @Autowired
+    private SemesterService semesterService;
 
-    public void save(Course course) {
+    public void save(CourseDTO courseDTO, User teacher) {
+        Course course = new Course();
+        course.setTeacher(teacher);
+        course.setCapacity(courseDTO.getCapacity());
+        course.setSubject(subjectService.findById(courseDTO.getSubjectId()).get());
+        course.setSemester(semesterService.current().get());
+        course.setStudentCourses(Collections.emptyList());
         courseRepository.save(course);
     }
 
@@ -37,6 +49,14 @@ public class CourseServiceImpl implements CourseService {
         return courses
             .stream()
             .map(n -> CourseDTO.create(n, user))
+            .collect(Collectors.toList());
+    }
+
+    public List<UserCourseDTO> convertToDTOs(Course course) {
+        return course
+            .getStudentCourses()
+            .stream()
+            .map(n -> UserCourseDTO.create(n))
             .collect(Collectors.toList());
     }
 }

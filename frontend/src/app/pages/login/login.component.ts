@@ -10,27 +10,27 @@ import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/form
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  loginForm: FormGroup = new FormGroup({
-    username: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required])
-  });
+    loginForm: FormGroup = new FormGroup({
+        username: new FormControl('', [Validators.required]),
+        password: new FormControl('', [Validators.required])
+    });
 
-  constructor(
-      private userService: UserService,
-      private router: Router) {
-  }
+    constructor(
+        private userService: UserService,
+        private router: Router) {
+    }
 
-  submit() {
-    this.userService.login(new AccountCredentials(this.username.value, this.password.value))
-        .subscribe(resp => 
-            this.router.navigateByUrl(''));
-  }
+    submit() {
+        this.userService.login(new AccountCredentials(this.username.value, this.password.value))
+            .subscribe(resp => 
+                this.router.navigateByUrl(''));
+    }
 
-  get username(): AbstractControl {
-    return this.loginForm.get('username');
-  }
+    get username(): AbstractControl {
+        return this.loginForm.get('username');
+    }
 
-  get password(): AbstractControl {
-    return this.loginForm.get('password');
-  }
+    get password(): AbstractControl {
+        return this.loginForm.get('password');
+    }
 }

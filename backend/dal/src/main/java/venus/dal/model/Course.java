@@ -22,8 +22,8 @@ public class Course extends BaseEntity {
     @OneToMany(mappedBy="course", cascade={CascadeType.ALL})
     private List<UserCourse> studentCourses;
 
-    @Column
-    private int limit;
+    @Column(nullable = false)
+    private int capacity;
 
     public User getTeacher() {
         return teacher;
@@ -57,12 +57,12 @@ public class Course extends BaseEntity {
         this.studentCourses = studentCourses;
     }
 
-    public int getLimit() {
-        return limit;
+    public int getCapacity() {
+        return capacity;
     }
 
-    public void setLimit(int limit) {
-        this.limit = limit;
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
     public Optional<UserCourse> getUserCourse(int userId) {

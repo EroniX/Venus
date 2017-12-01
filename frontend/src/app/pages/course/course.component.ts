@@ -5,6 +5,7 @@ import { Training } from '../../model/Training';
 import { MatSnackBar, MatTableDataSource } from '@angular/material';
 import { Course } from '../../model/course';
 import { CourseService } from '../../services/course.service';
+import { Role } from '../../helpers/role';
 
 @Component({
   selector: 'app-course',
@@ -13,15 +14,15 @@ import { CourseService } from '../../services/course.service';
 })
 export class CourseComponent implements OnInit {
     courses: Array<Course>;
-    subjectId?: number;
+    subjectId: number;
 
-    displayedColumns = ['id', 'name', 'code', 'teacher', 'limit', 'control'];
+    displayedColumns = ['id', 'name', 'code', 'teacher', 'capacity', 'control'];
     coursesDataSource = new MatTableDataSource<Course>(this.courses);
-    
+
     constructor(
-        private snackbar: MatSnackBar, 
+        private snackbar: MatSnackBar,
         private courseService: CourseService,
-        private activatedRoute: ActivatedRoute) { 
+        private activatedRoute: ActivatedRoute) {
     }
 
     ngOnInit() {
@@ -33,7 +34,7 @@ export class CourseComponent implements OnInit {
     }
 
     applyCoursesFilter(filterValue: string) {
-        filterValue = filterValue.trim(); 
+        filterValue = filterValue.trim();
         filterValue = filterValue.toLowerCase();
         this.coursesDataSource.filter = filterValue;
     }
@@ -46,7 +47,7 @@ export class CourseComponent implements OnInit {
                 this.snackbar.open('Course succesfully registered', "Close", {
                   duration: 3000
                 });
-            }                
+            }
         });
     }
 
@@ -58,7 +59,7 @@ export class CourseComponent implements OnInit {
                   this.snackbar.open('Course succesfully unregistered', "Close", {
                     duration: 3000
                   });
-              }                
+              }
           });
     }
 
@@ -68,5 +69,9 @@ export class CourseComponent implements OnInit {
                 this.courses = resp
                 this.coursesDataSource = new MatTableDataSource<Course>(this.courses);
             });
+    }
+
+    courseCreateRole(): string {
+        return Role.COURSE_CREATE;
     }
 }

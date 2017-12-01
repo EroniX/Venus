@@ -1,4 +1,15 @@
 <div class="page-body">
     <h1 class="mat-h1">New course</h1>
+    <form [formGroup]="courseCreateForm" novalidate class="course-create-container">
+        <mat-form-field>
+            <mat-select placeholder="Choose a subject" formControlName="subject">
+                <mat-option *ngFor="let subject of subjects" [value]="subject.id">{{subject.name}}</mat-option>
+            </mat-select>
+            <mat-hint align="end">Choose a subject</mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Capacity" type="number" formControlName="capacity">
+        </mat-form-field>
+        <button mat-raised-button class="mat-primary" (click)="create()">Create</button>
+    </form>
 </div>
-    

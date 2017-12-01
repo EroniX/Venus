@@ -1,0 +1,48 @@
+<div class="page-body">
+    <h1 class="mat-h1">Students</h1>
+    <div class="students-header">
+        <mat-form-field>
+            <input matInput (keyup)="applyStudentsFilter($event.target.value)" placeholder="Search">
+        </mat-form-field>
+    </div>
+
+    <div class="students-container mat-elevation-z8">
+        <mat-table #table [dataSource]="studentsDataSource" matSort>
+
+            <ng-container matColumnDef="subject">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Subject </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.subjectName}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="courseId">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.courseId}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="username">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Username </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="email">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="mark">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Mark </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.mark}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="control">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> # </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+        </mat-table>
+    </div>
+</div>

@@ -10,6 +10,7 @@ import { Config } from '../config/config';
 import { Training } from '../model/Training';
 import { Observable } from 'rxjs/Observable';
 import { Course } from '../model/course';
+import { UserCourse } from '../model/user-course';
 
 @Injectable()
 export class CourseService {
@@ -18,6 +19,16 @@ export class CourseService {
 
     list(id: number): Observable<Array<Course>> {
         return this.http.get(Routes.COURSE_LIST, id)
+            .map(resp => resp.json());
+    }
+
+    getTeacher(id: number): Observable<User> {
+        return this.http.get(Routes.COURSE_STUDENTS_LIST, id)
+            .map(resp => resp.json());
+    }
+
+    listStudents(id: number): Observable<Array<UserCourse>> {
+        return this.http.get(Routes.COURSE_STUDENTS_LIST, id)
             .map(resp => resp.json());
     }
 

@@ -29,26 +29,32 @@
                 <mat-cell *matCellDef="let element"> {{element.teacherName}} </mat-cell>
             </ng-container>
 
-            <ng-container matColumnDef="limit">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Limit </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.limit}} </mat-cell>
+            <ng-container matColumnDef="capacity">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Capacity </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.capacity}} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="control">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> # </mat-header-cell>
-                <mat-cell *matCellDef="let element"> 
+                <mat-cell *matCellDef="let element">
+                    <button mat-raised-button color="primary" [routerLink]="'/course-students/' + element.id">
+                        Students
+                    </button>
+
                     <div *ngIf="element.registered; else ELSE">
                         <button mat-raised-button color="warn" (click)="unregister(element)">
                             Unregister
-                        </button> 
-                    </div> 
+                        </button>
+                    </div>
+
                     <ng-template #ELSE>
                         <button mat-raised-button color="primary" (click)="register(element)">
                             Register
-                        </button> 
+                        </button>
                     </ng-template>
+                    
                 </mat-cell>
-            </ng-container>            
+            </ng-container>
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
@@ -56,4 +62,3 @@
         </mat-table>
     </div>
 </div>
-    

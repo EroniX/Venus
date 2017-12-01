@@ -1,5 +1,8 @@
 <div class="page-body">
     <h1 class="mat-h1">Subjects</h1>
+    <button *ngIf="userService.hasRole(courseCreateRole())" mat-raised-button class="mat-primary" [routerLink]="'/course-create'">
+        Create course
+    </button>
     <mat-tab-group>
         <mat-tab label="All subjects">
             <div class="subject-header">
