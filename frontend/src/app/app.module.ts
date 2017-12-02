@@ -5,7 +5,7 @@ import {RouterModule} from '@angular/router'
 
 import {AppComponent} from './app.component';
 import {LoginComponent} from './pages/login/login.component';
-import {CourseStudentsComponent} from './pages/course/students/course-students.component';
+import {UserCourseListComponent} from './pages/user-course/user-course-list.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AuthService} from "./services/auth.service";
 import {HttpService} from "./services/http.service";
@@ -28,6 +28,7 @@ import {CourseService} from './services/course.service';
 import {SubjectService} from './services/subject.service';
 import {DatePipe} from '@angular/common';
 import {RouteGuard} from './route.guard';
+import { UserCourseService } from './services/user-course.service';
 
 @NgModule({
     declarations: [
@@ -42,7 +43,7 @@ import {RouteGuard} from './route.guard';
         SemesterComponent,
         HomeComponent,
         CourseCreateComponent,
-        CourseStudentsComponent
+        UserCourseListComponent
     ],
     imports: [
         BrowserModule,
@@ -62,6 +63,7 @@ import {RouteGuard} from './route.guard';
         SemesterService, 
         CourseService, 
         SubjectService, 
+        UserCourseService,
         DatePipe],
     bootstrap: [AppComponent]
 })

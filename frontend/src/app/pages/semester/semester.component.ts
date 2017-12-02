@@ -16,11 +16,11 @@ export class SemesterComponent implements OnInit {
     constructor(private snackbar: MatSnackBar, private semesterService: SemesterService) { 
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.loadCurrent();
     }
 
-    register() {
+    register(): void {
       this.semesterService.register()
           .subscribe(resp => {
             if(resp == true) {
@@ -32,7 +32,7 @@ export class SemesterComponent implements OnInit {
         });
     }
 
-    unregister() {
+    unregister(): void {
       this.semesterService.unregister()
           .subscribe(resp => {
               if(resp == true) {
@@ -44,8 +44,8 @@ export class SemesterComponent implements OnInit {
           });
     }
 
-    loadCurrent() {
-      this.semesterService.current()
+    loadCurrent(): void {
+      this.semesterService.getCurrent()
          .subscribe(resp => this.current = resp);
     }
 }

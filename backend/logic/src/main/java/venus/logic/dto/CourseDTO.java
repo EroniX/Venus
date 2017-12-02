@@ -104,7 +104,7 @@ public class CourseDTO {
     }
 
     public static CourseDTO create(Course course, User user) {
-        Optional<UserCourse> userCourse = user.getUserCourseForCourse(course.getId());
+        Optional<UserCourse> userCourse = user.getUserCourseByCourseId(course.getId());
         return new CourseDTO(
             course.getId(),
             course.getTeacher().getEmail(),

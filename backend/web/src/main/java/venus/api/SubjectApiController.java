@@ -21,13 +21,12 @@ public class SubjectApiController {
     @Autowired
     private SecurityService securityService;
 
-    @GetMapping("/list")
+    @GetMapping("/find-all")
     @PreAuthorize("hasAuthority('SUBJECT_LIST')")
-    public ResponseEntity<Iterable<SubjectDTO>> list() {
+    public ResponseEntity<Iterable<SubjectDTO>> findAll() {
         User user = securityService.getUser();
         List<SubjectDTO> subjectDTOs = subjectService.convertToDTOs(
-                Lists.newArrayList(
-                        subjectService.findAll()),
+                Lists.newArrayList(subjectService.findAll()),
                 user);
 
         return ResponseEntity.ok(subjectDTOs);

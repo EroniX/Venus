@@ -37,9 +37,9 @@ public class SemesterApiController {
                 semesterService.convertToDTOs(semesters, user));
     }
 
-    @GetMapping("/current")
+    @GetMapping("/find-current")
     @PreAuthorize("hasAuthority('SEMESTER_CURRENT')")
-    public ResponseEntity<SemesterDTO> current() {
+    public ResponseEntity<SemesterDTO> findCurrent() {
         User user = securityService.getUser();
         Optional<Semester> semester = semesterService.current();
         if(!semester.isPresent()) {

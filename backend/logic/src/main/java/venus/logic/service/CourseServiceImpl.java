@@ -24,11 +24,14 @@ public class CourseServiceImpl implements CourseService {
 
     public void save(CourseDTO courseDTO, User teacher) {
         Course course = new Course();
+
+        //@TODO: Into course
         course.setTeacher(teacher);
         course.setCapacity(courseDTO.getCapacity());
         course.setSubject(subjectService.findById(courseDTO.getSubjectId()).get());
         course.setSemester(semesterService.current().get());
         course.setStudentCourses(Collections.emptyList());
+
         courseRepository.save(course);
     }
 
@@ -49,14 +52,6 @@ public class CourseServiceImpl implements CourseService {
         return courses
             .stream()
             .map(n -> CourseDTO.create(n, user))
-            .collect(Collectors.toList());
-    }
-
-    public List<UserCourseDTO> convertToDTOs(Course course) {
-        return course
-            .getStudentCourses()
-            .stream()
-            .map(n -> UserCourseDTO.create(n))
             .collect(Collectors.toList());
     }
 }

@@ -57,7 +57,7 @@ export class CourseCreateComponent implements OnInit {
     }
 
     loadSubjects() {
-        this.subjectService.list()
+        this.subjectService.findAll()
             .subscribe(n => this.subjects = n);
     }
 }

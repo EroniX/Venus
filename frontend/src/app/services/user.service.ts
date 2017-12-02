@@ -43,12 +43,17 @@ export class UserService {
     }
 
     setUser(): void {
-        this.getUser()
+        this.findMe()
             .subscribe(n => this.user = n);    
     }
 
-    getUser(): Observable<User> {
-        return this.http.get(Routes.USER_GET)
+    findMe(): Observable<User> {
+        return this.http.get(Routes.USER_FIND_ME)
+            .map(n => n.json());
+    }
+
+    findById(userId: number): Observable<User> {
+        return this.http.get(Routes.USER_FIND_BY_ID, userId)
             .map(n => n.json());
     }
 

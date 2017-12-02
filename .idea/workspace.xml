@@ -2,37 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b9692af-7dca-4a1b-80fd-a49a34ea8669" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/students/course-students.component.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/students/course-students.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/students/course-students.component.spec.ts" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/students/course-students.component.ts" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/backend.iml" afterPath="$PROJECT_DIR$/backend/backend.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/dal/dal.iml" afterPath="$PROJECT_DIR$/backend/dal/dal.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/model/Course.java" afterPath="$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/model/Course.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/model/User.java" afterPath="$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/repository/CourseRepository.java" afterPath="$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/repository/CourseRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/logic/logic.iml" afterPath="$PROJECT_DIR$/backend/logic/logic.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/CourseDTO.java" afterPath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/CourseDTO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/UserCourseDTO.java" afterPath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/UserCourseDTO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/CourseService.java" afterPath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/CourseService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/CourseServiceImpl.java" afterPath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/CourseServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserCourseService.java" afterPath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserCourseService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserCourseServiceImpl.java" afterPath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserCourseServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/CourseApiController.java" afterPath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/CourseApiController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/backend/web/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/web.iml" afterPath="$PROJECT_DIR$/backend/web/web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/frontend.iml" afterPath="$PROJECT_DIR$/frontend/frontend.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/SemesterApiController.java" afterPath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/SemesterApiController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/SubjectApiController.java" afterPath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/SubjectApiController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/TrainingApiController.java" afterPath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/TrainingApiController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/UserApiController.java" afterPath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/UserApiController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/config/routes.config.ts" afterPath="$PROJECT_DIR$/frontend/src/app/config/routes.config.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/model/course.ts" afterPath="$PROJECT_DIR$/frontend/src/app/model/course.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/model/user-course.ts" afterPath="$PROJECT_DIR$/frontend/src/app/model/user-course.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/course.component.html" afterPath="$PROJECT_DIR$/frontend/src/app/pages/course/course.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/course.component.ts" afterPath="$PROJECT_DIR$/frontend/src/app/pages/course/course.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/create/course-create.component.css" afterPath="$PROJECT_DIR$/frontend/src/app/pages/course/create/course-create.component.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/create/course-create.component.html" afterPath="$PROJECT_DIR$/frontend/src/app/pages/course/create/course-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/create/course-create.component.spec.ts" afterPath="$PROJECT_DIR$/frontend/src/app/pages/course/create/course-create.component.spec.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/create/course-create.component.ts" afterPath="$PROJECT_DIR$/frontend/src/app/pages/course/create/course-create.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.css" afterPath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.html" afterPath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.ts" afterPath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/subject/subject.component.html" afterPath="$PROJECT_DIR$/frontend/src/app/pages/subject/subject.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.css" afterPath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.html" afterPath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.ts" afterPath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/semester/semester.component.ts" afterPath="$PROJECT_DIR$/frontend/src/app/pages/semester/semester.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/subject/subject.component.ts" afterPath="$PROJECT_DIR$/frontend/src/app/pages/subject/subject.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/training/training.component.ts" afterPath="$PROJECT_DIR$/frontend/src/app/pages/training/training.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/routes.ts" afterPath="$PROJECT_DIR$/frontend/src/app/routes.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/services/auth.service.ts" afterPath="$PROJECT_DIR$/frontend/src/app/services/auth.service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/services/course.service.ts" afterPath="$PROJECT_DIR$/frontend/src/app/services/course.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/services/semester.service.ts" afterPath="$PROJECT_DIR$/frontend/src/app/services/semester.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/services/subject.service.ts" afterPath="$PROJECT_DIR$/frontend/src/app/services/subject.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/services/training.service.ts" afterPath="$PROJECT_DIR$/frontend/src/app/services/training.service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/services/user.service.ts" afterPath="$PROJECT_DIR$/frontend/src/app/services/user.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/venus.iml" afterPath="$PROJECT_DIR$/venus.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -61,22 +70,111 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CourseApiController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/CourseApiController.java">
+      <file leaf-file-name="UserCourseApiController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/UserCourseApiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="62" column="34" lean-forward="true" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+            <state relative-caret-position="13">
+              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserCourseDTO.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InvocableHandlerMethod.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.11.RELEASE/spring-web-4.3.11.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserCourseDTO.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/UserCourseDTO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-408">
-              <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+            <state relative-caret-position="344">
+              <caret line="59" column="44" lean-forward="false" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
+              <folding>
+                <element signature="e#527#528#0" expanded="true" />
+                <element signature="e#556#557#0" expanded="true" />
+                <element signature="e#597#598#0" expanded="true" />
+                <element signature="e#633#634#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserCourseMarkDTO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/UserCourseMarkDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDTO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/UserDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserApiController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/UserApiController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TrainingApiController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/TrainingApiController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-512">
+              <caret line="29" column="56" lean-forward="false" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SemesterApiController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/SemesterApiController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SubjectApiController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/SubjectApiController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="25" column="55" lean-forward="false" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CourseApiController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/CourseApiController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="44" column="45" lean-forward="false" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,8 +224,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.ts" />
         <option value="$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/model/Training.java" />
         <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/SecurityService.java" />
@@ -145,23 +241,17 @@
         <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/security/JWTLoginFilter.java" />
         <option value="$PROJECT_DIR$/backend/web/src/main/java/venus/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/repository/UserCourseRepository.java" />
-        <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserCourseService.java" />
         <option value="$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/model/Semester.java" />
         <option value="$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/model/UserCourse.java" />
-        <option value="$PROJECT_DIR$/backend/web/src/main/java/venus/api/SubjectApiController.java" />
         <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/SecurityServiceImpl.java" />
         <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/SemesterServiceImpl.java" />
         <option value="$PROJECT_DIR$/frontend/package.json" />
         <option value="$PROJECT_DIR$/frontend/package-lock.json" />
         <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/UserDTO.java" />
-        <option value="$PROJECT_DIR$/backend/web/src/main/java/venus/api/UserApiController.java" />
         <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/TrainingDTO.java" />
         <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/TrainingServiceImpl.java" />
         <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/TrainingService.java" />
-        <option value="$PROJECT_DIR$/backend/web/src/main/java/venus/api/TrainingApiController.java" />
-        <option value="$PROJECT_DIR$/backend/web/src/main/java/venus/api/SemesterApiController.java" />
-        <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserCourseServiceImpl.java" />
         <option value="$PROJECT_DIR$/frontend/src/app/services/auth.service.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/course/create/course-create.component.ts" />
         <option value="$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/repository/CourseRepository.java" />
@@ -171,12 +261,20 @@
         <option value="$PROJECT_DIR$/frontend/src/app/model/course.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/course/course.component.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/pages/course/teaching-list/course.component.ts" />
-        <option value="$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/model/User.java" />
-        <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/CourseDTO.java" />
-        <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/UserCourseDTO.java" />
+        <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/UserCourseMarkDTO.java" />
         <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/CourseServiceImpl.java" />
         <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/CourseService.java" />
+        <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserCourseService.java" />
+        <option value="$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/model/User.java" />
+        <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/CourseDTO.java" />
+        <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserCourseServiceImpl.java" />
         <option value="$PROJECT_DIR$/backend/web/src/main/java/venus/api/CourseApiController.java" />
+        <option value="$PROJECT_DIR$/backend/web/src/main/java/venus/api/UserApiController.java" />
+        <option value="$PROJECT_DIR$/backend/web/src/main/java/venus/api/TrainingApiController.java" />
+        <option value="$PROJECT_DIR$/backend/web/src/main/java/venus/api/SemesterApiController.java" />
+        <option value="$PROJECT_DIR$/backend/web/src/main/java/venus/api/SubjectApiController.java" />
+        <option value="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/UserCourseDTO.java" />
+        <option value="$PROJECT_DIR$/backend/web/src/main/java/venus/api/UserCourseApiController.java" />
       </list>
     </option>
   </component>
@@ -208,8 +306,8 @@
     <handled-path value="$PROJECT_DIR$/frontend/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="629" />
-    <option name="y" value="-13" />
+    <option name="x" value="343" />
+    <option name="y" value="-8" />
     <option name="width" value="697" />
     <option name="height" value="622" />
   </component>
@@ -231,9 +329,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -290,6 +387,17 @@
               <item name="Venus" type="b2602c69:ProjectViewProjectNode" />
               <item name="Venus" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Venus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Venus" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -341,7 +449,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -363,9 +472,22 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\EroniX\Desktop\Venus\frontend\src\app\utils" />
+      <recent name="C:\Users\EroniX\Desktop\Venus\frontend\src\app\routes" />
+      <recent name="C:\Users\EroniX\Desktop\Venus\backend\web\src\main\java\venus\api" />
+      <recent name="C:\Users\EroniX\Desktop\asd\venus\backend" />
+      <recent name="C:\Users\EroniX\Desktop\asd\venus\api\src\main\java\venus\api" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="venus.api" />
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="venus.api" />
+      <recent name="venus.logic.service" />
+      <recent name="venus.dal.repository" />
+      <recent name="venus.logic.dto" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\EroniX\Desktop\Venus\frontend\src\app\pages\course\teaching-list" />
@@ -373,19 +495,6 @@
       <recent name="C:\Users\EroniX\Desktop\Venus\frontend\src\app\pages\course\teaching" />
       <recent name="C:\Users\EroniX\Desktop\Venus\backend\logic\src\main\java\venus\logic\service" />
       <recent name="C:\Users\EroniX\Desktop\Venus\frontend\src\app\services" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="venus.logic.service" />
-      <recent name="venus.dal.repository" />
-      <recent name="venus.api" />
-      <recent name="venus.logic.dto" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\EroniX\Desktop\Venus\frontend\src\app\utils" />
-      <recent name="C:\Users\EroniX\Desktop\Venus\frontend\src\app\routes" />
-      <recent name="C:\Users\EroniX\Desktop\Venus\backend\web\src\main\java\venus\api" />
-      <recent name="C:\Users\EroniX\Desktop\asd\venus\backend" />
-      <recent name="C:\Users\EroniX\Desktop\asd\venus\api\src\main\java\venus\api" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -664,12 +773,14 @@
       <workItem from="1511877638977" duration="10099000" />
       <workItem from="1511952979401" duration="1146000" />
       <workItem from="1511963041840" duration="2123000" />
-      <workItem from="1512049103446" duration="14739000" />
+      <workItem from="1512049103446" duration="16544000" />
+      <workItem from="1512134730750" duration="8487000" />
+      <workItem from="1512207010709" duration="2955000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160479000" />
+    <option name="totallyTimeSpent" value="173726000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -682,7 +793,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
@@ -694,7 +804,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19407895" sideWeight="0.49707174" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5444079" sideWeight="0.49707174" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3223684" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -704,10 +814,9 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2944079" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39967105" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25718608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42598686" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2647504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -716,6 +825,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24177632" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -752,16 +862,22 @@
           <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/UserApiController.java</url>
-          <line>28</line>
+          <url>file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/UserCourseApiController.java</url>
+          <line>74</line>
           <properties />
-          <option name="timeStamp" value="121" />
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/UserCourseApiController.java</url>
+          <line>75</line>
+          <properties />
+          <option name="timeStamp" value="154" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="147" />
+      <option name="time" value="155" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -770,99 +886,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/model/BaseEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/model/Semester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/model/Subject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/repository/RoleRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/proxy.conf.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/tslint.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/repository/SemesterRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/package-lock.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/UserDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/TrainingServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="44" column="83" lean-forward="false" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/TrainingService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -874,16 +897,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
           <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserCourseServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -899,9 +912,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -909,9 +919,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -919,9 +926,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#57#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -929,7 +933,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -937,17 +940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-374">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#318#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/SubjectDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -955,23 +947,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="7" column="55" lean-forward="false" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.11.RELEASE/spring-web-4.3.11.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -979,7 +954,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1004,8 +978,8 @@
         <state relative-caret-position="203">
           <caret line="59" column="18" lean-forward="false" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
           <folding>
-            <element signature="e#1277#1278#0" expanded="true" />
-            <element signature="e#1308#1309#0" expanded="true" />
+            <element signature="e#1277#1278#0" expanded="false" />
+            <element signature="e#1308#1309#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1014,7 +988,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1022,41 +995,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
           <caret line="43" column="27" lean-forward="true" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/course/teacher-list/teacher-course-list.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/course/teaching-list/course-teaching-list.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/course/teaching-list/course.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/course/teacher-list/teacher-course-list.component.css" />
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/course/teaching-list/course-teaching-list.component.css" />
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/course/teaching-list/course.component.html" />
     <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/course/course.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1064,24 +1012,182 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#59#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/course/teaching-list/course-teaching-list.component.ts">
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/course/teaching-list/course-teaching-list.component.ts" />
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/course/teaching-list/course.component.spec.ts" />
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/SemesterDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pages/course/teaching-list/course.component.spec.ts">
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/SubjectDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/TrainingDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/SecurityServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/SemesterServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="27" column="49" lean-forward="false" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/SubjectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/SecurityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.11.RELEASE/spring-aop-4.3.11.RELEASE-sources.jar!/org/springframework/aop/framework/CglibAopProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="642" column="0" lean-forward="false" selection-start-line="642" selection-start-column="0" selection-end-line="642" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/SubjectServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/TrainingServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="44" column="83" lean-forward="false" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="52" column="9" lean-forward="true" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/CourseServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="55" column="5" lean-forward="false" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserCourseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="53" lean-forward="false" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/SemesterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/CourseService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="11" column="6" lean-forward="true" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <caret line="14" column="67" lean-forward="false" selection-start-line="14" selection-start-column="67" selection-end-line="14" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2295">
+          <caret line="183" column="53" lean-forward="false" selection-start-line="183" selection-start-column="53" selection-end-line="183" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/CourseDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="106" column="70" lean-forward="false" selection-start-line="106" selection-start-column="70" selection-end-line="106" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserCourseServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="23" column="25" lean-forward="false" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/CourseApiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="44" column="45" lean-forward="false" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/TrainingApiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-512">
+          <caret line="29" column="56" lean-forward="false" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/SemesterApiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1089,100 +1195,60 @@
     <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/SubjectApiController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="28" column="15" lean-forward="false" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/TrainingApiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="31" column="54" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="206" column="5" lean-forward="false" selection-start-line="206" selection-start-column="5" selection-end-line="206" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/CourseDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="114" column="34" lean-forward="true" selection-start-line="114" selection-start-column="34" selection-end-line="114" selection-end-column="34" />
-          <folding>
-            <element signature="e#1945#1946#0" expanded="true" />
-            <element signature="e#1972#1973#0" expanded="true" />
-            <element signature="e#2013#2014#0" expanded="true" />
-            <element signature="e#2045#2046#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/TrainingDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/SemesterApiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="45" column="42" lean-forward="false" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/CourseServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="56" column="32" lean-forward="true" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/CourseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="53" lean-forward="false" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="52" column="9" lean-forward="true" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+          <caret line="25" column="55" lean-forward="false" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/UserApiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="45">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/CourseApiController.java">
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/UserDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="62" column="34" lean-forward="true" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+        <state relative-caret-position="68">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/UserCourseMarkDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/UserCourseDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        <state relative-caret-position="344">
+          <caret line="59" column="44" lean-forward="false" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
+          <folding>
+            <element signature="e#527#528#0" expanded="true" />
+            <element signature="e#556#557#0" expanded="true" />
+            <element signature="e#597#598#0" expanded="true" />
+            <element signature="e#633#634#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.11.RELEASE/spring-web-4.3.11.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/UserCourseApiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding />
         </state>
       </provider>

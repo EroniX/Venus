@@ -6,6 +6,7 @@ import { MatSnackBar, MatTableDataSource } from '@angular/material';
 import { Course } from '../../model/course';
 import { CourseService } from '../../services/course.service';
 import { Role } from '../../helpers/role';
+import { UserCourseService } from '../../services/user-course.service';
 
 @Component({
   selector: 'app-course',
@@ -22,10 +23,11 @@ export class CourseComponent implements OnInit {
     constructor(
         private snackbar: MatSnackBar,
         private courseService: CourseService,
+        private userCourseService: UserCourseService,
         private activatedRoute: ActivatedRoute) {
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.activatedRoute.paramMap
             .subscribe(n => {
                 this.subjectId = parseInt(n.get('id'));
@@ -33,38 +35,38 @@ export class CourseComponent implements OnInit {
             });
     }
 
-    applyCoursesFilter(filterValue: string) {
+    applyCoursesFilter(filterValue: string): void {
         filterValue = filterValue.trim();
         filterValue = filterValue.toLowerCase();
         this.coursesDataSource.filter = filterValue;
     }
 
-    register(course: Course) {
-      this.courseService.register(course)
-          .subscribe(resp => {
-            if(resp == true) {
-                this.loadCourses();
-                this.snackbar.open('Course succesfully registered', "Close", {
-                  duration: 3000
-                });
+    register(courseId: number): void {
+        this.userCourseService.create(courseId)
+            .subscribe(resp => {
+                if(resp == true) {
+                    this.loadCourses();
+                    this.snackbar.open('Course succesfully registered', "Close", {
+                        duration: 3000
+                    });
             }
         });
     }
 
-    unregister(course: Course) {
-      this.courseService.unregister(course)
-          .subscribe(resp => {
-              if(resp == true) {
-                  this.loadCourses();
-                  this.snackbar.open('Course succesfully unregistered', "Close", {
-                    duration: 3000
-                  });
-              }
-          });
+    unregister(courseId: number): void {
+        this.userCourseService.delete(courseId)
+            .subscribe(resp => {
+                if(resp == true) {
+                    this.loadCourses();
+                    this.snackbar.open('Course succesfully unregistered', "Close", {
+                        duration: 3000
+                    });
+                }
+            });
     }
 
     loadCourses() {
-        this.courseService.list(this.subjectId)
+        this.courseService.findBySubjectId(this.subjectId)
             .subscribe(resp => {
                 this.courses = resp
                 this.coursesDataSource = new MatTableDataSource<Course>(this.courses);

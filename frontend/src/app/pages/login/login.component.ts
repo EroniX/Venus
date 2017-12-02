@@ -20,7 +20,7 @@ export class LoginComponent {
         private router: Router) {
     }
 
-    submit() {
+    submit(): void {
         this.userService.login(new AccountCredentials(this.username.value, this.password.value))
             .subscribe(resp => 
                 this.router.navigateByUrl(''));

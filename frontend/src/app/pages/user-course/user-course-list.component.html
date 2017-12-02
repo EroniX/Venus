@@ -9,16 +9,6 @@
     <div class="students-container mat-elevation-z8">
         <mat-table #table [dataSource]="studentsDataSource" matSort>
 
-            <ng-container matColumnDef="subject">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Subject </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.subjectName}} </mat-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="courseId">
-                    <mat-header-cell *matHeaderCellDef mat-sort-header> Id </mat-header-cell>
-                    <mat-cell *matCellDef="let element"> {{element.courseId}} </mat-cell>
-            </ng-container>
-
             <ng-container matColumnDef="username">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Username </mat-header-cell>
                 <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
@@ -31,7 +21,22 @@
 
             <ng-container matColumnDef="mark">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Mark </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.mark}} </mat-cell>
+                <mat-cell *matCellDef="let element">
+                    <div *ngIf="canWriteMark(); else ELSE">
+                        <form>
+                            <mat-form-field>
+                                <input matInput 
+                                        placeholder="Rate this student" 
+                                        type="number" 
+                                        [value]="element.mark" 
+                                        (blur)="saveMark(element.userId, $event.target.value)">
+                            </mat-form-field>
+                        </form>
+                    </div>
+                    <ng-template #ELSE>
+                        {{element.mark}}
+                    </ng-template>
+                </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="control">

@@ -37,20 +37,20 @@
             <ng-container matColumnDef="control">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> # </mat-header-cell>
                 <mat-cell *matCellDef="let element">
-                    <button mat-raised-button color="primary" [routerLink]="'/course-students/' + element.id">
+                    <a mat-raised-button color="primary" [routerLink]="'/user-course-list/' + element.id">
                         Students
-                    </button>
+                    </a>
 
-                    <div *ngIf="element.registered; else ELSE">
-                        <button mat-raised-button color="warn" (click)="unregister(element)">
+                    <span *ngIf="element.registered; else ELSE">
+                        <a mat-raised-button color="warn" (click)="unregister(element.id)">
                             Unregister
-                        </button>
-                    </div>
+                        </a>
+                    </span>
 
                     <ng-template #ELSE>
-                        <button mat-raised-button color="primary" (click)="register(element)">
+                        <a mat-raised-button color="primary" (click)="register(element.id)">
                             Register
-                        </button>
+                        </a>
                     </ng-template>
                     
                 </mat-cell>

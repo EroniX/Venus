@@ -16,8 +16,8 @@ export class SubjectService {
     constructor(private http: HttpService) {
     }
 
-    list(): Observable<Subject[]> {
-        return this.http.get(Routes.SUBJECT_LIST)
+    findAll(): Observable<Subject[]> {
+        return this.http.get(Routes.SUBJECT_FIND_ALL)
             .map(resp => resp.json());
     }
 }

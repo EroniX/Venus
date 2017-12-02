@@ -2,11 +2,14 @@ package venus.logic.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import venus.dal.model.Course;
 import venus.dal.model.UserCourse;
 import venus.dal.repository.UserCourseRepository;
+import venus.logic.dto.UserCourseDTO;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserCourseServiceImpl implements UserCourseService {
@@ -16,7 +19,14 @@ public class UserCourseServiceImpl implements UserCourseService {
     @Override
     @Transactional
     public void save(UserCourse userCourse) {
-        List<UserCourse> userCourses = userCourse.getStudent().getUserCourses();
+        //@TODO: Remove this shit
+        List<UserCourse> userCourses = userCourse
+            .getStudent()
+            .getUserCoursesBySubjectId(userCourse
+                    .getCourse()
+                    .getSubject()
+                    .getId());
+
         for(int i = 0; i < userCourses.size(); ++i) {
             this.delete(userCourses.get(i));
         }
@@ -29,5 +39,13 @@ public class UserCourseServiceImpl implements UserCourseService {
         userCourse.getStudent().getUserCourses().remove(userCourse);
         userCourse.getCourse().getStudentCourses().remove(userCourse);
         userCourseRepository.delete(userCourse);
+    }
+
+    public List<UserCourseDTO> convertToDTOs(Course course) {
+        return course
+            .getStudentCourses()
+            .stream()
+            .map(n -> UserCourseDTO.create(n))
+            .collect(Collectors.toList());
     }
 }

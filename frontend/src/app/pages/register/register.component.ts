@@ -27,12 +27,12 @@ export class RegisterComponent implements OnInit {
         private router: Router) {
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.usernameValidation = false;
         this.emailValidation = false;
     }
 
-    submit() {
+    submit(): void {
         this.userService.register(new User(this.username.value, this.password.value, this.email.value))
             .subscribe(resp => {
                 this.userService.login(new AccountCredentials(this.username.value, this.password.value))
@@ -57,13 +57,13 @@ export class RegisterComponent implements OnInit {
         return this.registerForm.get('email');
     }
 
-    validateUsername(username: string) {
-        return this.userService.validateUsername(username)
+    validateUsername(username: string): void {
+        this.userService.validateUsername(username)
             .subscribe(resp => this.usernameValidation = resp);
     }
 
-    validateEmail(email: string) {
-        return this.userService.validateEmail(email)
+    validateEmail(email: string): void {
+        this.userService.validateEmail(email)
             .subscribe(resp => this.emailValidation = resp);
     }
 }

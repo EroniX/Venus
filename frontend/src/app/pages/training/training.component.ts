@@ -22,48 +22,48 @@ export class TrainingComponent implements OnInit {
         private trainingService: TrainingService) { 
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.loadTrainings();
     }
 
-    applyAllTrainingsFilter(filterValue: string) {
+    applyAllTrainingsFilter(filterValue: string): void {
         filterValue = filterValue.trim(); 
         filterValue = filterValue.toLowerCase();
         this.allTrainingsDataSource.filter = filterValue;
     }
 
-    applyMyTrainingsFilter(filterValue: string) {
+    applyMyTrainingsFilter(filterValue: string): void {
         filterValue = filterValue.trim(); 
         filterValue = filterValue.toLowerCase();
         this.myTrainingsDataSource.filter = filterValue;
     }
 
-    registerTraining(training: Training) {
-      this.trainingService.register(training)
-          .subscribe(resp => {
-            if(resp == true) {
-                this.loadTrainings();
-                this.snackbar.open(training.name + ' succesfully registered', "Close", {
-                  duration: 3000
-                });
-            }                
+    registerTraining(training: Training): void {
+        this.trainingService.register(training)
+            .subscribe(resp => {
+                if(resp == true) {
+                    this.loadTrainings();
+                    this.snackbar.open(training.name + ' succesfully registered', "Close", {
+                        duration: 3000
+                    });
+                }                   
         });
     }
 
-    unregisterTraining(training: Training) {
-      this.trainingService.unregister(training)
-          .subscribe(resp => {
-              if(resp == true) {
-                  this.loadTrainings();
-                  this.snackbar.open(training.name + ' succesfully unregistered', "Close", {
-                    duration: 3000
-                  });
-              }                
-          });
+    unregisterTraining(training: Training): void {
+        this.trainingService.unregister(training)
+            .subscribe(resp => {
+                if(resp == true) {
+                    this.loadTrainings();
+                    this.snackbar.open(training.name + ' succesfully unregistered', "Close", {
+                        duration: 3000
+                    });
+                }                
+            });
     }
 
-    loadTrainings() {
-        this.trainingService.list()
+    loadTrainings(): void {
+        this.trainingService.findAll()
             .subscribe(resp => {
                 this.allTrainings = resp.filter(n => !n.registered); 
                 this.myTrainings = resp.filter(n => n.registered); 

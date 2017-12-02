@@ -8,9 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import venus.dal.model.Course;
 import venus.dal.model.Subject;
 import venus.dal.model.User;
-import venus.dal.model.UserCourse;
 import venus.logic.dto.CourseDTO;
-import venus.logic.dto.UserCourseDTO;
 import venus.logic.service.CourseService;
 import venus.logic.service.SecurityService;
 import venus.logic.service.SubjectService;
@@ -31,15 +29,31 @@ public class CourseApiController {
     @Autowired
     private SecurityService securityService;
 
-    @GetMapping
-    @PreAuthorize("hasAuthority('COURSE_LIST_ALL')")
-    public ResponseEntity<Iterable<CourseDTO>> listAll() {
+    @GetMapping("/find-all")
+    @PreAuthorize("hasAuthority('COURSE_FIND_ALL')")
+    public ResponseEntity<Iterable<CourseDTO>> findAll() {
         User user = securityService.getUser();
         List<CourseDTO> courseDTOs = courseService.convertToDTOs(
                 Lists.newArrayList(courseService.findAll()),
                 user);
 
         return ResponseEntity.ok(courseDTOs);
+    }
+
+    @GetMapping("/find-by-id/{courseId}")
+    @PreAuthorize("hasAuthority('COURSE_FIND')")
+    public ResponseEntity<CourseDTO> findById(@PathVariable int courseId) {
+        User user = securityService.getUser();
+        Optional<Course> course = this.courseService.findById(courseId);
+        if(!course.isPresent()) {
+            return ResponseEntity.badRequest().build();
+        }
+
+        CourseDTO courseDTO = CourseDTO.create(
+                course.get(),
+                user);
+
+        return ResponseEntity.ok(courseDTO);
     }
 
     @GetMapping("/list/{id}")
@@ -58,47 +72,7 @@ public class CourseApiController {
         return ResponseEntity.ok(courseDTOs);
     }
 
-    @GetMapping("/list-students/{id}")
-    @PreAuthorize("hasAuthority('COURSE_STUDENTS_LIST')")
-    public ResponseEntity<List<UserCourseDTO>> listStudents(@PathVariable int id) {
-        Optional<Course> course = courseService.findById(id);
-        if(!course.isPresent()) {
-            return ResponseEntity.badRequest().build();
-        }
-        User user = securityService.getUser();
-        List<UserCourseDTO> courseDTOs = courseService.convertToDTOs(course.get());
 
-        return ResponseEntity.ok(courseDTOs);
-    }
-
-    @PostMapping("/register")
-    @PreAuthorize("hasAuthority('COURSE_REGISTER')")
-    public ResponseEntity<Boolean> register(@RequestBody int id) {
-        Optional<Course> course = courseService.findById(id);
-        if(!course.isPresent()) {
-            return ResponseEntity.badRequest().build();
-        }
-        User user = securityService.getUser();
-        UserCourse userCourse = UserCourse.create(user, course.get());
-        userCourseService.save(userCourse);
-        return ResponseEntity.ok(true);
-    }
-
-    @PostMapping("/unregister")
-    @PreAuthorize("hasAuthority('COURSE_UNREGISTER')")
-    public ResponseEntity<Boolean> unregister(@RequestBody int id) {
-        User user = securityService.getUser();
-        Optional<Course> course = courseService.findById(id);
-        if(!course.isPresent()) {
-            return ResponseEntity.badRequest().build();
-        }
-        Optional<UserCourse> userCourse = course.get().getUserCourse(user.getId());
-        if(!userCourse.isPresent()) {
-            return ResponseEntity.badRequest().build();
-        }
-        userCourseService.delete(userCourse.get());
-        return ResponseEntity.ok(true);
-    }
 
     @DeleteMapping("/delete/{id}")
     @PreAuthorize("hasAuthority('COURSE_DELETE')")

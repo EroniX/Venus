@@ -16,13 +16,13 @@ export class SemesterService {
     constructor(private http: HttpService) {
     }
 
-    current(): Observable<Semester> {
-        return this.http.get(Routes.SEMESTER_CURRENT)
+    getCurrent(): Observable<Semester> {
+        return this.http.get(Routes.SEMESTER_FIND_CURRENT)
             .map(resp => resp.json());
     }
 
-    list(): Observable<Array<Semester>> {
-        return this.http.get(Routes.SEMESTER_LIST)
+    findAll(): Observable<Array<Semester>> {
+        return this.http.get(Routes.SEMESTER_FIND_ALL)
             .map(resp => resp.json());
     }
 
@@ -31,7 +31,7 @@ export class SemesterService {
             .map(resp => resp.text() == "true");
     }
 
-    unregister() {
+    unregister(): Observable<boolean> {
         return this.http.post(Routes.SEMESTER_UNREGISTER, "")
             .map(resp => resp.text() == "true");
     }

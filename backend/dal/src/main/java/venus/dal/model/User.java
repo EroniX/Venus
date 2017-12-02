@@ -172,13 +172,23 @@ public class User extends BaseEntity {
         getUserCourses().add(userCourse);
     }
 
-    public Optional<UserCourse> getUserCourseForCourse(int courseId) {
+    public Optional<UserCourse> getUserCourseByCourseId(int courseId) {
         for(UserCourse userCourse : getUserCourses()) {
             if(userCourse.getCourse().getId() == courseId) {
                 return Optional.of(userCourse);
             }
         }
         return Optional.empty();
+    }
+
+    public List<UserCourse> getUserCoursesBySubjectId(int subjectId) {
+        return getUserCourses()
+                .stream()
+                .filter(n -> n
+                        .getCourse()
+                        .getSubject()
+                        .getId() == subjectId)
+                .collect(Collectors.toList());
     }
 
     public Boolean hasCourse(int courseId) {

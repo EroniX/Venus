@@ -25,9 +25,9 @@ public class TrainingApiController {
     @Autowired
     private SecurityService securityService;
 
-    @GetMapping("/list")
+    @GetMapping("/find-all")
     @PreAuthorize("hasAuthority('TRAINING_LIST')")
-    public ResponseEntity<Iterable<TrainingDTO>> list() {
+    public ResponseEntity<Iterable<TrainingDTO>> findAll() {
         User user = securityService.getUser();
         List<Training> trainings = Lists.newArrayList(trainingService.findAll());
         Iterable<TrainingDTO> trainingDTOs = trainingService.convertToDTOs(trainings, user);

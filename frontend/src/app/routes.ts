@@ -10,7 +10,7 @@ import {CourseComponent} from './pages/course/course.component';
 import {RouteGuard} from './route.guard';
 import {Role} from './helpers/role';
 import {CourseCreateComponent} from './pages/course/create/course-create.component';
-import { CourseStudentsComponent } from './pages/course/students/course-students.component';
+import {UserCourseListComponent} from './pages/user-course/user-course-list.component';
 
 export const appRoutes: Routes = [
     {
@@ -26,7 +26,7 @@ export const appRoutes: Routes = [
           {path: 'subject',         component: SubjectComponent,  data: {roles: [Role.USER]}},
           {path: 'course/:id', 	    component: CourseComponent,   data: {roles: [Role.USER]}},
           {path: 'course-create', 	component: CourseCreateComponent,   data: {roles: [Role.USER]}},
-          {path: 'course-students/:id', component: CourseStudentsComponent,   data: {roles: [Role.USER]}},
+          {path: 'user-course-list/:id', component: UserCourseListComponent,   data: {roles: [Role.USER]}},
           {path: 'home',       	    component: HomeComponent},
           {path: '**',         	    component: ErrorComponent},
         ]

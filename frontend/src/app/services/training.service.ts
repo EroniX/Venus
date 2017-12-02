@@ -15,8 +15,8 @@ export class TrainingService {
     constructor(private http: HttpService) {
     }
 
-    list(): Observable<Array<Training>> {
-        return this.http.get(Routes.TRAINING_LIST)
+    findAll(): Observable<Array<Training>> {
+        return this.http.get(Routes.TRAINING_FIND_ALL)
             .map(resp => resp.json());
     }
 
@@ -25,7 +25,7 @@ export class TrainingService {
             .map(resp => resp.text() == "true");
     }
 
-    unregister(training: Training) {
+    unregister(training: Training): Observable<boolean> {
         return this.http.post(Routes.TRAINING_UNREGISTER, training.id)
             .map(resp => resp.text() == "true");
     }

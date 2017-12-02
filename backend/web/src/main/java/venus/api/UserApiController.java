@@ -9,6 +9,8 @@ import venus.logic.dto.UserDTO;
 import venus.logic.service.SecurityService;
 import venus.logic.service.UserService;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/api/user")
 public class UserApiController {
@@ -17,8 +19,18 @@ public class UserApiController {
     @Autowired
     private SecurityService securityService;
 
-    @GetMapping("/get")
-    public ResponseEntity<UserDTO> get() {
+    @GetMapping("/find-by-id/{userId}")
+    public ResponseEntity<UserDTO> findById(@PathVariable int userId) {
+        Optional<User> user = userService.findById(userId);
+        if(!user.isPresent()) {
+            return ResponseEntity.badRequest().build();
+        }
+        UserDTO userDTO = UserDTO.create(user.get());
+        return ResponseEntity.ok(userDTO);
+    }
+
+    @GetMapping("/find-me")
+    public ResponseEntity<UserDTO> findMe() {
         User user = securityService.getUser();
         UserDTO userDTO = UserDTO.create(user);
         return ResponseEntity.ok(userDTO);

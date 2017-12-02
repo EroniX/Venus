@@ -26,24 +26,24 @@ export class SubjectComponent implements OnInit {
         private userService: UserService) { 
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.loadSubjects();
     }
 
-    applyAllSubjectsFilter(filterValue: string) {
+    applyAllSubjectsFilter(filterValue: string): void {
         filterValue = filterValue.trim(); 
         filterValue = filterValue.toLowerCase();
         this.allSubjectsDataSource.filter = filterValue;
     }
 
-    applyMySubjectsFilter(filterValue: string) {
+    applyMySubjectsFilter(filterValue: string): void {
         filterValue = filterValue.trim(); 
         filterValue = filterValue.toLowerCase();
         this.mySubjectsDataSource.filter = filterValue;
     }
 
-    loadSubjects() {
-        this.subjectService.list()
+    loadSubjects(): void {
+        this.subjectService.findAll()
             .subscribe(resp => {
                 this.allSubjects = resp.filter(n => !n.registered); 
                 this.mySubjects = resp.filter(n => n.registered); 

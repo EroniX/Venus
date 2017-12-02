@@ -3,8 +3,7 @@ package venus.logic.dto;
 import venus.dal.model.UserCourse;
 
 public class UserCourseDTO {
-    private String subjectName;
-    private int courseId;
+    private int userId;
     private String username;
     private String email;
     private Integer mark;
@@ -13,33 +12,23 @@ public class UserCourseDTO {
     }
 
     public UserCourseDTO(
-            String subjectName,
-            int courseId,
+            int userId,
             String username,
             String email,
             Integer mark) {
 
-        this.setSubjectName(subjectName);
-        this.setCourseId(courseId);
+        this.setUserId(userId);
         this.setUsername(username);
         this.setEmail(email);
         this.setMark(mark);
     }
 
-    public String getSubjectName() {
-        return subjectName;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setSubjectName(String subjectName) {
-        this.subjectName = subjectName;
-    }
-
-    public int getCourseId() {
-        return courseId;
-    }
-
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getUsername() {
@@ -68,8 +57,7 @@ public class UserCourseDTO {
 
     public static UserCourseDTO create(UserCourse userCourse) {
         return new UserCourseDTO(
-            userCourse.getCourse().getSubject().getName(),
-            userCourse.getCourse().getId(),
+            userCourse.getStudent().getId(),
             userCourse.getStudent().getUsername(),
             userCourse.getStudent().getEmail(),
             userCourse.getMark()
