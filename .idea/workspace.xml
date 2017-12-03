@@ -1,48 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b9692af-7dca-4a1b-80fd-a49a34ea8669" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/students/course-students.component.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/students/course-students.component.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/students/course-students.component.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/students/course-students.component.ts" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/model/User.java" afterPath="$PROJECT_DIR$/backend/dal/src/main/java/venus/dal/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/CourseDTO.java" afterPath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/CourseDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/UserCourseDTO.java" afterPath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/dto/UserCourseDTO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/CourseService.java" afterPath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/CourseService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/CourseServiceImpl.java" afterPath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/CourseServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserCourseService.java" afterPath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserCourseService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserCourseServiceImpl.java" afterPath="$PROJECT_DIR$/backend/logic/src/main/java/venus/logic/service/UserCourseServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/CourseApiController.java" afterPath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/CourseApiController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/SemesterApiController.java" afterPath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/SemesterApiController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/SubjectApiController.java" afterPath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/SubjectApiController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/TrainingApiController.java" afterPath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/TrainingApiController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/UserApiController.java" afterPath="$PROJECT_DIR$/backend/web/src/main/java/venus/api/UserApiController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/config/routes.config.ts" afterPath="$PROJECT_DIR$/frontend/src/app/config/routes.config.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/model/user-course.ts" afterPath="$PROJECT_DIR$/frontend/src/app/model/user-course.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/course.component.html" afterPath="$PROJECT_DIR$/frontend/src/app/pages/course/course.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/course.component.ts" afterPath="$PROJECT_DIR$/frontend/src/app/pages/course/course.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/create/course-create.component.css" afterPath="$PROJECT_DIR$/frontend/src/app/pages/course/create/course-create.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/create/course-create.component.html" afterPath="$PROJECT_DIR$/frontend/src/app/pages/course/create/course-create.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/course/create/course-create.component.ts" afterPath="$PROJECT_DIR$/frontend/src/app/pages/course/create/course-create.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.css" afterPath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.html" afterPath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.ts" afterPath="$PROJECT_DIR$/frontend/src/app/pages/login/login.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.css" afterPath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.html" afterPath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.ts" afterPath="$PROJECT_DIR$/frontend/src/app/pages/register/register.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/semester/semester.component.ts" afterPath="$PROJECT_DIR$/frontend/src/app/pages/semester/semester.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/subject/subject.component.ts" afterPath="$PROJECT_DIR$/frontend/src/app/pages/subject/subject.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/pages/training/training.component.ts" afterPath="$PROJECT_DIR$/frontend/src/app/pages/training/training.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/routes.ts" afterPath="$PROJECT_DIR$/frontend/src/app/routes.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/services/course.service.ts" afterPath="$PROJECT_DIR$/frontend/src/app/services/course.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/services/semester.service.ts" afterPath="$PROJECT_DIR$/frontend/src/app/services/semester.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/services/subject.service.ts" afterPath="$PROJECT_DIR$/frontend/src/app/services/subject.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/services/training.service.ts" afterPath="$PROJECT_DIR$/frontend/src/app/services/training.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/app/services/user.service.ts" afterPath="$PROJECT_DIR$/frontend/src/app/services/user.service.ts" />
-    </list>
+    <list default="true" id="4b9692af-7dca-4a1b-80fd-a49a34ea8669" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/web/target/" />
@@ -73,8 +32,8 @@
       <file leaf-file-name="UserCourseApiController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/UserCourseApiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13">
-              <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+            <state relative-caret-position="1088">
+              <caret line="79" column="30" lean-forward="true" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -775,12 +734,12 @@
       <workItem from="1511963041840" duration="2123000" />
       <workItem from="1512049103446" duration="16544000" />
       <workItem from="1512134730750" duration="8487000" />
-      <workItem from="1512207010709" duration="2955000" />
+      <workItem from="1512207010709" duration="4108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173726000" />
+    <option name="totallyTimeSpent" value="174879000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -793,6 +752,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
@@ -804,7 +764,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5444079" sideWeight="0.49707174" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.04769737" sideWeight="0.49707174" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3223684" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -860,18 +820,6 @@
           <line>30</line>
           <properties />
           <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/UserCourseApiController.java</url>
-          <line>74</line>
-          <properties />
-          <option name="timeStamp" value="153" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/UserCourseApiController.java</url>
-          <line>75</line>
-          <properties />
-          <option name="timeStamp" value="154" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -1247,8 +1195,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/web/src/main/java/venus/api/UserCourseApiController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13">
-          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+        <state relative-caret-position="1088">
+          <caret line="79" column="30" lean-forward="true" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="30" />
           <folding />
         </state>
       </provider>
