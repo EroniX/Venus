@@ -18,7 +18,7 @@ export class CourseService {
     }
 
     findBySubjectId(subjectId: number): Observable<Array<Course>> {
-        return this.http.get(Routes.COURSE_LIST, subjectId)
+        return this.http.get(Routes.COURSE_FIND_BY_SUBJECT_ID, subjectId)
             .map(resp => resp.json());
     }
 

@@ -1,5 +1,12 @@
 <div class="page-body">
-    <h1 class="mat-h1">Trainings</h1>
+    <mat-toolbar color="primary">
+        <span>Training</span>
+    </mat-toolbar>      
+    <ol class="breadcrumb">
+        <li><a [routerLink]="'/home'">Home</a></li>
+        <li class="active-breadcrumb">Training</li>
+    </ol>  
+
     <mat-tab-group>
         <mat-tab label="All trainings">
             <div class="training-header">

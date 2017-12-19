@@ -1,5 +1,13 @@
 <div class="page-body">
-    <h1 class="mat-h1">Courses</h1>
+    <mat-toolbar color="primary">
+        <span>Course</span>
+    </mat-toolbar>      
+    <ol class="breadcrumb">
+        <li><a [routerLink]="'/home'">Home</a></li>
+        <li><a [routerLink]="'/subject'">Subject</a></li>
+        <li class="active-breadcrumb">Course</li>
+    </ol> 
+    
     <div class="subject-header">
         <mat-form-field>
             <input matInput (keyup)="applyCoursesFilter($event.target.value)" placeholder="Search">

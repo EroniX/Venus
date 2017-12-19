@@ -1,5 +1,11 @@
 <div class="page-body">
-    <h1 class="mat-h1">Semester</h1>
+    <mat-toolbar color="primary">
+        <span>Semester</span>
+    </mat-toolbar>      
+    <ol class="breadcrumb">
+        <li><a [routerLink]="'/home'">Home</a></li>
+        <li class="active-breadcrumb">Semester</li>
+    </ol>  
     
     <div *ngIf="current == undefined; else ELSE">
         <h2 class="mat-h2">There is no available semester yet. Sorry for the inconvience.</h2>

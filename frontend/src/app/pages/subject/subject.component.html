@@ -1,5 +1,12 @@
 <div class="page-body">
-    <h1 class="mat-h1">Subjects</h1>
+    <mat-toolbar color="primary">
+        <span>Subject</span>
+    </mat-toolbar>      
+    <ol class="breadcrumb">
+        <li><a [routerLink]="'/home'">Home</a></li>
+        <li class="active-breadcrumb">Subject</li>
+    </ol> 
+
     <button *ngIf="userService.hasRole(courseCreateRole())" mat-raised-button class="mat-primary" [routerLink]="'/course-create'">
         Create course
     </button>
