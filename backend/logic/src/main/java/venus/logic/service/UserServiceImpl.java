@@ -6,6 +6,8 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import venus.dal.model.Semester;
+import venus.dal.model.Training;
 import venus.dal.model.User;
 import venus.dal.repository.UserRepository;
 import venus.logic.dto.UserDTO;
@@ -55,6 +57,42 @@ public class UserServiceImpl implements UserService {
             throw new EmailAlreadyUsedException();
         }
         userRepository.save(user);
+    }
+
+    public Boolean registerSemester(User user, Semester semester) {
+        if(user.hasSemester(user.getId())) {
+            return false;
+        }
+        user.addSemester(semester);
+        update(user);
+        return true;
+    }
+
+    public Boolean unregisterSemester(User user, int semesterId) {
+        if(!user.hasSemester(semesterId)) {
+            return false;
+        }
+        user.removeSemester(semesterId);
+        update(user);
+        return true;
+    }
+
+    public Boolean registerTraining(User user, Training training) {
+        if(user.hasTraining(training.getId())) {
+            return false;
+        }
+        user.addTraining(training);
+        update(user);
+        return true;
+    }
+
+    public Boolean unregisterTraining(User user, int trainingId) {
+        if(!user.hasTraining(trainingId)) {
+            return false;
+        }
+        user.removeTraining(trainingId);
+        update(user);
+        return true;
     }
 
     @Override

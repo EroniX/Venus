@@ -136,25 +136,32 @@ public class User extends BaseEntity {
     public Boolean hasTraining(int id) {
         return getTrainings()
             .stream()
-            .anyMatch(n -> n.getId() == id);
+            .anyMatch(n ->
+                n.getId() == id);
     }
 
     public void removeTraining(int id) {
-        getTrainings().removeIf(n -> n.getId() == id);
+        getTrainings()
+            .removeIf(n ->
+                n.getId() == id);
     }
 
     public void addTraining(Training training) {
-        getTrainings().add(training);
+        getTrainings()
+            .add(training);
     }
 
     public Boolean hasSemester(int id) {
         return getSemesters()
             .stream()
-            .anyMatch(n -> n.getId() == id);
+            .anyMatch(n ->
+                n.getId() == id);
     }
 
     public void removeSemester(int id) {
-        getSemesters().removeIf(n -> n.getId() == id);
+        getSemesters()
+            .removeIf(n ->
+                n.getId() == id);
     }
 
     public void addSemester(Semester semester) {
@@ -185,9 +192,9 @@ public class User extends BaseEntity {
         return getUserCourses()
                 .stream()
                 .filter(n -> n
-                        .getCourse()
-                        .getSubject()
-                        .getId() == subjectId)
+                    .getCourse()
+                    .getSubject()
+                    .getId() == subjectId)
                 .collect(Collectors.toList());
     }
 

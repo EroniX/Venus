@@ -57,12 +57,8 @@ public class SemesterApiController {
         if(!semester.isPresent()) {
             return ResponseEntity.badRequest().build();
         }
-        if(user.hasSemester(semester.get().getId())) {
-            return ResponseEntity.ok(false);
-        }
-        user.addSemester(semester.get());
-        userService.update(user);
-        return ResponseEntity.ok(true);
+        Boolean result = userService.registerSemester(user, semester.get());
+        return ResponseEntity.ok(result);
     }
 
     @PostMapping("/unregister")
@@ -76,8 +72,7 @@ public class SemesterApiController {
         if(!user.hasSemester(semester.get().getId())) {
             return ResponseEntity.ok(false);
         }
-        user.removeSemester(semester.get().getId());
-        userService.update(user);
-        return ResponseEntity.ok(true);
+        Boolean result = userService.unregisterSemester(user, semester.get().getId());
+        return ResponseEntity.ok(result);
     }
 }

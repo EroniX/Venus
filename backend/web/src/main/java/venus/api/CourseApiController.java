@@ -56,11 +56,11 @@ public class CourseApiController {
         return ResponseEntity.ok(courseDTO);
     }
 
-    @GetMapping("/list/{id}")
+    @GetMapping("/find-by-subject-id/{subjectId}")
     @PreAuthorize("hasAuthority('COURSE_LIST')")
-    public ResponseEntity<List<CourseDTO>> list(@PathVariable int id) {
+    public ResponseEntity<List<CourseDTO>> findBySubjectId(@PathVariable int subjectId) {
         User user = securityService.getUser();
-        Optional<Subject> subject = subjectService.findById(id);
+        Optional<Subject> subject = subjectService.findById(subjectId);
         if(!subject.isPresent()) {
             return ResponseEntity.badRequest().build();
         }
@@ -71,8 +71,6 @@ public class CourseApiController {
 
         return ResponseEntity.ok(courseDTOs);
     }
-
-
 
     @DeleteMapping("/delete/{id}")
     @PreAuthorize("hasAuthority('COURSE_DELETE')")

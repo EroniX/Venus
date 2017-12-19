@@ -12,7 +12,6 @@ import venus.logic.service.SecurityService;
 import venus.logic.service.TrainingService;
 import venus.logic.service.UserService;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -29,8 +28,9 @@ public class TrainingApiController {
     @PreAuthorize("hasAuthority('TRAINING_LIST')")
     public ResponseEntity<Iterable<TrainingDTO>> findAll() {
         User user = securityService.getUser();
-        List<Training> trainings = Lists.newArrayList(trainingService.findAll());
-        Iterable<TrainingDTO> trainingDTOs = trainingService.convertToDTOs(trainings, user);
+        Iterable<TrainingDTO> trainingDTOs = trainingService.convertToDTOs(
+            Lists.newArrayList(trainingService.findAll()),
+            user);
         return ResponseEntity.ok(trainingDTOs);
     }
 
@@ -56,23 +56,19 @@ public class TrainingApiController {
         if(!training.isPresent()) {
             return ResponseEntity.ok(false);
         }
-        if(user.hasTraining(id)) {
-            return ResponseEntity.ok(false);
-        }
-        user.addTraining(training.get());
-        userService.update(user);
-        return ResponseEntity.ok(true);
+        Boolean result = userService.registerTraining(user, training.get());
+        return ResponseEntity.ok(result);
     }
 
     @PostMapping("/unregister")
     @PreAuthorize("hasAuthority('TRAINING_UNREGISTER')")
     public ResponseEntity<Boolean> unregister(@RequestBody int id) {
         User user = securityService.getUser();
-        if(!user.hasTraining(id)) {
+        Optional<Training> training = trainingService.findById(id);
+        if(!training.isPresent()) {
             return ResponseEntity.ok(false);
         }
-        user.removeTraining(id);
-        userService.update(user);
-        return ResponseEntity.ok(true);
+        Boolean result = userService.unregisterTraining(user, id);
+        return ResponseEntity.ok(result);
     }
 }
